@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Ripasso – Prima Liceo 🇬🇧</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+
+  :root {
+    --pink:    #FF6B9D;
+    --purple:  #9B5DE5;
+    --blue:    #00B4D8;
+    --yellow:  #FFD166;
+    --green:   #06D6A0;
+    --bg:      #FFF8FD;
+    --card:    #FFFFFF;
+    --text:    #2D2D3F;
+    --muted:   #8B8BAD;
+    --radius:  16px;
+    --shadow:  0 4px 20px rgba(155,93,229,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+    padding: 28px 20px 20px;
+    text-align: center;
+    color: white;
+  }
+  header h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+  }
+  header p { font-size: 0.95rem; opacity: 0.88; margin-top: 4px; }
+
+  /* NAV */
+  nav {
+    display: flex;
+    overflow-x: auto;
+    background: white;
+    border-bottom: 2px solid #F0EAF8;
+    padding: 0 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav button {
+    flex-shrink: 0;
+    padding: 14px 18px;
+    border: none;
+    background: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  nav button.active {
+    color: var(--purple);
+    border-bottom-color: var(--purple);
+  }
+  nav button:hover:not(.active) { color: var(--text); }
+
+  /* MAIN */
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 60px; }
+
+  section { display: none; }
+  section.active { display: block; }
+
+  /* CARDS */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card h3 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 16px 0 8px;
+    color: var(--purple);
+  }
+  .card p { line-height: 1.65; font-size: 0.93rem; }
+
+  /* RULE BOX */
+  .rule-box {
+    background: #F5F0FF;
+    border-left: 4px solid var(--purple);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .rule-box strong { color: var(--purple); }
+
+  /* EXAMPLE */
+  .examples { margin: 8px 0; }
+  .examples li {
+    list-style: none;
+    padding: 4px 0 4px 20px;
+    position: relative;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  .examples li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+    font-weight: 700;
+  }
+  .examples .it { color: var(--muted); font-style: italic; font-size: 0.82rem; }
+
+  /* QUIZ */
+  .quiz-area { margin-top: 16px; }
+  .quiz-q {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.98rem;
+    margin-bottom: 10px;
+  }
+  .quiz-opts { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    padding: 10px 16px;
+    border: 2px solid #E8E0F5;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-align: left;
+    transition: all 0.18s;
+  }
+  .quiz-opt:hover { border-color: var(--purple); background: #F8F4FF; }
+  .quiz-opt.correct { border-color: var(--green); background: #EDFBF6; color: #0A7A5E; }
+  .quiz-opt.wrong   { border-color: var(--pink);  background: #FFF0F5; color: #B0003A; }
+  .quiz-feedback {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    min-height: 20px;
+  }
+  .quiz-feedback.ok  { color: var(--green); }
+  .quiz-feedback.err { color: var(--pink); }
+  .quiz-nav {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    align-items: center;
+  }
+  .btn {
+    padding: 9px 20px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.1s;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-purple { background: var(--purple); color: white; }
+  .btn-pink   { background: var(--pink);   color: white; }
+  .btn-green  { background: var(--green);  color: white; }
+  .btn-blue   { background: var(--blue);   color: white; }
+  .btn-yellow { background: var(--yellow); color: var(--text); }
+  .score-pill {
+    margin-left: auto;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.88rem;
+    background: #F0EAF8;
+    color: var(--purple);
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  /* VOCAB FLASHCARD */
+  .theme-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .theme-tab {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 2px solid #E8E0F5;
+    background: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.18s;
+  }
+  .theme-tab.active { background: var(--pink); border-color: var(--pink); color: white; }
+
+  .flashcard-wrap {
+    perspective: 800px;
+    margin: 10px auto;
+    max-width: 340px;
+    height: 160px;
+    cursor: pointer;
+  }
+  .flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+  }
+  .flashcard.flipped { transform: rotateY(180deg); }
+  .flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 6px 24px rgba(155,93,229,0.15);
+  }
+  .flashcard-front {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: white;
+  }
+  .flashcard-back {
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .flashcard-face .word {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+  }
+  .flashcard-face .hint {
+    font-size: 0.8rem;
+    opacity: 0.78;
+  }
+  .flashcard-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .fc-count {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--muted);
+    min-width: 60px;
+    text-align: center;
+  }
+
+  /* WORD TABLE */
+  .word-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.88rem;
+  }
+  .word-table th {
+    background: var(--purple);
+    color: white;
+    padding: 8px 12px;
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+  }
+  .word-table th:first-child { border-radius: 8px 0 0 0; }
+  .word-table th:last-child  { border-radius: 0 8px 0 0; }
+  .word-table td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #F0EAF8;
+  }
+  .word-table tr:nth-child(even) td { background: #FBF8FF; }
+  .word-table tr:last-child td { border-bottom: none; }
+
+  /* VERBS TABLE */
+  .verb-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.83rem;
+  }
+  .verb-table th {
+    background: var(--pink);
+    color: white;
+    padding: 8px 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    text-align: left;
+  }
+  .verb-table th:first-child { border-radius: 8px 0 0 0; }
+  .verb-table th:last-child  { border-radius: 0 8px 0 0; }
+  .verb-table td { padding: 6px 10px; border-bottom: 1px solid #F5EFF8; }
+  .verb-table tr:nth-child(even) td { background: #FFF5F9; }
+  .verb-table td:nth-child(1) { font-weight: 700; color: var(--purple); }
+  .verb-table td:nth-child(2) { color: var(--pink); font-weight: 600; }
+  .verb-table td:nth-child(3) { color: var(--blue); font-weight: 600; }
+  .verb-table td:nth-child(4) { color: var(--muted); font-style: italic; }
+
+  /* CONJUGATION TRAINER */
+  .conj-input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+    align-items: center;
+  }
+  .conj-input-row input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 2px solid #E8E0F5;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .conj-input-row input:focus { border-color: var(--purple); }
+  .conj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-size: 0.88rem;
+  }
+  .conj-row {
+    background: #F8F4FF;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .conj-row span:first-child { color: var(--muted); font-size: 0.8rem; margin-right: 6px; }
+  .conj-row span:last-child  { font-weight: 700; color: var(--purple); }
+
+  /* MINI TEST */
+  .test-intro {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .test-intro .big-num {
+    font-family: 'Nunito', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .result-box {
+    text-align: center;
+    padding: 24px;
+  }
+  .result-box .big-score {
+    font-family: 'Nunito', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+  }
+  .result-box .msg {
+    font-size: 1.1rem;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .progress-bar {
+    background: #F0EAF8;
+    border-radius: 20px;
+    height: 8px;
+    margin: 8px 0 16px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--purple), var(--pink));
+    transition: width 0.3s;
+  }
+
+  /* BADGE */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+  }
+  .badge-purple { background: #EDE5FF; color: var(--purple); }
+  .badge-pink   { background: #FFE8F2; color: var(--pink); }
+
+  @media (max-width: 500px) {
+    header h1 { font-size: 1.5rem; }
+    .conj-grid { grid-template-columns: 1fr; }
+    .verb-table { font-size: 0.75rem; }
+    .word-table { font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇬🇧 English Ripasso</h1>
+  <p>Prima Liceo — Grammatica, Vocaboli e Verbi</p>
+</header>
+
+<nav>
+  <button class="active" onclick="showTab('grammar')">📖 Grammatica</button>
+  <button onclick="showTab('vocab')">🗂️ Vocabolario</button>
+  <button onclick="showTab('verbs')">⚡ Verbi</button>
+  <button onclick="showTab('test')">🎯 Mini Test</button>
+  <button onclick="showTab('results')">📊 Risultati</button>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════ GRAMMAR ═══════════════════════════════ -->
+<section id="grammar" class="active">
+
+  <!-- Present Simple -->
+  <div class="card">
+    <h2>🟣 Present Simple</h2>
+    <div class="rule-box">
+      <strong>Quando si usa:</strong> azioni abituali, fatti sempre veri, routine.<br>
+      <strong>Forma:</strong> soggetto + verbo base (+ <em>-s</em> con he/she/it)<br>
+      <strong>Negativa:</strong> don't / doesn't + verbo<br>
+      <strong>Domanda:</strong> Do / Does + soggetto + verbo?
+    </div>
+    <ul class="examples">
+      <li>I <strong>play</strong> tennis every Saturday. <span class="it">(Gioco a tennis ogni sabato.)</span></li>
+      <li>She <strong>doesn't like</strong> coffee. <span class="it">(A lei non piace il caffè.)</span></li>
+      <li><strong>Do</strong> you speak English? <span class="it">(Parli inglese?)</span></li>
+    </ul>
+    <div id="q-ps" class="quiz-area"></div>
+  </div>
+
+  <!-- Present Continuous -->
+  <div class="card">
+    <h2>🔵 Present Continuous</h2>
+    <div class="rule-box">
+      <strong>Quando si usa:</strong> azioni che stanno succedendo ADESSO o temporanee.<br>
+      <strong>Forma:</strong> to be (am/is/are) + verbo + <em>-ing</em>
+    </div>
+    <ul class="examples">
+      <li>I <strong>am studying</strong> English right now. <span class="it">(Sto studiando inglese adesso.)</span></li>
+      <li>They <strong>are watching</strong> a film. <span class="it">(Stanno guardando un film.)</span></li>
+      <li>She <strong>isn't sleeping</strong>. <span class="it">(Lei non sta dormendo.)</span></li>
+    </ul>
+    <div class="rule-box" style="background:#EBF8FF; border-color:var(--blue);">
+      <strong style="color:var(--blue);">Simple vs Continuous:</strong><br>
+      I <em>eat</em> pizza every Friday. (abitudine) ✦ I <em>am eating</em> pizza now. (adesso)
+    </div>
+    <div id="q-pc" class="quiz-area"></div>
+  </div>
+
+  <!-- Past Simple -->
+  <div class="card">
+    <h2>🟡 Past Simple</h2>
+    <div class="rule-box">
+      <strong>Quando si usa:</strong> azioni completate nel passato.<br>
+      <strong>Regolari:</strong> verbo + <em>-ed</em> (walk → walked)<br>
+      <strong>Irregolari:</strong> forma propria (go → went, see → saw)<br>
+      <strong>Negativa:</strong> didn't + verbo base<br>
+      <strong>Domanda:</strong> Did + soggetto + verbo base?
+    </div>
+    <ul class="examples">
+      <li>I <strong>watched</strong> a film yesterday. <span class="it">(Ho guardato un film ieri.)</span></li>
+      <li>She <strong>went</strong> to London last year. <span class="it">(È andata a Londra l'anno scorso.)</span></li>
+      <li><strong>Did</strong> you <strong>call</strong> him? <span class="it">(L'hai chiamato?)</span></li>
+    </ul>
+    <div id="q-past" class="quiz-area"></div>
+  </div>
+
+  <!-- Future -->
+  <div class="card">
+    <h2>🟢 Future: will vs going to</h2>
+    <div class="rule-box">
+      <strong>Will:</strong> decisioni spontanee, previsioni, promesse.<br>
+      → I'<strong>ll help</strong> you! (Decisione sul momento)<br><br>
+      <strong>Going to:</strong> piani già decisi, intenzioni, prove evidenti.<br>
+      → She <strong>is going to study</strong> medicine. (Piano già deciso)
+    </div>
+    <ul class="examples">
+      <li>It <strong>will</strong> rain tomorrow. <span class="it">(Pioverà domani.)</span></li>
+      <li>We <strong>are going to</strong> visit Rome next week. <span class="it">(Visiteremo Roma.)</span></li>
+      <li>I <strong>won't</strong> tell anyone. <span class="it">(Non dirò niente a nessuno.)</span></li>
+    </ul>
+    <div id="q-fut" class="quiz-area"></div>
+  </div>
+
+  <!-- Modals -->
+  <div class="card">
+    <h2>🔴 Modal Verbs</h2>
+    <div class="rule-box">
+      I modal non cambiano mai forma e sono seguiti dal verbo base (senza <em>to</em>).
+    </div>
+    <h3>can — capacità / possibilità</h3>
+    <ul class="examples">
+      <li>She <strong>can</strong> swim very well. <span class="it">(Sa nuotare bene.)</span></li>
+      <li>I <strong>can't</strong> come tonight. <span class="it">(Non posso venire stasera.)</span></li>
+    </ul>
+    <h3>must — obbligo / necessità</h3>
+    <ul class="examples">
+      <li>You <strong>must</strong> wear a seatbelt. <span class="it">(Devi mettere la cintura.)</span></li>
+      <li>You <strong>mustn't</strong> cheat. <span class="it">(Non devi copiare.)</span></li>
+    </ul>
+    <h3>should — consiglio</h3>
+    <ul class="examples">
+      <li>You <strong>should</strong> sleep more. <span class="it">(Dovresti dormire di più.)</span></li>
+    </ul>
+    <div id="q-mod" class="quiz-area"></div>
+  </div>
+
+  <!-- Articles -->
+  <div class="card">
+    <h2>⚪ Articoli: a / an / the</h2>
+    <div class="rule-box">
+      <strong>a</strong> — davanti a consonante: <em>a dog, a school</em><br>
+      <strong>an</strong> — davanti a vocale (a, e, i, o, u): <em>an apple, an hour</em><br>
+      <strong>the</strong> — elemento specifico, già noto: <em>the book (quel libro specifico)</em><br>
+      <strong>zero article</strong> — sostantivi plurali generici: <em>I love cats.</em>
+    </div>
+    <ul class="examples">
+      <li>I have <strong>a</strong> dog and <strong>a</strong> cat. <span class="it">(un cane e un gatto)</span></li>
+      <li><strong>An</strong> elephant is big. <span class="it">(un elefante — generico)</span></li>
+      <li><strong>The</strong> elephant in the zoo is huge. <span class="it">(quello specifico)</span></li>
+    </ul>
+    <div id="q-art" class="quiz-area"></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════ VOCAB ════════════════════════════════ -->
+<section id="vocab">
+  <div class="card">
+    <h2>🗂️ Flashcard per tema</h2>
+    <p style="margin-bottom:14px; font-size:0.88rem; color:var(--muted);">Tocca la carta per vedere la traduzione!</p>
+    <div class="theme-tabs" id="themeTabs"></div>
+    <div class="flashcard-wrap" onclick="flipCard()">
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard-face flashcard-front">
+          <span class="hint">🇬🇧 Inglese</span>
+          <span class="word" id="fc-front">—</span>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <span class="hint">🇮🇹 Italiano</span>
+          <span class="word" id="fc-back">—</span>
+        </div>
+      </div>
+    </div>
+    <div class="flashcard-controls">
+      <button class="btn btn-purple" onclick="prevCard()">← Indietro</button>
+      <span class="fc-count" id="fc-count">1 / 1</span>
+      <button class="btn btn-pink" onclick="nextCard()">Avanti →</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Lista completa per tema</h2>
+    <div class="theme-tabs" id="tableTabs"></div>
+    <div id="wordTableArea"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ VERBS ════════════════════════════════ -->
+<section id="verbs">
+  <div class="card">
+    <h2>⚡ I 40 Verbi Irregolari più importanti</h2>
+    <p style="font-size:0.85rem; color:var(--muted); margin-bottom:14px;">Base → Past Simple → Past Participle → Significato</p>
+    <div style="overflow-x:auto;">
+      <table class="verb-table" id="verbTableMain"></table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔧 Trainer: coniugazione Present Simple</h2>
+    <p style="font-size:0.88rem; color:var(--muted); margin-bottom:14px;">Inserisci un verbo in inglese e vedi come si coniuga!</p>
+    <div class="conj-input-row">
+      <input type="text" id="conjInput" placeholder="es. play, watch, go..." onkeydown="if(event.key==='Enter') conjugate()">
+      <button class="btn btn-purple" onclick="conjugate()">Coniuga</button>
+    </div>
+    <div class="conj-grid" id="conjGrid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ TEST ════════════════════════════════ -->
+<section id="test">
+  <div class="card" id="testCard">
+    <div class="test-intro" id="testIntro">
+      <div class="big-num">15</div>
+      <h2 style="margin:8px 0 6px; font-size:1.3rem;">Mini Test Misto</h2>
+      <p style="color:var(--muted); font-size:0.9rem; margin-bottom:20px;">Grammatica + Vocaboli — Quante ne sai?</p>
+      <button class="btn btn-purple" onclick="startTest()">Inizia il Test →</button>
+    </div>
+    <div id="testArea" style="display:none;"></div>
+    <div id="testResult" style="display:none;"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ RESULTS ═════════════════════════════ -->
+<section id="results">
+  <div class="card" id="resultsLock">
+    <div style="text-align:center; padding:20px 0;">
+      <div style="font-size:3rem;">🔒</div>
+      <h2 style="justify-content:center; margin:10px 0 6px;">Area Riservata</h2>
+      <p style="color:var(--muted); font-size:0.9rem; margin-bottom:18px;">Inserisci la password per vedere i risultati</p>
+      <div style="display:flex; gap:10px; max-width:320px; margin:0 auto;">
+        <input type="password" id="pwInput" placeholder="Password..."
+          style="flex:1; padding:10px 14px; border:2px solid #E8E0F5; border-radius:10px; font-family:'Nunito',sans-serif; font-size:0.95rem; outline:none;"
+          onkeydown="if(event.key==='Enter') checkPassword()">
+        <button class="btn btn-purple" onclick="checkPassword()">Entra</button>
+      </div>
+      <p id="pwError" style="color:var(--pink); font-size:0.85rem; margin-top:10px; min-height:18px;"></p>
+    </div>
+  </div>
+
+  <div id="resultsArea" style="display:none;">
+    <div class="card">
+      <h2>📊 Tutti i risultati</h2>
+      <p style="font-size:0.85rem; color:var(--muted); margin-bottom:14px;">
+        Ogni quiz e test completato viene salvato automaticamente su questo dispositivo.
+      </p>
+      <div id="resultsList"></div>
+      <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+        <button class="btn btn-green" onclick="copySummary()">📋 Copia riepilogo per WhatsApp</button>
+        <button class="btn btn-pink" onclick="clearResults()">🗑️ Cancella tutto</button>
+      </div>
+      <p id="copyFeedback" style="color:var(--green); font-size:0.85rem; margin-top:8px; min-height:18px; font-weight:600;"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+// ═══════════════════════ DATA ═══════════════════════
+
+const vocab = {
+  "🏫 Scuola": [
+    ["school","scuola"],["classroom","aula"],["homework","compiti"],["lesson","lezione"],
+    ["subject","materia"],["teacher","insegnante"],["student","studente"],["textbook","libro di testo"],
+    ["exam","esame"],["grade","voto"],["notebook","quaderno"],["library","biblioteca"],
+    ["timetable","orario"],["break","intervallo"],["gym","palestra"]
+  ],
+  "👨‍👩‍👧 Famiglia": [
+    ["mother","madre"],["father","padre"],["sister","sorella"],["brother","fratello"],
+    ["grandmother","nonna"],["grandfather","nonno"],["aunt","zia"],["uncle","zio"],
+    ["cousin","cugino/a"],["husband","marito"],["wife","moglie"],["daughter","figlia"],
+    ["son","figlio"],["parents","genitori"],["family","famiglia"]
+  ],
+  "🍕 Cibo": [
+    ["breakfast","colazione"],["lunch","pranzo"],["dinner","cena"],["bread","pane"],
+    ["milk","latte"],["water","acqua"],["fruit","frutta"],["vegetables","verdura"],
+    ["meat","carne"],["fish","pesce"],["cheese","formaggio"],["egg","uovo"],
+    ["coffee","caffè"],["juice","succo"],["cake","torta"]
+  ],
+  "🎮 Hobby": [
+    ["reading","leggere / lettura"],["music","musica"],["dancing","ballare / danza"],
+    ["cooking","cucinare"],["painting","dipingere / pittura"],["sport","sport"],
+    ["swimming","nuoto"],["cycling","ciclismo"],["travelling","viaggiare"],
+    ["shopping","shopping"],["singing","cantare"],["photography","fotografia"],
+    ["gaming","videogiochi"],["hiking","escursioni"],["yoga","yoga"]
+  ],
+  "📅 Tempo": [
+    ["Monday","lunedì"],["Tuesday","martedì"],["Wednesday","mercoledì"],["Thursday","giovedì"],
+    ["Friday","venerdì"],["Saturday","sabato"],["Sunday","domenica"],
+    ["January","gennaio"],["February","febbraio"],["March","marzo"],["April","aprile"],
+    ["May","maggio"],["June","giugno"],["July","luglio"],["August","agosto"],
+    ["September","settembre"],["October","ottobre"],["November","novembre"],["December","dicembre"],
+    ["spring","primavera"],["summer","estate"],["autumn","autunno"],["winter","inverno"]
+  ]
+};
+
+const irregularVerbs = [
+  ["be","was/were","been","essere"],
+  ["become","became","become","diventare"],
+  ["begin","began","begun","cominciare"],
+  ["break","broke","broken","rompere"],
+  ["bring","brought","brought","portare"],
+  ["buy","bought","bought","comprare"],
+  ["come","came","come","venire"],
+  ["do","did","done","fare"],
+  ["drink","drank","drunk","bere"],
+  ["drive","drove","driven","guidare"],
+  ["eat","ate","eaten","mangiare"],
+  ["fall","fell","fallen","cadere"],
+  ["feel","felt","felt","sentire"],
+  ["find","found","found","trovare"],
+  ["fly","flew","flown","volare"],
+  ["forget","forgot","forgotten","dimenticare"],
+  ["get","got","got","ottenere/diventare"],
+  ["give","gave","given","dare"],
+  ["go","went","gone","andare"],
+  ["have","had","had","avere"],
+  ["hear","heard","heard","sentire/udire"],
+  ["know","knew","known","sapere/conoscere"],
+  ["leave","left","left","partire/lasciare"],
+  ["lose","lost","lost","perdere"],
+  ["make","made","made","fare/creare"],
+  ["meet","met","met","incontrare"],
+  ["put","put","put","mettere"],
+  ["read","read","read","leggere"],
+  ["run","ran","run","correre"],
+  ["say","said","said","dire"],
+  ["see","saw","seen","vedere"],
+  ["sleep","slept","slept","dormire"],
+  ["speak","spoke","spoken","parlare"],
+  ["swim","swam","swum","nuotare"],
+  ["take","took","taken","prendere"],
+  ["teach","taught","taught","insegnare"],
+  ["think","thought","thought","pensare"],
+  ["understand","understood","understood","capire"],
+  ["win","won","won","vincere"],
+  ["write","wrote","written","scrivere"]
+];
+
+// ═══════════════════════ QUIZ DATA ═══════════════════════
+
+const quizzes = {
+  "q-ps": {
+    questions: [
+      { q: "She ___ to school every day.", opts: ["go","goes","is going","went"], ans: 1 },
+      { q: "They ___ like spiders.", opts: ["doesn't","don't","isn't","aren't"], ans: 1 },
+      { q: "___ he play football?", opts: ["Is","Does","Do","Are"], ans: 1 },
+      { q: "Water ___ at 100°C.", opts: ["boil","boils","is boiling","boiled"], ans: 1 },
+      { q: "I ___ my room every Saturday.", opts: ["cleans","cleaning","clean","cleaned"], ans: 2 }
+    ],
+    color: "purple"
+  },
+  "q-pc": {
+    questions: [
+      { q: "Look! It ___ outside!", opts: ["rains","rained","is raining","rain"], ans: 2 },
+      { q: "She ___ a book at the moment.", opts: ["reads","read","is reading","are reading"], ans: 2 },
+      { q: "They ___ (not) football right now.", opts: ["aren't playing","don't play","isn't playing","not play"], ans: 0 },
+      { q: "___ you listening to music?", opts: ["Do","Does","Are","Is"], ans: 2 },
+      { q: "He usually walks, but today he ___ his bike.", opts: ["rides","is riding","rode","ride"], ans: 1 }
+    ],
+    color: "blue"
+  },
+  "q-past": {
+    questions: [
+      { q: "I ___ a great film last night.", opts: ["watch","watches","watched","am watching"], ans: 2 },
+      { q: "She ___ to Paris in 2022.", opts: ["go","goes","went","gone"], ans: 2 },
+      { q: "___ you enjoy the party?", opts: ["Did","Do","Was","Were"], ans: 0 },
+      { q: "He ___ his keys this morning.", opts: ["lose","lost","loses","losing"], ans: 1 },
+      { q: "They ___ (not) come to school yesterday.", opts: ["didn't","don't","weren't","aren't"], ans: 0 }
+    ],
+    color: "yellow"
+  },
+  "q-fut": {
+    questions: [
+      { q: "It's very cold. I think it ___ snow.", opts: ["is going to","will","goes to","going to"], ans: 1 },
+      { q: "I've already bought the tickets. We ___ see the concert.", opts: ["will","are going to","going","shall"], ans: 1 },
+      { q: "A: I'm thirsty. B: I ___ get you some water.", opts: ["am going to","will","going to","shall"], ans: 1 },
+      { q: "Look at those clouds! It ___ rain.", opts: ["will","is going to","goes to","shall"], ans: 1 },
+      { q: "She ___ (not) come. She's ill.", opts: ["won't","isn't going to","both A and B are correct","doesn't"], ans: 2 }
+    ],
+    color: "green"
+  },
+  "q-mod": {
+    questions: [
+      { q: "You ___ study more – your exams are next week!", opts: ["can","should","will","are"], ans: 1 },
+      { q: "She ___ speak three languages. She's amazing!", opts: ["must","should","can","will"], ans: 2 },
+      { q: "You ___ use your phone in class. It's forbidden.", opts: ["mustn't","shouldn't","can't","all correct"], ans: 3 },
+      { q: "I ___ finish this today. It's urgent.", opts: ["should","can","must","will"], ans: 2 },
+      { q: "___ I open the window? It's hot.", opts: ["Must","Should","Can","Will"], ans: 2 }
+    ],
+    color: "pink"
+  },
+  "q-art": {
+    questions: [
+      { q: "She is ___ engineer.", opts: ["a","an","the","—"], ans: 1 },
+      { q: "Can you close ___ door, please?", opts: ["a","an","the","—"], ans: 2 },
+      { q: "I have ___ dog. ___ dog is very friendly.", opts: ["a / The","the / A","an / The","— / The"], ans: 0 },
+      { q: "I love ___ cats. (in general)", opts: ["a","the","—","an"], ans: 2 },
+      { q: "___ Eiffel Tower is in Paris.", opts: ["A","An","The","—"], ans: 2 }
+    ],
+    color: "purple"
+  }
+};
+
+// Mixed test questions
+const testQuestions = [
+  { q: "She ___ tennis every Sunday.", opts: ["play","plays","is playing","played"], ans: 1 },
+  { q: "Look! They ___ to music!", opts: ["listen","listened","are listening","listens"], ans: 2 },
+  { q: "I ___ my keys yesterday. I can't find them.", opts: ["lose","lost","loses","am losing"], ans: 1 },
+  { q: "It ___ rain tomorrow. (prediction)", opts: ["is going to","will","going","shall to"], ans: 1 },
+  { q: "You ___ eat in the classroom. It's not allowed.", opts: ["should","can","mustn't","won't"], ans: 2 },
+  { q: "Please pass me ___ salt.", opts: ["a","an","the","—"], ans: 2 },
+  { q: "What is 'sorella' in English?", opts: ["brother","mother","sister","daughter"], ans: 2 },
+  { q: "What is 'colazione' in English?", opts: ["lunch","dinner","snack","breakfast"], ans: 3 },
+  { q: "The past of 'go' is:", opts: ["goed","went","gone","going"], ans: 1 },
+  { q: "He ___ (not) like vegetables.", opts: ["don't","doesn't","isn't","aren't"], ans: 1 },
+  { q: "What is 'novembre' in English?", opts: ["October","November","December","September"], ans: 1 },
+  { q: "___ you study English? Yes, I ___.", opts: ["Do / do","Does / does","Are / am","Is / is"], ans: 0 },
+  { q: "The past participle of 'write' is:", opts: ["wrote","written","writed","writing"], ans: 1 },
+  { q: "She ___ going to be a doctor.", opts: ["am","is","are","be"], ans: 1 },
+  { q: "What is 'insegnante' in English?", opts: ["student","principal","teacher","librarian"], ans: 2 }
+];
+
+// ═══════════════════════ NAVIGATION ═══════════════════════
+
+function showTab(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const btns = document.querySelectorAll('nav button');
+  const map = { grammar: 0, vocab: 1, verbs: 2, test: 3, results: 4 };
+  btns[map[id]].classList.add('active');
+}
+
+// ═══════════════════════ QUIZ ENGINE ═══════════════════════
+
+const quizState = {};
+
+function initQuiz(id) {
+  const data = quizzes[id];
+  if (!data) return;
+  quizState[id] = { current: 0, score: 0, answered: false };
+  renderQuiz(id);
+}
+
+function renderQuiz(id) {
+  const s = quizState[id];
+  const data = quizzes[id];
+  const q = data.questions[s.current];
+  const colorClass = `btn-${data.color === 'yellow' ? 'yellow' : data.color}`;
+  const total = data.questions.length;
+  const pct = (s.current / total) * 100;
+
+  const el = document.getElementById(id);
+  el.innerHTML = `
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="quiz-q">❓ ${q.q}</div>
+    <div class="quiz-opts" id="${id}-opts">
+      ${q.opts.map((o,i) => `<button class="quiz-opt" onclick="answerQuiz('${id}',${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="${id}-fb"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-purple" onclick="nextQuiz('${id}')" id="${id}-next" style="display:none">Prossima →</button>
+      <span class="score-pill" id="${id}-score">${s.score}/${total} ⭐</span>
+    </div>
+  `;
+}
+
+function answerQuiz(id, chosen) {
+  const s = quizState[id];
+  if (s.answered) return;
+  s.answered = true;
+  const q = quizzes[id].questions[s.current];
+  const opts = document.querySelectorAll(`#${id}-opts .quiz-opt`);
+  const fb = document.getElementById(`${id}-fb`);
+  const next = document.getElementById(`${id}-next`);
+  opts.forEach((o, i) => {
+    o.disabled = true;
+    if (i === q.ans) o.classList.add('correct');
+    else if (i === chosen && chosen !== q.ans) o.classList.add('wrong');
+  });
+  if (chosen === q.ans) {
+    s.score++;
+    fb.textContent = "✅ Corretto! Brava!";
+    fb.className = "quiz-feedback ok";
+  } else {
+    fb.textContent = `❌ La risposta corretta era: "${q.opts[q.ans]}"`;
+    fb.className = "quiz-feedback err";
+  }
+  document.getElementById(`${id}-score`).textContent = `${s.score}/${quizzes[id].questions.length} ⭐`;
+  next.style.display = '';
+}
+
+function nextQuiz(id) {
+  const s = quizState[id];
+  const total = quizzes[id].questions.length;
+  s.current++;
+  s.answered = false;
+  if (s.current >= total) {
+    saveResult(id, s.score, total);
+    const el = document.getElementById(id);
+    const emoji = s.score >= 4 ? '🌟' : s.score >= 3 ? '😊' : '💪';
+    el.innerHTML = `
+      <div style="text-align:center; padding:16px 0;">
+        <div style="font-size:2.5rem;">${emoji}</div>
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.8rem; color:var(--purple);">${s.score}/${total}</div>
+        <p style="margin:8px 0 16px; color:var(--muted); font-size:0.9rem;">${s.score===total?'Perfetto! Sei bravissima! 🏆':s.score>=3?'Molto bene! Continua così! 😊':'Ancora un po\' di pratica e ce la fai! 💪'}</p>
+        <button class="btn btn-purple" onclick="initQuiz('${id}')">🔄 Riprova</button>
+      </div>`;
+    return;
+  }
+  renderQuiz(id);
+}
+
+// ═══════════════════════ VOCAB ═══════════════════════
+
+let currentTheme = Object.keys(vocab)[0];
+let currentCard = 0;
+let isFlipped = false;
+let currentTableTheme = Object.keys(vocab)[0];
+
+function initVocab() {
+  const themes = Object.keys(vocab);
+
+  // Flashcard tabs
+  const tt = document.getElementById('themeTabs');
+  tt.innerHTML = themes.map(t => `<button class="theme-tab${t===currentTheme?' active':''}" onclick="setTheme('${t}',this)">${t}</button>`).join('');
+
+  // Table tabs
+  const tbl = document.getElementById('tableTabs');
+  tbl.innerHTML = themes.map(t => `<button class="theme-tab${t===currentTableTheme?' active':''}" onclick="setTableTheme('${t}',this)">${t}</button>`).join('');
+
+  renderCard();
+  renderTable();
+}
+
+function setTheme(theme, btn) {
+  currentTheme = theme;
+  currentCard = 0;
+  isFlipped = false;
+  document.getElementById('flashcard').classList.remove('flipped');
+  document.querySelectorAll('#themeTabs .theme-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCard();
+}
+
+function setTableTheme(theme, btn) {
+  currentTableTheme = theme;
+  document.querySelectorAll('#tableTabs .theme-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable();
+}
+
+function renderCard() {
+  const words = vocab[currentTheme];
+  const w = words[currentCard];
+  document.getElementById('fc-front').textContent = w[0];
+  document.getElementById('fc-back').textContent  = w[1];
+  document.getElementById('fc-count').textContent = `${currentCard+1} / ${words.length}`;
+}
+
+function renderTable() {
+  const words = vocab[currentTableTheme];
+  const area = document.getElementById('wordTableArea');
+  area.innerHTML = `<table class="word-table">
+    <thead><tr><th>🇬🇧 English</th><th>🇮🇹 Italiano</th></tr></thead>
+    <tbody>${words.map(w=>`<tr><td><strong>${w[0]}</strong></td><td>${w[1]}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function flipCard() {
+  isFlipped = !isFlipped;
+  document.getElementById('flashcard').classList.toggle('flipped', isFlipped);
+}
+
+function prevCard() {
+  const len = vocab[currentTheme].length;
+  currentCard = (currentCard - 1 + len) % len;
+  isFlipped = false;
+  document.getElementById('flashcard').classList.remove('flipped');
+  renderCard();
+}
+
+function nextCard() {
+  const len = vocab[currentTheme].length;
+  currentCard = (currentCard + 1) % len;
+  isFlipped = false;
+  document.getElementById('flashcard').classList.remove('flipped');
+  renderCard();
+}
+
+// ═══════════════════════ VERBS ═══════════════════════
+
+function initVerbs() {
+  const tbl = document.getElementById('verbTableMain');
+  tbl.innerHTML = `<thead><tr><th>Infinitive</th><th>Past Simple</th><th>Past Participle</th><th>Italiano</th></tr></thead>
+  <tbody>${irregularVerbs.map(v=>`<tr><td>${v[0]}</td><td>${v[1]}</td><td>${v[2]}</td><td>${v[3]}</td></tr>`).join('')}</tbody>`;
+}
+
+const pronouns = ["I","you","he / she / it","we","you (pl.)","they"];
+const thirdPerson = (v) => {
+  if (v.endsWith('ss') || v.endsWith('sh') || v.endsWith('ch') || v.endsWith('x') || v.endsWith('o')) return v + 'es';
+  if (v.endsWith('y') && !'aeiou'.includes(v[v.length-2])) return v.slice(0,-1) + 'ies';
+  return v + 's';
+};
+
+function conjugate() {
+  const verb = document.getElementById('conjInput').value.trim().toLowerCase();
+  if (!verb) return;
+  const forms = pronouns.map((p, i) => i === 2 ? thirdPerson(verb) : verb);
+  const grid = document.getElementById('conjGrid');
+  grid.innerHTML = pronouns.map((p,i) => `
+    <div class="conj-row">
+      <span>${p}</span><span>${forms[i]}</span>
+    </div>`).join('');
+}
+
+// ═══════════════════════ MINI TEST ═══════════════════════
+
+let testState = { current: 0, score: 0, answered: false };
+
+function startTest() {
+  testState = { current: 0, score: 0, answered: false };
+  document.getElementById('testIntro').style.display = 'none';
+  document.getElementById('testResult').style.display = 'none';
+  document.getElementById('testArea').style.display = 'block';
+  renderTest();
+}
+
+function renderTest() {
+  const s = testState;
+  const q = testQuestions[s.current];
+  const total = testQuestions.length;
+  const pct = (s.current / total) * 100;
+  document.getElementById('testArea').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+      <span style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.88rem;color:var(--muted);">Domanda ${s.current+1} di ${total}</span>
+      <span class="score-pill">${s.score} ⭐</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="quiz-q">❓ ${q.q}</div>
+    <div class="quiz-opts" id="test-opts">
+      ${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answerTest(${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="test-fb"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-purple" id="test-next" onclick="nextTest()" style="display:none">Prossima →</button>
+    </div>
+  `;
+}
+
+function answerTest(chosen) {
+  if (testState.answered) return;
+  testState.answered = true;
+  const q = testQuestions[testState.current];
+  const opts = document.querySelectorAll('#test-opts .quiz-opt');
+  const fb = document.getElementById('test-fb');
+  opts.forEach((o,i) => {
+    o.disabled = true;
+    if (i===q.ans) o.classList.add('correct');
+    else if (i===chosen && chosen!==q.ans) o.classList.add('wrong');
+  });
+  if (chosen===q.ans) {
+    testState.score++;
+    fb.textContent="✅ Corretto!"; fb.className="quiz-feedback ok";
+  } else {
+    fb.textContent=`❌ Risposta: "${q.opts[q.ans]}"`; fb.className="quiz-feedback err";
+  }
+  document.getElementById('test-next').style.display='';
+}
+
+function nextTest() {
+  testState.current++;
+  testState.answered = false;
+  if (testState.current >= testQuestions.length) {
+    showTestResult();
+    return;
+  }
+  renderTest();
+}
+
+function showTestResult() {
+  saveResult('test', testState.score, testQuestions.length);
+  document.getElementById('testArea').style.display = 'none';
+  const r = document.getElementById('testResult');
+  r.style.display = 'block';
+  const s = testState.score;
+  const t = testQuestions.length;
+  const pct = Math.round((s/t)*100);
+  let emoji, msg, color;
+  if (pct>=90) { emoji='🏆'; msg='Eccezionale! Sei una star dell\'inglese!'; color='var(--green)'; }
+  else if (pct>=70) { emoji='🌟'; msg='Bravissima! Stai andando molto bene!'; color='var(--purple)'; }
+  else if (pct>=50) { emoji='😊'; msg='Bene! Con un po\' di pratica migliorerai ancora!'; color='var(--blue)'; }
+  else { emoji='💪'; msg='Non mollare! Ripassa e riprova!'; color='var(--pink)'; }
+  r.innerHTML = `
+    <div class="result-box">
+      <div style="font-size:3.5rem;">${emoji}</div>
+      <div class="big-score" style="color:${color}">${s}/${t}</div>
+      <div style="font-size:1rem;color:var(--muted);margin:2px 0;">${pct}% corretto</div>
+      <div class="msg">${msg}</div>
+      <div class="progress-bar" style="margin:16px 0 8px;height:12px;">
+        <div class="progress-fill" style="width:${pct}%;background:linear-gradient(90deg,${color},var(--pink));"></div>
+      </div>
+      <button class="btn btn-purple" onclick="startTest()" style="margin-top:12px;margin-right:8px;">🔄 Riprova</button>
+      <button class="btn btn-blue" onclick="showIntro()" style="margin-top:12px;">🏠 Menù</button>
+    </div>`;
+}
+
+function showIntro() {
+  document.getElementById('testIntro').style.display='';
+  document.getElementById('testArea').style.display='none';
+  document.getElementById('testResult').style.display='none';
+}
+
+// ═══════════════════════ RESULTS STORAGE ═══════════════════════
+
+// 🔑 PASSWORD — cambiala qui se vuoi:
+const PARENT_PASSWORD = "daniele2026";
+
+const quizNames = {
+  "q-ps":   "Present Simple",
+  "q-pc":   "Present Continuous",
+  "q-past": "Past Simple",
+  "q-fut":  "Future (will/going to)",
+  "q-mod":  "Modal Verbs",
+  "q-art":  "Articoli a/an/the",
+  "test":   "🎯 MINI TEST"
+};
+
+let memoryResults = []; // fallback se localStorage non disponibile
+
+function loadResults() {
+  try {
+    const raw = localStorage.getItem('englishResults');
+    return raw ? JSON.parse(raw) : [];
+  } catch(e) { return memoryResults; }
+}
+
+function saveResult(quizId, score, total) {
+  const entry = {
+    quiz: quizNames[quizId] || quizId,
+    score: score,
+    total: total,
+    date: new Date().toLocaleString('it-IT', {day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit'})
+  };
+  try {
+    const all = loadResults();
+    all.push(entry);
+    localStorage.setItem('englishResults', JSON.stringify(all));
+  } catch(e) {
+    memoryResults.push(entry);
+  }
+}
+
+function checkPassword() {
+  const val = document.getElementById('pwInput').value;
+  const err = document.getElementById('pwError');
+  if (val === PARENT_PASSWORD) {
+    document.getElementById('resultsLock').style.display = 'none';
+    document.getElementById('resultsArea').style.display = 'block';
+    renderResults();
+  } else {
+    err.textContent = "❌ Password sbagliata, riprova!";
+    document.getElementById('pwInput').value = '';
+  }
+}
+
+function renderResults() {
+  const all = loadResults();
+  const list = document.getElementById('resultsList');
+  if (all.length === 0) {
+    list.innerHTML = `<p style="text-align:center; color:var(--muted); padding:20px 0;">
+      Nessun risultato ancora. Quando completerà quiz e test, appariranno qui! 📭</p>`;
+    return;
+  }
+  // Most recent first
+  const rows = [...all].reverse().map(r => {
+    const pct = Math.round((r.score / r.total) * 100);
+    const color = pct >= 80 ? 'var(--green)' : pct >= 60 ? 'var(--blue)' : pct >= 40 ? 'var(--yellow)' : 'var(--pink)';
+    const isTest = r.quiz.includes('MINI TEST');
+    return `
+      <div style="display:flex; align-items:center; gap:12px; padding:10px 12px;
+        background:${isTest ? '#FFF8E8' : '#FBF8FF'}; border-radius:10px; margin-bottom:8px;
+        border-left:4px solid ${color};">
+        <div style="flex:1;">
+          <div style="font-family:'Nunito',sans-serif; font-weight:700; font-size:0.9rem;">${r.quiz}</div>
+          <div style="font-size:0.75rem; color:var(--muted);">${r.date}</div>
+        </div>
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.1rem; color:${color};">
+          ${r.score}/${r.total}
+        </div>
+        <div style="font-size:0.8rem; color:var(--muted); min-width:42px; text-align:right;">${pct}%</div>
+      </div>`;
+  }).join('');
+
+  // Stats summary
+  const tests = all.filter(r => r.quiz.includes('MINI TEST'));
+  const quizzesOnly = all.filter(r => !r.quiz.includes('MINI TEST'));
+  const avgPct = arr => arr.length ? Math.round(arr.reduce((s,r) => s + r.score/r.total, 0) / arr.length * 100) : null;
+  const statsHtml = `
+    <div style="display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap;">
+      <div style="flex:1; min-width:120px; background:#F0EAF8; border-radius:12px; padding:12px; text-align:center;">
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.5rem; color:var(--purple);">${all.length}</div>
+        <div style="font-size:0.75rem; color:var(--muted);">Attività completate</div>
+      </div>
+      <div style="flex:1; min-width:120px; background:#EDFBF6; border-radius:12px; padding:12px; text-align:center;">
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.5rem; color:var(--green);">${avgPct(quizzesOnly) !== null ? avgPct(quizzesOnly) + '%' : '—'}</div>
+        <div style="font-size:0.75rem; color:var(--muted);">Media quiz</div>
+      </div>
+      <div style="flex:1; min-width:120px; background:#FFF8E8; border-radius:12px; padding:12px; text-align:center;">
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.5rem; color:#D49000;">${avgPct(tests) !== null ? avgPct(tests) + '%' : '—'}</div>
+        <div style="font-size:0.75rem; color:var(--muted);">Media Mini Test</div>
+      </div>
+    </div>`;
+
+  list.innerHTML = statsHtml + rows;
+}
+
+function copySummary() {
+  const all = loadResults();
+  const fb = document.getElementById('copyFeedback');
+  if (all.length === 0) {
+    fb.textContent = "Nessun risultato da copiare!";
+    fb.style.color = 'var(--pink)';
+    return;
+  }
+  let txt = "📊 RISULTATI ENGLISH RIPASSO\n";
+  txt += "─────────────────────\n";
+  all.forEach(r => {
+    const pct = Math.round((r.score/r.total)*100);
+    txt += `${r.quiz}: ${r.score}/${r.total} (${pct}%) — ${r.date}\n`;
+  });
+  const tests = all.filter(r => r.quiz.includes('MINI TEST'));
+  const quizzesOnly = all.filter(r => !r.quiz.includes('MINI TEST'));
+  const avgPct = arr => arr.length ? Math.round(arr.reduce((s,r) => s + r.score/r.total, 0) / arr.length * 100) : null;
+  txt += "─────────────────────\n";
+  if (avgPct(quizzesOnly) !== null) txt += `Media quiz: ${avgPct(quizzesOnly)}%\n`;
+  if (avgPct(tests) !== null) txt += `Media Mini Test: ${avgPct(tests)}%\n`;
+
+  // Copy with fallback
+  function done(ok) {
+    fb.style.color = ok ? 'var(--green)' : 'var(--pink)';
+    fb.textContent = ok ? "✅ Copiato! Ora incollalo su WhatsApp." : "Copia non riuscita — seleziona e copia manualmente il testo qui sotto.";
+    if (!ok) {
+      const pre = document.createElement('textarea');
+      pre.value = txt;
+      pre.style.cssText = 'width:100%; height:140px; margin-top:8px; font-size:0.8rem; padding:8px; border-radius:8px; border:2px solid #E8E0F5;';
+      fb.after(pre);
+      pre.select();
+    }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(() => done(true)).catch(() => done(false));
+  } else {
+    done(false);
+  }
+}
+
+function clearResults() {
+  if (!confirm("Vuoi davvero cancellare tutti i risultati salvati?")) return;
+  try { localStorage.removeItem('englishResults'); } catch(e) {}
+  memoryResults = [];
+  renderResults();
+}
+
+// ═══════════════════════ INIT ═══════════════════════
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Init all quizzes
+  Object.keys(quizzes).forEach(id => initQuiz(id));
+  initVocab();
+  initVerbs();
+});
+</script>
+</body>
+</html>
