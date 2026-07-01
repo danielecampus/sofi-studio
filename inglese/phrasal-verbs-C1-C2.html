@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>British Phrasal Verbs — C1 to C2</title>
+<style>
+  @page { size: A4; margin: 15mm 15mm 16mm 15mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #23233a; font-size: 10.8pt; line-height: 1.5;
+  }
+  :root {
+    --navy:#213A8F; --royal:#2F5AD0; --red:#C0392B; --teal:#0E7C86;
+    --green:#0A9C77; --amber:#C77A0A; --muted:#7d7d95;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    height: 258mm; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    page-break-after: always;
+  }
+  .cover .flag { font-size: 50pt; }
+  .cover h1 { font-size: 30pt; color: var(--navy); margin: 8pt 0 2pt; letter-spacing:-0.5px; }
+  .cover h2 { font-size: 15pt; color: var(--royal); font-weight: 600; }
+  .cover .sub { margin-top: 16pt; font-size: 11.5pt; color: #5a5a72; max-width: 130mm; }
+  .cover .ladder { margin-top: 22pt; display:flex; gap:8pt; }
+  .cover .step {
+    background: var(--royal); color:white; padding:7pt 14pt; border-radius: 20pt;
+    font-weight:700; font-size:10.5pt;
+  }
+  .cover .step:nth-child(1){ background:#5B8DEF; }
+  .cover .step:nth-child(2){ background:#2F5AD0; }
+  .cover .step:nth-child(3){ background:#213A8F; }
+  .cover .step:nth-child(4){ background:#C0392B; }
+  .cover .who { margin-top: 26pt; font-size: 12pt; color:#23233a; }
+
+  /* ── GUIDE ── */
+  .guide { page-break-after: always; padding-top: 4mm; }
+  .guide h2 { font-size: 19pt; color: var(--navy); margin-bottom: 10pt; border-bottom: 3px solid var(--navy); padding-bottom: 5pt; }
+  .guide h3 { font-size: 12pt; color: var(--royal); margin: 12pt 0 4pt; }
+  .guide p { margin-bottom: 6pt; }
+  .guide ul { margin: 4pt 0 6pt 18pt; }
+  .guide li { margin-bottom: 4pt; }
+  .tipbox {
+    background:#EEF3FF; border-left:4pt solid var(--royal); border-radius:5pt;
+    padding:9pt 13pt; margin-top:10pt; font-size:10.2pt;
+  }
+  .tipbox b { color: var(--royal); }
+  .toc-mini { margin-top:12pt; }
+  .toc-mini div { padding:6pt 10pt; border-radius:6pt; margin-bottom:6pt; font-weight:600; font-size:10.6pt; color:white; }
+
+  /* ── SECTION ── */
+  .section { page-break-before: always; padding-top: 3mm; }
+  .sec-head {
+    display:flex; align-items:center; gap:10pt;
+    color:white; border-radius:8pt; padding:9pt 14pt; margin-bottom:11pt;
+  }
+  .sec-1 .sec-head{ background:#5B8DEF; }
+  .sec-2 .sec-head{ background:#2F5AD0; }
+  .sec-3 .sec-head{ background:#213A8F; }
+  .sec-4 .sec-head{ background:#C0392B; }
+  .sec-head .lv { font-size:9pt; font-weight:700; letter-spacing:0.5px; opacity:0.9; text-transform:uppercase; }
+  .sec-head h3 { font-size:16pt; }
+
+  .pv {
+    break-inside: avoid;
+    padding: 6pt 0 7pt;
+    border-bottom: 1px solid #e7e7f0;
+  }
+  .pv:last-child { border-bottom:none; }
+  .pv-term {
+    font-weight: 800; color: var(--navy); font-size: 12pt;
+  }
+  .pv-tag {
+    font-size: 8.6pt; color: var(--muted); font-style: italic; margin-left: 6pt;
+  }
+  .pv-reg {
+    font-size: 8.2pt; font-weight:700; color: var(--red);
+    background:#FBEDEC; padding:1pt 6pt; border-radius:10pt; margin-left:6pt;
+  }
+  .pv-def { font-size: 10.4pt; margin: 3pt 0 4pt; }
+  .pv-ex { list-style: none; }
+  .pv-ex li {
+    padding: 2pt 0 2pt 16pt; position: relative; font-size: 10.2pt; color:#3a3a55;
+  }
+  .pv-ex li::before { content:"“"; position:absolute; left:2pt; color:var(--teal); font-weight:700; font-size:12pt; top:1pt; }
+  .pv-ex li em { color:#5a5a72; }
+
+  .foot { text-align:center; color:#a9a9c0; font-size:9pt; margin-top:12pt; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="cover">
+  <div class="flag">🇬🇧</div>
+  <h1>British Phrasal Verbs</h1>
+  <h2>From C1 to C2 · A Progressive Glossary</h2>
+  <div class="sub">60 essential-to-advanced phrasal verbs with a clear English definition and two example sentences each — arranged from foundations to proficiency-level, idiomatic usage.</div>
+  <div class="ladder">
+    <span class="step">B2→C1</span>
+    <span class="step">C1</span>
+    <span class="step">C1→C2</span>
+    <span class="step">C2</span>
+  </div>
+  <div class="who">Advanced English study pack</div>
+</div>
+
+<!-- ══════════ GUIDE ══════════ -->
+<div class="guide">
+  <h2>How to use this glossary</h2>
+  <p>A <b>phrasal verb</b> is a verb combined with one or two particles (a preposition and/or an adverb), e.g. <i>look into</i>, <i>put up with</i>. Their meaning is often <b>idiomatic</b> — you cannot always guess it from the individual words — which is exactly why they are so important at C1–C2 level, where natural, native-like English is expected.</p>
+
+  <h3>Separable vs. inseparable</h3>
+  <ul>
+    <li><b>Separable:</b> an object can go between the verb and the particle. <i>Turn the radio down / turn it down.</i> With a pronoun, separation is compulsory: <i>turn it down</i> (not <i>turn down it</i>).</li>
+    <li><b>Inseparable:</b> the particle stays with the verb. <i>look into the matter / look into it</i> (not <i>look it into</i>).</li>
+  </ul>
+
+  <h3>Register matters</h3>
+  <p>Many phrasal verbs are neutral or informal and sound natural in speech. In <b>formal writing</b>, a single-word (often Latin-based) synonym is sometimes preferred: <i>carry out → conduct</i>, <i>find out → ascertain</i>, <i>put off → postpone</i>. Items marked <span class="pv-reg">informal</span> or <span class="pv-reg">BrE</span> are best kept for conversation and informal texts.</p>
+
+  <div class="tipbox">
+    <b>Study tip:</b> don't just memorise the meaning — learn each phrasal verb <i>inside a sentence</i>. Cover the definitions, read the examples, and try to produce your own two sentences for each one. Work through the four levels in order.
+  </div>
+
+  <div class="toc-mini">
+    <div style="background:#5B8DEF;">Level 1 · Foundations (B2 → C1) — 15 verbs</div>
+    <div style="background:#2F5AD0;">Level 2 · Building fluency (C1) — 15 verbs</div>
+    <div style="background:#213A8F;">Level 3 · Advanced (C1 → C2) — 15 verbs</div>
+    <div style="background:#C0392B;">Level 4 · Proficiency &amp; idiomatic, British (C2) — 15 verbs</div>
+  </div>
+</div>
+
+<!-- ══════════ SECTION 1 ══════════ -->
+<div class="section sec-1">
+  <div class="sec-head"><div><div class="lv">Level 1 · B2 → C1</div><h3>Foundations</h3></div></div>
+
+  <div class="pv"><span class="pv-term">get by</span><span class="pv-tag">manage, survive</span>
+    <div class="pv-def">To manage to live or cope with the limited money, skills or resources you have.</div>
+    <ul class="pv-ex"><li>It's tight, but we get by on what we earn.</li><li>He gets by in Spanish well enough to order a meal.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">put off</span><span class="pv-tag">postpone; discourage</span>
+    <div class="pv-def">(1) To postpone something to a later time. (2) To make someone lose enthusiasm or feel disgust.</div>
+    <ul class="pv-ex"><li>They've put the wedding off until next spring.</li><li>The gory details rather put me off my dinner.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">turn up</span><span class="pv-tag">arrive; increase</span>
+    <div class="pv-def">(1) To arrive or appear, often unexpectedly. (2) To increase the level of sound, heat, etc.</div>
+    <ul class="pv-ex"><li>She turned up at the party without an invitation.</li><li>Turn the music up — I love this song.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">come across</span><span class="pv-tag">find by chance; seem</span>
+    <div class="pv-def">(1) To find or meet something/someone by chance. (2) To give a particular impression.</div>
+    <ul class="pv-ex"><li>I came across your letter while tidying the drawer.</li><li>He comes across as confident, but he's actually quite nervous.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">sort out</span><span class="pv-tag">resolve, organise</span>
+    <div class="pv-def">To organise, tidy or resolve a problem, mess or disagreement.</div>
+    <ul class="pv-ex"><li>Give me a day to sort out the paperwork.</li><li>They finally sorted out their differences.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">look into</span><span class="pv-tag">investigate</span>
+    <div class="pv-def">To examine or investigate a matter in order to find out the facts.</div>
+    <ul class="pv-ex"><li>The manager promised to look into the mistake.</li><li>We're looking into cheaper suppliers.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">carry on</span><span class="pv-tag">continue</span>
+    <div class="pv-def">To continue doing something, especially after an interruption.</div>
+    <ul class="pv-ex"><li>Carry on — I didn't mean to interrupt.</li><li>She carried on working despite feeling unwell.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">work out</span><span class="pv-tag">solve; exercise; succeed</span>
+    <div class="pv-def">(1) To find a solution or calculate. (2) To do physical exercise. (3) To develop in a successful way.</div>
+    <ul class="pv-ex"><li>I can't work out how much we owe.</li><li>It all worked out for the best in the end.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">bring up</span><span class="pv-tag">mention; raise a child</span>
+    <div class="pv-def">(1) To introduce or mention a subject. (2) To raise and care for a child.</div>
+    <ul class="pv-ex"><li>Don't bring up politics at dinner.</li><li>She was brought up in a small Yorkshire village.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">give up</span><span class="pv-tag">quit, surrender</span>
+    <div class="pv-def">To stop trying to do something, or to stop a habit.</div>
+    <ul class="pv-ex"><li>I gave up chocolate for Lent.</li><li>Don't give up — you're so close.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">run out of</span><span class="pv-tag">have none left</span>
+    <div class="pv-def">To use all of something so that there is none left.</div>
+    <ul class="pv-ex"><li>We've run out of coffee again.</li><li>Hurry — we're running out of time.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">take up</span><span class="pv-tag">start; occupy</span>
+    <div class="pv-def">(1) To start a hobby or activity. (2) To fill or occupy time or space.</div>
+    <ul class="pv-ex"><li>He's taken up cycling to keep fit.</li><li>These files take up too much space.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">set off</span><span class="pv-tag">depart; trigger</span>
+    <div class="pv-def">(1) To begin a journey. (2) To cause something to start, especially an alarm or reaction.</div>
+    <ul class="pv-ex"><li>We set off early to avoid the rush hour.</li><li>The dust set off his allergies.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">put up with</span><span class="pv-tag">tolerate</span>
+    <div class="pv-def">To tolerate or accept something unpleasant without complaining.</div>
+    <ul class="pv-ex"><li>I won't put up with rudeness.</li><li>How do you put up with all that noise?</li></ul></div>
+
+  <div class="pv"><span class="pv-term">get on with</span><span class="pv-tag">relate to; progress</span>
+    <div class="pv-def">(1) To have a friendly relationship with someone. (2) To continue or make progress with a task.</div>
+    <ul class="pv-ex"><li>The two of them get on like a house on fire.</li><li>I'd better get on with my essay.</li></ul></div>
+</div>
+
+<!-- ══════════ SECTION 2 ══════════ -->
+<div class="section sec-2">
+  <div class="sec-head"><div><div class="lv">Level 2 · C1</div><h3>Building fluency</h3></div></div>
+
+  <div class="pv"><span class="pv-term">put forward</span><span class="pv-tag">propose</span>
+    <div class="pv-def">To propose an idea, plan or candidate for others to consider.</div>
+    <ul class="pv-ex"><li>She put forward a bold proposal to cut costs.</li><li>His name was put forward for the committee.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">carry out</span><span class="pv-tag">perform, complete</span>
+    <div class="pv-def">To perform or complete a task, order, or piece of work.</div>
+    <ul class="pv-ex"><li>Engineers carried out a thorough inspection.</li><li>The orders were carried out to the letter.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">point out</span><span class="pv-tag">draw attention to</span>
+    <div class="pv-def">To make someone aware of a fact or detail they may not have noticed.</div>
+    <ul class="pv-ex"><li>He pointed out that the deadline had already passed.</li><li>May I point out one small error?</li></ul></div>
+
+  <div class="pv"><span class="pv-term">rule out</span><span class="pv-tag">exclude</span>
+    <div class="pv-def">To exclude something as a possibility or option.</div>
+    <ul class="pv-ex"><li>Police haven't ruled out foul play.</li><li>The injury ruled her out of the final.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">come up with</span><span class="pv-tag">produce an idea</span>
+    <div class="pv-def">To produce or think of an idea, plan or solution.</div>
+    <ul class="pv-ex"><li>We need to come up with a plan by Monday.</li><li>She came up with a brilliant title for the book.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">cut down on</span><span class="pv-tag">reduce</span>
+    <div class="pv-def">To reduce the amount or frequency of something.</div>
+    <ul class="pv-ex"><li>I'm trying to cut down on sugar.</li><li>They've cut down on unnecessary spending.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">look forward to</span><span class="pv-tag">anticipate with pleasure</span>
+    <div class="pv-def">To feel pleased and excited about something that is going to happen.</div>
+    <ul class="pv-ex"><li>I'm really looking forward to the weekend.</li><li>We look forward to hearing from you.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">get away with</span><span class="pv-tag">escape blame</span>
+    <div class="pv-def">To avoid punishment or blame for something you have done.</div>
+    <ul class="pv-ex"><li>He cheated and somehow got away with it.</li><li>You won't get away with being late again.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">turn down</span><span class="pv-tag">reject; lower</span>
+    <div class="pv-def">(1) To reject or refuse an offer or request. (2) To reduce sound, heat, etc.</div>
+    <ul class="pv-ex"><li>She turned down the job offer.</li><li>Could you turn the telly down?</li></ul></div>
+
+  <div class="pv"><span class="pv-term">back up</span><span class="pv-tag">support; copy</span>
+    <div class="pv-def">(1) To support someone or confirm what they say. (2) To make a spare copy of data.</div>
+    <ul class="pv-ex"><li>Her colleagues backed up her version of events.</li><li>Always back up your files before updating.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">break down</span><span class="pv-tag">fail; collapse; analyse</span>
+    <div class="pv-def">(1) To stop functioning. (2) To lose emotional control. (3) To separate into smaller parts.</div>
+    <ul class="pv-ex"><li>The car broke down on the motorway.</li><li>He broke down in tears at the news.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">make up for</span><span class="pv-tag">compensate</span>
+    <div class="pv-def">To compensate for something bad or missing.</div>
+    <ul class="pv-ex"><li>Nothing can make up for lost time.</li><li>He bought flowers to make up for forgetting the date.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">stand out</span><span class="pv-tag">be prominent</span>
+    <div class="pv-def">To be clearly noticeable or much better than the rest.</div>
+    <ul class="pv-ex"><li>Her application stood out from the rest.</li><li>One detail stands out in my memory.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">hold up</span><span class="pv-tag">delay; rob</span>
+    <div class="pv-def">(1) To delay or slow something down. (2) To rob a place using threat or force.</div>
+    <ul class="pv-ex"><li>Roadworks held up the traffic for miles.</li><li>Two men held up the bank in broad daylight.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">take on</span><span class="pv-tag">accept; employ; acquire</span>
+    <div class="pv-def">(1) To accept work or responsibility. (2) To employ someone. (3) To begin to have a quality.</div>
+    <ul class="pv-ex"><li>She's taken on far too much this term.</li><li>The firm is taking on new staff.</li></ul></div>
+</div>
+
+<!-- ══════════ SECTION 3 ══════════ -->
+<div class="section sec-3">
+  <div class="sec-head"><div><div class="lv">Level 3 · C1 → C2</div><h3>Advanced</h3></div></div>
+
+  <div class="pv"><span class="pv-term">wear off</span><span class="pv-tag">fade gradually</span>
+    <div class="pv-def">(Of an effect or feeling) to disappear slowly over time.</div>
+    <ul class="pv-ex"><li>The anaesthetic slowly wore off.</li><li>The novelty of the new phone soon wore off.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">come round</span><span class="pv-tag">revive; be persuaded</span><span class="pv-reg">BrE</span>
+    <div class="pv-def">(1) To regain consciousness. (2) To change your mind and agree. (3) To visit someone informally.</div>
+    <ul class="pv-ex"><li>It took her a few minutes to come round after fainting.</li><li>He eventually came round to our way of thinking.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">bring about</span><span class="pv-tag">cause</span>
+    <div class="pv-def">To make something happen; to cause a change.</div>
+    <ul class="pv-ex"><li>The reforms brought about lasting change.</li><li>What brought about this sudden decision?</li></ul></div>
+
+  <div class="pv"><span class="pv-term">do away with</span><span class="pv-tag">abolish</span>
+    <div class="pv-def">To abolish, remove or get rid of something.</div>
+    <ul class="pv-ex"><li>The school did away with compulsory uniforms.</li><li>These outdated rules should be done away with.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">fall through</span><span class="pv-tag">fail to happen</span>
+    <div class="pv-def">(Of a plan, deal or arrangement) to fail to be completed.</div>
+    <ul class="pv-ex"><li>The house sale fell through at the last minute.</li><li>Our holiday plans fell through.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">gloss over</span><span class="pv-tag">minimise, skate over</span>
+    <div class="pv-def">To avoid dealing with something properly by mentioning it only briefly.</div>
+    <ul class="pv-ex"><li>The report glossed over the safety concerns.</li><li>He glossed over his own mistakes.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">iron out</span><span class="pv-tag">resolve difficulties</span>
+    <div class="pv-def">To resolve small problems or disagreements so that something runs smoothly.</div>
+    <ul class="pv-ex"><li>We still have a few details to iron out.</li><li>They ironed out their differences over coffee.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">wind up</span><span class="pv-tag">end up; tease; close</span><span class="pv-reg">BrE informal</span>
+    <div class="pv-def">(1) To end up in a state or place. (2) To tease or annoy someone. (3) To close down a company.</div>
+    <ul class="pv-ex"><li>If you're not careful, you'll wind up in trouble.</li><li>Stop winding your brother up!</li></ul></div>
+
+  <div class="pv"><span class="pv-term">tail off</span><span class="pv-tag">decrease gradually</span>
+    <div class="pv-def">To become gradually smaller, weaker or quieter and then stop.</div>
+    <ul class="pv-ex"><li>Sales tailed off after Christmas.</li><li>Her voice tailed off into a whisper.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">branch out</span><span class="pv-tag">expand into</span>
+    <div class="pv-def">To extend your activities into a new and different area.</div>
+    <ul class="pv-ex"><li>The bakery has branched out into catering.</li><li>She branched out from acting into directing.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">bank on</span><span class="pv-tag">rely on</span>
+    <div class="pv-def">To rely on or feel confident that something will happen.</div>
+    <ul class="pv-ex"><li>Don't bank on the weather staying fine.</li><li>We were banking on him to close the deal.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">stumble across</span><span class="pv-tag">discover by chance</span>
+    <div class="pv-def">To find or discover something unexpectedly and by chance.</div>
+    <ul class="pv-ex"><li>I stumbled across a lovely little café down a side street.</li><li>Researchers stumbled across the fossil by accident.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">knuckle down</span><span class="pv-tag">start working hard</span>
+    <div class="pv-def">To begin to work seriously and with effort.</div>
+    <ul class="pv-ex"><li>It's time to knuckle down and revise.</li><li>If we knuckle down, we'll finish by tonight.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">shrug off</span><span class="pv-tag">dismiss</span>
+    <div class="pv-def">To treat something as unimportant and not let it affect you.</div>
+    <ul class="pv-ex"><li>She shrugged off the criticism with a smile.</li><li>He shrugged off the injury and carried on playing.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">rope in</span><span class="pv-tag">recruit reluctantly</span><span class="pv-reg">informal</span>
+    <div class="pv-def">To persuade someone to take part in an activity, often when they are reluctant.</div>
+    <ul class="pv-ex"><li>I got roped into helping with the school fair.</li><li>They roped in a few friends to move the piano.</li></ul></div>
+</div>
+
+<!-- ══════════ SECTION 4 ══════════ -->
+<div class="section sec-4">
+  <div class="sec-head"><div><div class="lv">Level 4 · C2</div><h3>Proficiency &amp; idiomatic (British)</h3></div></div>
+
+  <div class="pv"><span class="pv-term">cotton on (to)</span><span class="pv-tag">start to understand</span><span class="pv-reg">informal</span>
+    <div class="pv-def">To begin to understand or realise something, often slowly.</div>
+    <ul class="pv-ex"><li>It took him a while to cotton on to the joke.</li><li>She soon cottoned on to what they were up to.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">catch on</span><span class="pv-tag">grasp; become popular</span>
+    <div class="pv-def">(1) To understand something. (2) To become popular or fashionable.</div>
+    <ul class="pv-ex"><li>The children caught on to the rules quickly.</li><li>The trend never really caught on in Britain.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">faff about / around</span><span class="pv-tag">waste time</span><span class="pv-reg">BrE informal</span>
+    <div class="pv-def">To spend time doing things in a disorganised, fussy and unproductive way.</div>
+    <ul class="pv-ex"><li>Stop faffing about and get in the car!</li><li>We faffed around for ages trying to park.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">chivvy along</span><span class="pv-tag">hurry someone</span><span class="pv-reg">BrE</span>
+    <div class="pv-def">To encourage or urge someone to hurry up or get on with something.</div>
+    <ul class="pv-ex"><li>The teacher chivvied the stragglers along.</li><li>I had to chivvy him along or we'd have missed the train.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">fob off</span><span class="pv-tag">deceive with excuses</span>
+    <div class="pv-def">To deceive someone into accepting something inferior, or to put them off with excuses.</div>
+    <ul class="pv-ex"><li>Don't let them fob you off with a cheap replacement.</li><li>He fobbed me off with yet another excuse.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">palm off</span><span class="pv-tag">unload by deceit</span>
+    <div class="pv-def">To persuade someone to accept something unwanted, usually by deception.</div>
+    <ul class="pv-ex"><li>They palmed off the faulty goods on unsuspecting tourists.</li><li>She palmed the boring task off on a colleague.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">wriggle out of</span><span class="pv-tag">evade cleverly</span>
+    <div class="pv-def">To avoid doing something you should do, by using clever excuses.</div>
+    <ul class="pv-ex"><li>He always wriggles out of doing the washing-up.</li><li>You can't wriggle out of your responsibilities.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">hark back to</span><span class="pv-tag">recall an earlier time</span>
+    <div class="pv-def">To recall, mention or be reminiscent of something from the past.</div>
+    <ul class="pv-ex"><li>The décor harks back to the 1920s.</li><li>He's always harking back to his university days.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">egg on</span><span class="pv-tag">urge (unwisely)</span>
+    <div class="pv-def">To strongly encourage someone to do something, often something foolish.</div>
+    <ul class="pv-ex"><li>The crowd egged the two of them on.</li><li>His mates egged him on to jump in the river.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">rustle up</span><span class="pv-tag">produce quickly</span><span class="pv-reg">informal</span>
+    <div class="pv-def">To make or produce something quickly, especially a meal, from what is available.</div>
+    <ul class="pv-ex"><li>I'll rustle up a quick omelette.</li><li>She rustled up a costume from odds and ends.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">muck about / around</span><span class="pv-tag">behave foolishly</span><span class="pv-reg">BrE informal</span>
+    <div class="pv-def">To behave in a silly way or waste time instead of being useful.</div>
+    <ul class="pv-ex"><li>The boys were mucking about at the back of the class.</li><li>Stop mucking around — we've got work to do.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">own up (to)</span><span class="pv-tag">confess</span>
+    <div class="pv-def">To admit honestly that you have done something wrong.</div>
+    <ul class="pv-ex"><li>Nobody would own up to breaking the window.</li><li>She owned up to the mistake straight away.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">sound out</span><span class="pv-tag">test opinion discreetly</span>
+    <div class="pv-def">To discreetly find out someone's opinions or intentions before acting.</div>
+    <ul class="pv-ex"><li>Let me sound out the committee before we decide.</li><li>They sounded him out about a possible transfer.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">talk down to</span><span class="pv-tag">patronise</span>
+    <div class="pv-def">To speak to someone as if they were less intelligent or important than you.</div>
+    <ul class="pv-ex"><li>I hate the way he talks down to the interns.</li><li>She never talks down to her students.</li></ul></div>
+
+  <div class="pv"><span class="pv-term">live up to</span><span class="pv-tag">meet expectations</span>
+    <div class="pv-def">To be as good as what was expected, promised or hoped for.</div>
+    <ul class="pv-ex"><li>The film didn't quite live up to the hype.</li><li>She worked hard to live up to her parents' expectations.</li></ul></div>
+
+  <p class="foot">60 phrasal verbs · B2 → C2 · Keep a notebook and add your own examples as you meet them in reading and listening.</p>
+</div>
+
+</body>
+</html>
