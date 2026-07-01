@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Booster – Verso il B1 🚀</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+
+  :root {
+    --pink:    #FF6B9D;
+    --purple:  #9B5DE5;
+    --blue:    #00B4D8;
+    --indigo:  #5B5BE6;
+    --yellow:  #FFD166;
+    --green:   #06D6A0;
+    --orange:  #FF8C42;
+    --bg:      #F6F4FF;
+    --card:    #FFFFFF;
+    --text:    #2D2D3F;
+    --muted:   #8B8BAD;
+    --radius:  16px;
+    --shadow:  0 4px 20px rgba(91,91,230,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--indigo) 0%, var(--purple) 55%, var(--pink) 100%);
+    padding: 28px 20px 22px;
+    text-align: center;
+    color: white;
+  }
+  header h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+  }
+  header p { font-size: 0.95rem; opacity: 0.9; margin-top: 4px; }
+  header .lvl {
+    display: inline-block;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.2);
+    border: 1.5px solid rgba(255,255,255,0.5);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    overflow-x: auto;
+    background: white;
+    border-bottom: 2px solid #ECE7FA;
+    padding: 0 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav button {
+    flex-shrink: 0;
+    padding: 14px 16px;
+    border: none;
+    background: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  nav button.active {
+    color: var(--indigo);
+    border-bottom-color: var(--indigo);
+  }
+  nav button:hover:not(.active) { color: var(--text); }
+
+  /* MAIN */
+  main { max-width: 780px; margin: 0 auto; padding: 24px 16px 70px; }
+
+  section { display: none; }
+  section.active { display: block; }
+
+  .intro-line {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 18px;
+    line-height: 1.55;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card .unit-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--indigo);
+    background: #EAE8FF;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+  .card h3 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 16px 0 8px;
+    color: var(--purple);
+  }
+  .card p { line-height: 1.65; font-size: 0.93rem; }
+
+  /* RULE BOX */
+  .rule-box {
+    background: #F1EEFF;
+    border-left: 4px solid var(--purple);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+  .rule-box strong { color: var(--purple); }
+  .rule-box.blue   { background: #E7F7FC; border-color: var(--blue); }
+  .rule-box.blue strong { color: var(--blue); }
+  .rule-box.green  { background: #E7FBF4; border-color: var(--green); }
+  .rule-box.green strong { color: #0A9C77; }
+
+  /* WARNING BOX */
+  .warn-box {
+    background: #FFF3E8;
+    border-left: 4px solid var(--orange);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 12px 0;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .warn-box strong { color: var(--orange); }
+
+  /* FORM TABLE (aff / neg / interr) */
+  .form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.85rem;
+  }
+  .form-table th {
+    background: var(--indigo);
+    color: white;
+    padding: 8px 10px;
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+  }
+  .form-table th:first-child { border-radius: 8px 0 0 0; }
+  .form-table th:last-child  { border-radius: 0 8px 0 0; }
+  .form-table td { padding: 7px 10px; border-bottom: 1px solid #ECE7FA; }
+  .form-table tr:nth-child(even) td { background: #F7F5FF; }
+  .form-table td:first-child { font-weight: 700; color: var(--indigo); white-space: nowrap; }
+
+  /* EXAMPLES */
+  .examples { margin: 8px 0; }
+  .examples li {
+    list-style: none;
+    padding: 4px 0 4px 20px;
+    position: relative;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  .examples li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+    font-weight: 700;
+  }
+  .examples .it { color: var(--muted); font-style: italic; font-size: 0.82rem; }
+
+  /* QUIZ */
+  .quiz-area { margin-top: 16px; padding-top: 14px; border-top: 1px dashed #E2DCF5; }
+  .quiz-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--pink);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .quiz-q {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.98rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .quiz-opts { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    padding: 10px 16px;
+    border: 2px solid #E8E0F5;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-align: left;
+    transition: all 0.18s;
+  }
+  .quiz-opt:hover { border-color: var(--purple); background: #F8F4FF; }
+  .quiz-opt.correct { border-color: var(--green); background: #EDFBF6; color: #0A7A5E; }
+  .quiz-opt.wrong   { border-color: var(--pink);  background: #FFF0F5; color: #B0003A; }
+  .quiz-feedback {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    min-height: 20px;
+    line-height: 1.5;
+  }
+  .quiz-feedback.ok  { color: var(--green); }
+  .quiz-feedback.err { color: var(--pink); }
+  .quiz-nav {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    align-items: center;
+  }
+  .btn {
+    padding: 9px 20px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.1s;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-purple { background: var(--purple); color: white; }
+  .btn-indigo { background: var(--indigo); color: white; }
+  .btn-pink   { background: var(--pink);   color: white; }
+  .btn-green  { background: var(--green);  color: white; }
+  .btn-blue   { background: var(--blue);   color: white; }
+  .btn-yellow { background: var(--yellow); color: var(--text); }
+  .score-pill {
+    margin-left: auto;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.88rem;
+    background: #ECE8FA;
+    color: var(--indigo);
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  /* VOCAB FLASHCARD */
+  .theme-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .theme-tab {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 2px solid #E8E0F5;
+    background: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.18s;
+  }
+  .theme-tab.active { background: var(--pink); border-color: var(--pink); color: white; }
+
+  .flashcard-wrap { perspective: 800px; margin: 10px auto; max-width: 340px; height: 160px; cursor: pointer; }
+  .flashcard { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.5s ease; }
+  .flashcard.flipped { transform: rotateY(180deg); }
+  .flashcard-face {
+    position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+    border-radius: 16px; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 6px; box-shadow: 0 6px 24px rgba(91,91,230,0.15); padding: 12px; text-align: center;
+  }
+  .flashcard-front { background: linear-gradient(135deg, var(--indigo), var(--purple)); color: white; }
+  .flashcard-back  { background: linear-gradient(135deg, var(--blue), var(--green)); color: white; transform: rotateY(180deg); }
+  .flashcard-face .word { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.5rem; }
+  .flashcard-face .hint { font-size: 0.8rem; opacity: 0.78; }
+  .flashcard-controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 14px; }
+  .fc-count { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--muted); min-width: 60px; text-align: center; }
+
+  /* WORD TABLE */
+  .word-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.88rem; }
+  .word-table th { background: var(--purple); color: white; padding: 8px 12px; text-align: left; font-family: 'Nunito', sans-serif; font-weight: 700; }
+  .word-table th:first-child { border-radius: 8px 0 0 0; }
+  .word-table th:last-child  { border-radius: 0 8px 0 0; }
+  .word-table td { padding: 7px 12px; border-bottom: 1px solid #F0EAF8; }
+  .word-table tr:nth-child(even) td { background: #FBF8FF; }
+  .word-table tr:last-child td { border-bottom: none; }
+
+  /* VERBS TABLE */
+  .verb-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  .verb-table th { background: var(--pink); color: white; padding: 8px 10px; font-family: 'Nunito', sans-serif; font-weight: 700; text-align: left; }
+  .verb-table th:first-child { border-radius: 8px 0 0 0; }
+  .verb-table th:last-child  { border-radius: 0 8px 0 0; }
+  .verb-table td { padding: 6px 10px; border-bottom: 1px solid #F5EFF8; }
+  .verb-table tr:nth-child(even) td { background: #FFF5F9; }
+  .verb-table td:nth-child(1) { font-weight: 700; color: var(--purple); }
+  .verb-table td:nth-child(2) { color: var(--pink); font-weight: 600; }
+  .verb-table td:nth-child(3) { color: var(--blue); font-weight: 600; }
+  .verb-table td:nth-child(4) { color: var(--muted); font-style: italic; }
+
+  /* VERB TRAINER */
+  .vt-base {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--indigo);
+    margin: 6px 0;
+  }
+  .vt-ask { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 14px; }
+  .vt-ask strong { color: var(--pink); }
+
+  /* READING BOX */
+  .reading-box {
+    background: #FFFDF5;
+    border: 2px solid #FFE9B8;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-height: 260px;
+    overflow-y: auto;
+  }
+  .reading-box h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #C98A00;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  /* SECTION BANNER (test) */
+  .section-banner {
+    display: flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, var(--indigo), var(--purple));
+    color: white; border-radius: 12px; padding: 12px 16px; margin-bottom: 14px;
+  }
+  .section-banner .n { font-family:'Nunito',sans-serif; font-weight:900; font-size:1.4rem; }
+  .section-banner .t { font-family:'Nunito',sans-serif; font-weight:800; font-size:1rem; }
+  .section-banner .s { font-size:0.78rem; opacity:0.85; }
+
+  /* TEST INTRO / RESULT */
+  .test-intro { text-align: center; padding: 20px 0; }
+  .test-intro .big-num {
+    font-family: 'Nunito', sans-serif; font-size: 3rem; font-weight: 900;
+    background: linear-gradient(135deg, var(--indigo), var(--pink));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .test-sections-list { text-align:left; max-width:340px; margin:14px auto 20px; }
+  .test-sections-list div { padding:8px 12px; background:#F4F2FF; border-radius:10px; margin-bottom:8px; font-size:0.9rem; font-weight:600; }
+  .result-box { text-align: center; padding: 24px; }
+  .result-box .big-score { font-family: 'Nunito', sans-serif; font-size: 3.5rem; font-weight: 900; }
+  .result-box .msg { font-size: 1.1rem; margin-top: 8px; font-weight: 600; }
+  .sec-result-row {
+    display:flex; align-items:center; gap:12px; padding:10px 12px;
+    background:#F7F5FF; border-radius:10px; margin-bottom:8px; border-left:4px solid var(--indigo);
+  }
+  .sec-result-row .name { flex:1; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.9rem; text-align:left; }
+  .sec-result-row .val { font-family:'Nunito',sans-serif; font-weight:900; color:var(--indigo); }
+
+  .progress-bar { background: #ECE8FA; border-radius: 20px; height: 8px; margin: 8px 0 16px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 20px; background: linear-gradient(90deg, var(--indigo), var(--pink)); transition: width 0.3s; }
+
+  @media (max-width: 500px) {
+    header h1 { font-size: 1.5rem; }
+    .verb-table { font-size: 0.75rem; }
+    .word-table { font-size: 0.8rem; }
+    .form-table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🚀 English Booster</h1>
+  <p>Ripasso avanzato di inglese per Sofia 💪</p>
+  <span class="lvl">LIVELLO: VERSO IL B1</span>
+</header>
+
+<nav>
+  <button class="active" onclick="showTab('grammar')">📖 Grammatica</button>
+  <button onclick="showTab('vocab')">🗂️ Vocabolario</button>
+  <button onclick="showTab('verbs')">⚡ Verbi</button>
+  <button onclick="showTab('exercises')">📝 Esercizi</button>
+  <button onclick="showTab('test')">🎯 Test Finale</button>
+  <button onclick="showTab('results')">📊 Risultati</button>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════ GRAMMAR ═══════════════════════════════ -->
+<section id="grammar" class="active">
+  <p class="intro-line">9 capitoli di grammatica più impegnativi, presi dal programma del tuo libro (Units 2–12). Leggi le regole, guarda gli esempi e poi prova il quiz alla fine di ogni capitolo. 🧠</p>
+
+  <!-- 1 -->
+  <div class="card">
+    <h2>🟣 1. Present Simple vs Present Continuous</h2>
+    <span class="unit-tag">Units 2–3</span>
+    <div class="rule-box">
+      <strong>Present Simple:</strong> abitudini, routine, fatti sempre veri.<br>
+      <strong>Present Continuous:</strong> azioni che stanno succedendo ADESSO o situazioni temporanee (<em>am/is/are + verbo-ing</em>).
+    </div>
+    <div class="rule-box blue">
+      <strong>Stative verbs</strong> (like, love, hate, want, know, understand, believe, prefer, need, seem, <em>e i verbi di percezione</em> see, hear, taste, smell) di solito <strong>NON</strong> si usano al continuous!
+    </div>
+    <ul class="examples">
+      <li>I <strong>go</strong> to school by bus. <span class="it">(abitudine)</span></li>
+      <li>Look! The bus <strong>is coming</strong>. <span class="it">(adesso)</span></li>
+      <li>She usually <strong>wears</strong> jeans, but today she <strong>is wearing</strong> a dress. <span class="it">(abitudine vs adesso)</span></li>
+      <li>I <strong>love</strong> this song. <span class="it">(NON "I am loving")</span></li>
+    </ul>
+    <div id="q-1" class="quiz-area"></div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <h2>🔵 2. Quantifiers</h2>
+    <span class="unit-tag">Unit 4</span>
+    <div class="rule-box">
+      <strong>Countable</strong> (si contano: apple → apples) vs <strong>uncountable</strong> (non si contano: water, money, bread).<br>
+      <strong>some</strong> = frasi affermative · <strong>any</strong> = negative e domande.
+    </div>
+    <table class="form-table">
+      <tr><th>Con countable (plurale)</th><th>Con uncountable</th></tr>
+      <tr><td>how <strong>many</strong>? · <strong>too many</strong> · a few</td><td>how <strong>much</strong>? · <strong>too much</strong> · a little</td></tr>
+      <tr><td colspan="2" style="text-align:center;"><strong>a lot of / lots of</strong> → con entrambi</td></tr>
+    </table>
+    <div class="rule-box green">
+      <strong>too / enough:</strong> <em>too much/many</em> = troppo · <em>not enough</em> = non abbastanza · <em>too + aggettivo</em> = troppo (It's <em>too</em> hot) · <em>adjective + enough</em> = abbastanza (It's warm <em>enough</em>).
+    </div>
+    <ul class="examples">
+      <li>There isn't <strong>any</strong> milk. <span class="it">(Non c'è latte.)</span></li>
+      <li>How <strong>much</strong> sugar do you want? <span class="it">(uncountable)</span></li>
+      <li>There are <strong>too many</strong> cars. <span class="it">(troppe macchine)</span></li>
+      <li>I don't have <strong>enough</strong> money. <span class="it">(non abbastanza soldi)</span></li>
+    </ul>
+    <div id="q-2" class="quiz-area"></div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <h2>🟡 3. Past Simple</h2>
+    <span class="unit-tag">Units 6–7</span>
+    <div class="rule-box">
+      <strong>Quando:</strong> azioni concluse nel passato (spesso con <em>yesterday, last week, in 2020, ago</em>).<br>
+      <strong>Regolari:</strong> verbo + <em>-ed</em> · <strong>Irregolari:</strong> forma propria (go → went).
+    </div>
+    <table class="form-table">
+      <tr><th>Forma</th><th>Esempio</th></tr>
+      <tr><td>Affermativa</td><td>She <strong>played / went</strong>.</td></tr>
+      <tr><td>Negativa</td><td>She <strong>didn't play / go</strong>. <span class="it">(verbo base!)</span></td></tr>
+      <tr><td>Interrogativa</td><td><strong>Did</strong> she <strong>play / go</strong>?</td></tr>
+    </table>
+    <div class="warn-box"><strong>Attenzione:</strong> dopo <em>didn't</em> e <em>did</em> il verbo torna alla forma base: <em>Did you <u>went</u>?</em> ❌ → <em>Did you <u>go</u>?</em> ✅</div>
+    <ul class="examples">
+      <li>We <strong>watched</strong> a film last night. <span class="it">(regolare)</span></li>
+      <li>He <strong>bought</strong> a new phone. <span class="it">(irregolare)</span></li>
+      <li><strong>Did</strong> you <strong>see</strong> the match? <span class="it">(domanda)</span></li>
+    </ul>
+    <div id="q-3" class="quiz-area"></div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <h2>🟢 4. Comparatives &amp; Superlatives</h2>
+    <span class="unit-tag">Unit 8</span>
+    <table class="form-table">
+      <tr><th>Aggettivo</th><th>Comparativo</th><th>Superlativo</th></tr>
+      <tr><td>corto (tall)</td><td>tall<strong>er</strong> than</td><td>the tall<strong>est</strong></td></tr>
+      <tr><td>lungo (modern)</td><td><strong>more</strong> modern than</td><td>the <strong>most</strong> modern</td></tr>
+      <tr><td>-y (easy)</td><td>eas<strong>ier</strong> than</td><td>the eas<strong>iest</strong></td></tr>
+      <tr><td>irregolari</td><td>good→<strong>better</strong> · bad→<strong>worse</strong></td><td>the <strong>best</strong> · the <strong>worst</strong></td></tr>
+    </table>
+    <div class="rule-box green">
+      <strong>as … as</strong> = uguaglianza: <em>She is <u>as tall as</u> me.</em> (alta quanto me)
+    </div>
+    <ul class="examples">
+      <li>A train is <strong>faster than</strong> a bike. <span class="it">(più veloce di)</span></li>
+      <li>Everest is <strong>the highest</strong> mountain. <span class="it">(la più alta)</span></li>
+      <li>This exercise is <strong>more difficult than</strong> the last one.</li>
+    </ul>
+    <div id="q-4" class="quiz-area"></div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <h2>🔴 5. Il Futuro: will / going to / present continuous</h2>
+    <span class="unit-tag">Units 9–10</span>
+    <div class="rule-box">
+      <strong>will</strong> → decisioni sul momento, previsioni, promesse, offerte. <em>(I'll help you!)</em><br>
+      <strong>be going to</strong> → piani/intenzioni già decisi, prove evidenti. <em>(Look at those clouds! It's going to rain.)</em><br>
+      <strong>present continuous</strong> → appuntamenti fissati, con orario/luogo. <em>(I'm meeting Sofia at 5.)</em>
+    </div>
+    <ul class="examples">
+      <li>The phone is ringing. I <strong>'ll</strong> answer it. <span class="it">(decisione ora)</span></li>
+      <li>We <strong>are going to</strong> visit Rome next month. <span class="it">(piano deciso)</span></li>
+      <li>I <strong>'m seeing</strong> the dentist at 3 tomorrow. <span class="it">(appuntamento)</span></li>
+    </ul>
+    <div id="q-5" class="quiz-area"></div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <h2>🟠 6. Zero &amp; First Conditional</h2>
+    <span class="unit-tag">Unit 10</span>
+    <table class="form-table">
+      <tr><th>Tipo</th><th>Struttura</th><th>Uso</th></tr>
+      <tr><td>Zero</td><td>if + present, present</td><td>verità/leggi generali</td></tr>
+      <tr><td>First</td><td>if + present, <strong>will</strong> + base</td><td>futuro possibile/reale</td></tr>
+    </table>
+    <div class="rule-box blue">
+      Dopo <strong>if</strong>, <strong>when</strong>, <strong>as soon as</strong> si usa il <strong>presente</strong>, mai il <em>will</em>: <br><em>If it <u>will rain</u>…</em> ❌ → <em>If it <u>rains</u>…</em> ✅
+    </div>
+    <ul class="examples">
+      <li>If you heat ice, it <strong>melts</strong>. <span class="it">(zero – legge)</span></li>
+      <li>If it <strong>rains</strong>, we <strong>'ll stay</strong> at home. <span class="it">(first)</span></li>
+      <li>I'll call you as soon as I <strong>get</strong> home.</li>
+    </ul>
+    <div id="q-6" class="quiz-area"></div>
+  </div>
+
+  <!-- 7 -->
+  <div class="card">
+    <h2>🟣 7. Present Perfect + ever / never · been vs gone</h2>
+    <span class="unit-tag">Unit 11</span>
+    <div class="rule-box">
+      <strong>Forma:</strong> have / has + <em>past participle</em> (3ª colonna dei verbi).<br>
+      <strong>Uso:</strong> esperienze di vita (senza dire quando), azioni che continuano fino ad ora.
+    </div>
+    <div class="rule-box green">
+      <strong>been</strong> = andato e <u>tornato</u> (esperienza): <em>I've <u>been</u> to London.</em><br>
+      <strong>gone</strong> = andato e <u>ancora là</u>: <em>She's <u>gone</u> to the shops.</em>
+    </div>
+    <ul class="examples">
+      <li>I have <strong>never eaten</strong> sushi. <span class="it">(mai in vita mia)</span></li>
+      <li><strong>Have</strong> you <strong>ever been</strong> to Paris? <span class="it">(sei mai stata…?)</span></li>
+      <li>He <strong>has gone</strong> to school. <span class="it">(è a scuola ora)</span></li>
+    </ul>
+    <div id="q-7" class="quiz-area"></div>
+  </div>
+
+  <!-- 8 -->
+  <div class="card">
+    <h2>🔵 8. Present Perfect (just/already/yet) vs Past Simple</h2>
+    <span class="unit-tag">Unit 12</span>
+    <div class="rule-box">
+      <strong>just</strong> = appena (I've <em>just</em> arrived) · <strong>already</strong> = già (affermativa) · <strong>yet</strong> = ancora/già (in negative e domande, a fine frase).
+    </div>
+    <div class="rule-box blue">
+      <strong>Present Perfect</strong> → tempo NON finito o non detto (today, this week, ever).<br>
+      <strong>Past Simple</strong> → tempo finito e preciso (yesterday, last year, in 2020, ago).
+    </div>
+    <ul class="examples">
+      <li>I've <strong>just</strong> finished. <span class="it">(appena)</span></li>
+      <li>Have you done it <strong>yet</strong>? – No, not <strong>yet</strong>. <span class="it">(ancora)</span></li>
+      <li>We <strong>went</strong> to Spain <strong>last year</strong>. <span class="it">(past simple – tempo finito)</span></li>
+    </ul>
+    <div id="q-8" class="quiz-area"></div>
+  </div>
+
+  <!-- 9 -->
+  <div class="card">
+    <h2>🟡 9. Possessivi, pronomi &amp; was/were</h2>
+    <span class="unit-tag">Unit 5</span>
+    <table class="form-table">
+      <tr><th>Aggettivo poss.</th><th>Pronome poss.</th></tr>
+      <tr><td>my, your, his, her, our, their</td><td>mine, yours, his, hers, ours, theirs</td></tr>
+    </table>
+    <div class="rule-box">
+      <strong>whose</strong> = di chi (possesso) · <strong>who's</strong> = who is / who has.<br>
+      <strong>Double genitive:</strong> a friend <em>of mine</em> (un mio amico).<br>
+      <strong>Infinitive of purpose:</strong> <em>to</em> + verbo = per (I went out <em>to buy</em> bread).<br>
+      <strong>was/were</strong> = passato di <em>be</em> (I/he/she/it <em>was</em>; you/we/they <em>were</em>).
+    </div>
+    <ul class="examples">
+      <li><strong>Whose</strong> pen is this? It's <strong>hers</strong>. <span class="it">(di chi… è suo)</span></li>
+      <li>He is a friend <strong>of mine</strong>. <span class="it">(un mio amico)</span></li>
+      <li>Where <strong>were</strong> you? I <strong>was</strong> at home.</li>
+    </ul>
+    <div id="q-9" class="quiz-area"></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════ VOCAB ════════════════════════════════ -->
+<section id="vocab">
+  <p class="intro-line">Vocaboli più ricchi presi dalle sezioni <em>Vocabulary</em> ed <em>Expansion</em> del libro. Tocca la carta per girarla e studia la lista completa per ogni tema.</p>
+  <div class="card">
+    <h2>🗂️ Flashcard per tema</h2>
+    <p style="margin-bottom:14px; font-size:0.88rem; color:var(--muted);">Tocca la carta per vedere la traduzione!</p>
+    <div class="theme-tabs" id="themeTabs"></div>
+    <div class="flashcard-wrap" onclick="flipCard()">
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard-face flashcard-front">
+          <span class="hint">🇬🇧 English</span>
+          <span class="word" id="fc-front">—</span>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <span class="hint">🇮🇹 Italiano</span>
+          <span class="word" id="fc-back">—</span>
+        </div>
+      </div>
+    </div>
+    <div class="flashcard-controls">
+      <button class="btn btn-indigo" onclick="prevCard()">← Indietro</button>
+      <span class="fc-count" id="fc-count">1 / 1</span>
+      <button class="btn btn-pink" onclick="nextCard()">Avanti →</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Lista completa per tema</h2>
+    <div class="theme-tabs" id="tableTabs"></div>
+    <div id="wordTableArea"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ VERBS ════════════════════════════════ -->
+<section id="verbs">
+  <p class="intro-line">La lista estesa dei verbi irregolari (le 3 forme + significato) e un allenatore che ti fa esercitare su Past Simple e Past Participle.</p>
+  <div class="card">
+    <h2>⚡ Verbi Irregolari (lista estesa)</h2>
+    <p style="font-size:0.85rem; color:var(--muted); margin-bottom:14px;">Base → Past Simple → Past Participle → Significato</p>
+    <div style="overflow-x:auto;">
+      <table class="verb-table" id="verbTableMain"></table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔧 Verb Trainer: Past Simple / Participle</h2>
+    <p style="font-size:0.88rem; color:var(--muted); margin-bottom:8px;">12 verbi a caso: scegli la forma giusta!</p>
+    <div id="verbTrainer"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ EXERCISES ════════════════════════════ -->
+<section id="exercises">
+  <p class="intro-line">Esercizi extra per allenarti ancora: tempi verbali misti, Present Perfect vs Past Simple, caccia all'errore e completamento. Ottimi per un secondo giorno di ripasso! 📝</p>
+
+  <div class="card">
+    <h2>📝 Esercizio 1 — Tempi verbali misti</h2>
+    <div id="ex-1" class="quiz-area" style="border-top:none; padding-top:0;"></div>
+  </div>
+  <div class="card">
+    <h2>📝 Esercizio 2 — Present Perfect vs Past Simple</h2>
+    <div id="ex-2" class="quiz-area" style="border-top:none; padding-top:0;"></div>
+  </div>
+  <div class="card">
+    <h2>🔎 Esercizio 3 — Trova la frase corretta</h2>
+    <div id="ex-3" class="quiz-area" style="border-top:none; padding-top:0;"></div>
+  </div>
+  <div class="card">
+    <h2>✏️ Esercizio 4 — Completa con la parola giusta</h2>
+    <div id="ex-4" class="quiz-area" style="border-top:none; padding-top:0;"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ TEST ════════════════════════════════ -->
+<section id="test">
+  <div class="card" id="testCard">
+    <div class="test-intro" id="testIntro">
+      <div class="big-num">39</div>
+      <h2 style="justify-content:center; margin:8px 0 6px; font-size:1.3rem;">Test Finale</h2>
+      <p style="color:var(--muted); font-size:0.9rem;">Diviso in 3 sezioni. Prenditi il tempo che ti serve!</p>
+      <div class="test-sections-list">
+        <div>📖 Sezione 1 — Grammatica (15 domande)</div>
+        <div>🗂️ Sezione 2 — Vocabolario (12 domande)</div>
+        <div>📚 Sezione 3 — Comprensione del testo (12 domande)</div>
+      </div>
+      <button class="btn btn-indigo" onclick="startFinal()">Inizia il Test →</button>
+    </div>
+    <div id="testArea" style="display:none;"></div>
+    <div id="testResult" style="display:none;"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ RESULTS ═════════════════════════════ -->
+<section id="results">
+  <div class="card" id="resultsLock">
+    <div style="text-align:center; padding:20px 0;">
+      <div style="font-size:3rem;">🔒</div>
+      <h2 style="justify-content:center; margin:10px 0 6px;">Area Riservata</h2>
+      <p style="color:var(--muted); font-size:0.9rem; margin-bottom:18px;">Inserisci la password per vedere i risultati</p>
+      <div style="display:flex; gap:10px; max-width:320px; margin:0 auto;">
+        <input type="password" id="pwInput" placeholder="Password..."
+          style="flex:1; padding:10px 14px; border:2px solid #E8E0F5; border-radius:10px; font-family:'Nunito',sans-serif; font-size:0.95rem; outline:none;"
+          onkeydown="if(event.key==='Enter') checkPassword()">
+        <button class="btn btn-indigo" onclick="checkPassword()">Entra</button>
+      </div>
+      <p id="pwError" style="color:var(--pink); font-size:0.85rem; margin-top:10px; min-height:18px;"></p>
+    </div>
+  </div>
+
+  <div id="resultsArea" style="display:none;">
+    <div class="card">
+      <h2>📊 Tutti i risultati</h2>
+      <p style="font-size:0.85rem; color:var(--muted); margin-bottom:14px;">
+        Ogni quiz, esercizio e test completato viene salvato automaticamente su questo dispositivo.
+      </p>
+      <div id="resultsList"></div>
+      <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+        <button class="btn btn-green" onclick="copySummary()">📋 Copia riepilogo per WhatsApp</button>
+        <button class="btn btn-pink" onclick="clearResults()">🗑️ Cancella tutto</button>
+      </div>
+      <p id="copyFeedback" style="color:var(--green); font-size:0.85rem; margin-top:8px; min-height:18px; font-weight:600;"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+// ═══════════════════════ DATA: VOCAB ═══════════════════════
+const vocab = {
+  "👗 Clothes & Shopping": [
+    ["trousers","pantaloni"],["jacket","giacca"],["skirt","gonna"],["shirt","camicia"],
+    ["dress","vestito"],["jumper","maglione"],["coat","cappotto"],["scarf","sciarpa"],
+    ["gloves","guanti"],["trainers","scarpe da ginnastica"],["belt","cintura"],["size","taglia"],
+    ["changing room","camerino"],["receipt","scontrino"],["discount","sconto"]
+  ],
+  "🍽️ Food & Taste": [
+    ["savoury","salato/saporito"],["sweet","dolce"],["spicy","piccante"],["sour","aspro"],
+    ["bitter","amaro"],["tasty","gustoso"],["meal","pasto"],["dish","piatto/pietanza"],
+    ["starter","antipasto"],["main course","piatto principale"],["dessert","dolce/dessert"],["recipe","ricetta"],
+    ["ingredient","ingrediente"],["raw","crudo"],["ripe","maturo"]
+  ],
+  "👨‍👩‍👧 Family & Feelings": [
+    ["nephew","nipote (m)"],["niece","nipote (f)"],["stepmother","matrigna"],["twins","gemelli"],
+    ["relative","parente"],["proud","orgoglioso"],["scared","spaventato"],["worried","preoccupato"],
+    ["embarrassed","imbarazzato"],["jealous","geloso"],["confident","sicuro di sé"],["upset","turbato/dispiaciuto"],
+    ["lonely","solo"],["grateful","grato"],["cheerful","allegro"]
+  ],
+  "🏠 Home & Furniture": [
+    ["furniture","mobili"],["wardrobe","armadio"],["drawer","cassetto"],["shelf","mensola"],
+    ["sink","lavandino"],["cushion","cuscino"],["carpet","tappeto/moquette"],["curtains","tende"],
+    ["ceiling","soffitto"],["stairs","scale"],["attic","soffitta"],["basement","scantinato"],
+    ["cupboard","credenza/armadietto"],["mirror","specchio"],["blanket","coperta"]
+  ],
+  "😀 Personality": [
+    ["generous","generoso"],["honest","onesto"],["shy","timido"],["brave","coraggioso"],
+    ["selfish","egoista"],["reliable","affidabile"],["lazy","pigro"],["hard-working","laborioso"],
+    ["friendly","amichevole"],["stubborn","testardo"],["polite","educato"],["rude","maleducato"],
+    ["clever","intelligente/sveglio"],["funny","divertente"],["kind","gentile"]
+  ],
+  "🐾 Animals & Weather": [
+    ["wildlife","fauna selvatica"],["cliff","scogliera"],["forest","foresta"],["desert","deserto"],
+    ["ocean","oceano"],["thunderstorm","temporale"],["lightning","fulmine"],["fog","nebbia"],
+    ["breeze","brezza"],["flood","alluvione"],["frost","gelo/brina"],["dawn","alba"],
+    ["wave","onda"],["shore","riva"],["cave","grotta"]
+  ],
+  "🏙️ Places in Town": [
+    ["library","biblioteca"],["town hall","municipio"],["chemist's","farmacia"],["bakery","panetteria"],
+    ["crossroads","incrocio"],["pavement","marciapiede"],["traffic lights","semaforo"],["bridge","ponte"],
+    ["square","piazza"],["market","mercato"],["bus stop","fermata dell'autobus"],["museum","museo"],
+    ["railway station","stazione ferroviaria"],["roundabout","rotonda"],["neighbourhood","quartiere"]
+  ],
+  "✈️ Travel & Body": [
+    ["to travel","viaggiare"],["journey","viaggio/tragitto"],["flight","volo"],["luggage","bagaglio"],
+    ["passport","passaporto"],["abroad","all'estero"],["ticket","biglietto"],["delay","ritardo"],
+    ["ache","dolore"],["headache","mal di testa"],["shoulder","spalla"],["ankle","caviglia"],
+    ["knee","ginocchio"],["wrist","polso"],["chest","petto"]
+  ]
+};
+
+// ═══════════════════════ DATA: IRREGULAR VERBS ═══════════════════════
+const irregularVerbs = [
+  ["be","was/were","been","essere"],
+  ["become","became","become","diventare"],
+  ["begin","began","begun","cominciare"],
+  ["break","broke","broken","rompere"],
+  ["bring","brought","brought","portare"],
+  ["build","built","built","costruire"],
+  ["buy","bought","bought","comprare"],
+  ["catch","caught","caught","prendere/afferrare"],
+  ["choose","chose","chosen","scegliere"],
+  ["come","came","come","venire"],
+  ["cost","cost","cost","costare"],
+  ["cut","cut","cut","tagliare"],
+  ["do","did","done","fare"],
+  ["draw","drew","drawn","disegnare"],
+  ["drink","drank","drunk","bere"],
+  ["drive","drove","driven","guidare"],
+  ["eat","ate","eaten","mangiare"],
+  ["fall","fell","fallen","cadere"],
+  ["feel","felt","felt","sentire/provare"],
+  ["fight","fought","fought","combattere"],
+  ["find","found","found","trovare"],
+  ["fly","flew","flown","volare"],
+  ["forget","forgot","forgotten","dimenticare"],
+  ["get","got","got","ottenere"],
+  ["give","gave","given","dare"],
+  ["go","went","gone","andare"],
+  ["grow","grew","grown","crescere"],
+  ["have","had","had","avere"],
+  ["hear","heard","heard","sentire/udire"],
+  ["hit","hit","hit","colpire"],
+  ["hold","held","held","tenere"],
+  ["keep","kept","kept","mantenere/conservare"],
+  ["know","knew","known","sapere/conoscere"],
+  ["learn","learnt","learnt","imparare"],
+  ["leave","left","left","partire/lasciare"],
+  ["lose","lost","lost","perdere"],
+  ["make","made","made","fare/creare"],
+  ["mean","meant","meant","significare"],
+  ["meet","met","met","incontrare"],
+  ["pay","paid","paid","pagare"],
+  ["put","put","put","mettere"],
+  ["read","read","read","leggere"],
+  ["ride","rode","ridden","cavalcare/andare (in bici)"],
+  ["ring","rang","rung","suonare/telefonare"],
+  ["run","ran","run","correre"],
+  ["say","said","said","dire"],
+  ["see","saw","seen","vedere"],
+  ["sell","sold","sold","vendere"],
+  ["send","sent","sent","inviare"],
+  ["show","showed","shown","mostrare"],
+  ["sing","sang","sung","cantare"],
+  ["sit","sat","sat","sedersi"],
+  ["sleep","slept","slept","dormire"],
+  ["speak","spoke","spoken","parlare"],
+  ["spend","spent","spent","spendere/trascorrere"],
+  ["stand","stood","stood","stare in piedi"],
+  ["swim","swam","swum","nuotare"],
+  ["take","took","taken","prendere"],
+  ["teach","taught","taught","insegnare"],
+  ["tell","told","told","raccontare/dire"],
+  ["think","thought","thought","pensare"],
+  ["throw","threw","thrown","lanciare"],
+  ["understand","understood","understood","capire"],
+  ["wake","woke","woken","svegliarsi"],
+  ["wear","wore","worn","indossare"],
+  ["win","won","won","vincere"],
+  ["write","wrote","written","scrivere"]
+];
+
+// ═══════════════════════ QUIZ DATA (grammar + exercises) ═══════════════════════
+const quizzes = {
+  "q-1": { questions: [
+    { q: "Water ___ at 100°C.", opts: ["boil","boils","is boiling","boiled"], ans: 1 },
+    { q: "Be quiet! The baby ___.", opts: ["sleeps","is sleeping","sleep","slept"], ans: 1 },
+    { q: "I ___ this song. It's my favourite.", opts: ["am loving","love","loves","loving"], ans: 1 },
+    { q: "Look! Those boys ___ your bike.", opts: ["take","are taking","takes","took"], ans: 1 },
+    { q: "She usually ___ tea, but today she ___ coffee.", opts: ["drinks / is drinking","is drinking / drinks","drink / drinks","drinks / drink"], ans: 0 },
+    { q: "This soup ___ delicious!", opts: ["is tasting","tastes","taste","are tasting"], ans: 1 }
+  ]},
+  "q-2": { questions: [
+    { q: "There isn't ___ milk in the fridge.", opts: ["some","any","many","a"], ans: 1 },
+    { q: "How ___ money do you have?", opts: ["many","much","few","a lot"], ans: 1 },
+    { q: "There are ___ apples on the table.", opts: ["much","a little","a lot of","any"], ans: 2 },
+    { q: "I can't buy it. I don't have ___ money.", opts: ["enough","too many","many","few"], ans: 0 },
+    { q: "Be careful, there's ___ salt in this dish.", opts: ["too many","too much","enough of","many"], ans: 1 },
+    { q: "Would you like ___ tea?", opts: ["any","some","many","much"], ans: 1 }
+  ]},
+  "q-3": { questions: [
+    { q: "We ___ to the cinema last night.", opts: ["go","goed","went","gone"], ans: 2 },
+    { q: "She ___ her homework yesterday.", opts: ["do","did","done","does"], ans: 1 },
+    { q: "___ you see the match on TV?", opts: ["Did","Do","Was","Were"], ans: 0 },
+    { q: "They ___ come to the party.", opts: ["didn't","don't","weren't","hasn't"], ans: 0 },
+    { q: "I ___ a strange noise and ___ scared.", opts: ["heard / was","hear / was","heard / were","hears / was"], ans: 0 },
+    { q: "He ___ a new phone last week.", opts: ["buyed","bought","buy","buys"], ans: 1 }
+  ]},
+  "q-4": { questions: [
+    { q: "This exercise is ___ than the last one.", opts: ["easier","more easy","easiest","as easy"], ans: 0 },
+    { q: "Mount Everest is ___ mountain in the world.", opts: ["the highest","the higher","highest","higher"], ans: 0 },
+    { q: "A car is ___ expensive ___ a bike.", opts: ["more / than","most / than","as / than","more / as"], ans: 0 },
+    { q: "This film is ___ interesting ___ that one. (=)", opts: ["as / as","so / as","more / as","as / than"], ans: 0 },
+    { q: "Today the weather is ___ than yesterday.", opts: ["gooder","more good","better","best"], ans: 2 },
+    { q: "It was ___ day of my life!", opts: ["the baddest","the worst","the most bad","worse"], ans: 1 }
+  ]},
+  "q-5": { questions: [
+    { q: "I've decided: I ___ study medicine.", opts: ["will","am going to","study","going"], ans: 1 },
+    { q: "The phone is ringing. I ___ answer it.", opts: ["am going to","will","going to","am"], ans: 1 },
+    { q: "I ___ the dentist at 3 o'clock tomorrow. (appuntamento)", opts: ["am seeing","will see","see","would see"], ans: 0 },
+    { q: "Look at those clouds! It ___ rain.", opts: ["will","is going to","goes to","shall"], ans: 1 },
+    { q: "Maybe I ___ go to the party, I'm not sure.", opts: ["will","am going to","am","going to"], ans: 0 },
+    { q: "___ you help me with this box, please?", opts: ["Will","Are going to","Do","Shall"], ans: 0 }
+  ]},
+  "q-6": { questions: [
+    { q: "If you heat ice, it ___.", opts: ["melts","will melt","melted","would melt"], ans: 0 },
+    { q: "If it ___ tomorrow, we'll stay at home.", opts: ["will rain","rains","rained","is raining"], ans: 1 },
+    { q: "I'll call you as soon as I ___ home.", opts: ["will get","get","got","am getting"], ans: 1 },
+    { q: "If she studies hard, she ___ the exam.", opts: ["passes","will pass","passed","would pass"], ans: 1 },
+    { q: "Water boils if you ___ it to 100°C.", opts: ["heat","will heat","heated","heating"], ans: 0 },
+    { q: "We won't go out if it ___.", opts: ["will rain","rains","rained","rain"], ans: 1 }
+  ]},
+  "q-7": { questions: [
+    { q: "I ___ never ___ sushi.", opts: ["have / eaten","have / ate","has / eaten","did / eat"], ans: 0 },
+    { q: "___ you ever ___ to London?", opts: ["Have / been","Have / gone","Did / been","Has / been"], ans: 0 },
+    { q: "She isn't here. She ___ to the shops.", opts: ["has been","has gone","have gone","went been"], ans: 1 },
+    { q: "We ___ in Paris three times. (esperienza)", opts: ["have been","have gone","has been","are"], ans: 0 },
+    { q: "He ___ finished his homework.", opts: ["have","has","is","did"], ans: 1 },
+    { q: "I ___ never ___ such a beautiful place.", opts: ["have / seen","have / saw","has / seen","did / see"], ans: 0 }
+  ]},
+  "q-8": { questions: [
+    { q: "I've ___ finished my lunch. (appena)", opts: ["yet","already","just","ago"], ans: 2 },
+    { q: "Have you done your homework ___?", opts: ["yet","already","just","still"], ans: 0 },
+    { q: "She has ___ seen this film, so she doesn't want to watch it again.", opts: ["yet","already","just","never"], ans: 1 },
+    { q: "I ___ my keys yesterday.", opts: ["have lost","lost","has lost","have losed"], ans: 1 },
+    { q: "We haven't finished ___.", opts: ["already","just","yet","ever"], ans: 2 },
+    { q: "They ___ to Spain in 2019.", opts: ["have gone","went","have been","has gone"], ans: 1 }
+  ]},
+  "q-9": { questions: [
+    { q: "___ book is this? It's mine.", opts: ["Who's","Whose","Who","Whom"], ans: 1 },
+    { q: "That's not your pen, it's ___.", opts: ["my","mine","me","myself"], ans: 1 },
+    { q: "This is a friend ___.", opts: ["of mine","of me","of my","mine"], ans: 0 },
+    { q: "She went to the library ___ study.", opts: ["for","to","for to","because"], ans: 1 },
+    { q: "Where ___ you yesterday? I ___ at home.", opts: ["was / were","were / was","was / was","were / were"], ans: 1 },
+    { q: "___ that girl over there? (chi è)", opts: ["Whose","Who's","Whos","Who"], ans: 1 }
+  ]},
+
+  // ─── EXERCISES ───
+  "ex-1": { questions: [
+    { q: "Right now, I ___ (watch) TV.", opts: ["watch","am watching","watched","watches"], ans: 1 },
+    { q: "Every morning she ___ (drink) coffee.", opts: ["drink","drinks","is drinking","drank"], ans: 1 },
+    { q: "Yesterday we ___ (visit) our grandparents.", opts: ["visit","visited","have visited","are visiting"], ans: 1 },
+    { q: "Tomorrow it ___ (be) sunny, I think.", opts: ["is","will be","was","is being"], ans: 1 },
+    { q: "Listen! Someone ___ (sing).", opts: ["sings","is singing","sang","sing"], ans: 1 },
+    { q: "He ___ (not/like) horror films.", opts: ["doesn't like","don't like","isn't liking","didn't liked"], ans: 0 },
+    { q: "Last summer they ___ (go) to Greece.", opts: ["go","went","have gone","were going"], ans: 1 },
+    { q: "I ___ (finish) my project. Here it is!", opts: ["have finished","finish","am finishing","will finished"], ans: 0 }
+  ]},
+  "ex-2": { questions: [
+    { q: "I ___ (see) this film last week.", opts: ["have seen","saw","seen","have saw"], ans: 1 },
+    { q: "She ___ (never/be) to Japan.", opts: ["was never","has never been","never went","is never"], ans: 1 },
+    { q: "We ___ (live) here since 2010.", opts: ["live","lived","have lived","are living"], ans: 2 },
+    { q: "___ you ___ (finish) yet?", opts: ["Did / finish","Have / finished","Are / finishing","Have / finish"], ans: 1 },
+    { q: "He ___ (break) his leg two days ago.", opts: ["has broken","broke","break","have broken"], ans: 1 },
+    { q: "They ___ (just/arrive).", opts: ["just arrived","have just arrived","are just arriving","just arrive"], ans: 1 },
+    { q: "I ___ (not/see) her yesterday.", opts: ["haven't seen","didn't see","don't see","didn't saw"], ans: 1 },
+    { q: "How long ___ you ___ (know) him?", opts: ["did / know","have / known","are / knowing","do / know"], ans: 1 }
+  ]},
+  "ex-3": { questions: [
+    { q: "Quale frase è corretta?", opts: ["She don't like tea.","She doesn't likes tea.","She doesn't like tea.","She not like tea."], ans: 2 },
+    { q: "Quale frase è corretta?", opts: ["I have seen him yesterday.","I saw him yesterday.","I seen him yesterday.","I did saw him yesterday."], ans: 1 },
+    { q: "Quale frase è corretta?", opts: ["There are much people.","There are many people.","There is many people.","There are a much people."], ans: 1 },
+    { q: "Quale frase è corretta?", opts: ["He is more tall than me.","He is taller than me.","He is tallest than me.","He is more taller than me."], ans: 1 },
+    { q: "Quale frase è corretta?", opts: ["If it will rain, I stay home.","If it rains, I will stay home.","If it rains, I staying home.","If it rain, I will stay."], ans: 1 },
+    { q: "Quale frase è corretta?", opts: ["I have lived here since three years.","I have lived here for three years.","I live here since three years.","I am living here for three years."], ans: 1 },
+    { q: "Quale frase è corretta?", opts: ["Who's car is this?","Whose car is this?","Whos car is this?","Who car is this?"], ans: 1 },
+    { q: "Quale frase è corretta?", opts: ["She can to swim.","She cans swim.","She can swims.","She can swim."], ans: 3 }
+  ]},
+  "ex-4": { questions: [
+    { q: "I'd like ___ apple, please.", opts: ["a","an","much","any"], ans: 1 },
+    { q: "There isn't ___ bread left.", opts: ["some","any","many","a"], ans: 1 },
+    { q: "It's ___ interesting book.", opts: ["a","an","the","some"], ans: 1 },
+    { q: "He runs ___ than his brother.", opts: ["fast","faster","fastest","more fast"], ans: 1 },
+    { q: "She is the ___ student in the class.", opts: ["best","better","goodest","more good"], ans: 0 },
+    { q: "How ___ sugar do you want?", opts: ["many","much","some of","few"], ans: 1 },
+    { q: "Can I have ___ water, please?", opts: ["any","some","many","a"], ans: 1 },
+    { q: "It's ___ hot to go outside.", opts: ["too","enough","very much","so many"], ans: 0 }
+  ]}
+};
+
+// ═══════════════════════ FINAL TEST DATA ═══════════════════════
+const sectionMeta = [
+  { name: "Grammatica", icon: "📖" },
+  { name: "Vocabolario", icon: "🗂️" },
+  { name: "Comprensione del testo", icon: "📚" }
+];
+
+const testPassages = [
+  { title: "A New Student",
+    text: "Emma is a new student at Greenwood School. She is fifteen years old and she comes from Manchester. Last month, her family moved to a small town near London because her mother found a new job. At first, Emma was nervous because she didn't know anybody. But on her first day, a girl called Sofia sat next to her and they quickly became friends. Now Emma loves her new school. Her favourite subjects are art and history, and she has already joined the school drama club. After lessons, she usually goes to the library to do her homework before taking the bus home." },
+  { title: "Weekend Plans",
+    text: "It is Friday afternoon and the Rossi family is making plans for the weekend. Tomorrow morning, Marco is going to play football with his friends in the park. His sister, Giulia, prefers quieter activities, so she is going to read her new book and paint in her room. On Sunday, the whole family is going to visit their grandparents, who live in the countryside. They are going to have lunch together and, if the weather is nice, they will go for a long walk in the woods. Giulia is very excited because her grandmother always makes a delicious chocolate cake." }
+];
+
+const finalTest = [
+  // ── Sezione 1: Grammatica (15) ──
+  { sec:0, q:"She ___ TV every evening.", opts:["watch","watches","is watching","watched"], ans:1 },
+  { sec:0, q:"Look! It ___ outside.", opts:["rains","is raining","rain","rained"], ans:1 },
+  { sec:0, q:"I ___ this song, it's beautiful.", opts:["am loving","love","loves","loving"], ans:1 },
+  { sec:0, q:"There isn't ___ juice left.", opts:["some","any","many","a"], ans:1 },
+  { sec:0, q:"How ___ students are there in your class?", opts:["much","many","some of","a lot"], ans:1 },
+  { sec:0, q:"We ___ to the beach last Sunday.", opts:["go","went","gone","going"], ans:1 },
+  { sec:0, q:"This book is ___ than that one.", opts:["interestinger","more interesting","most interesting","as interesting"], ans:1 },
+  { sec:0, q:"Everest is the ___ mountain in the world.", opts:["higher","highest","most high","high"], ans:1 },
+  { sec:0, q:"I think it ___ rain tomorrow.", opts:["will","is going","goes to","shall to"], ans:0 },
+  { sec:0, q:"If you heat ice, it ___.", opts:["melts","will melt","melted","melt"], ans:0 },
+  { sec:0, q:"If it ___ tomorrow, we'll cancel the trip.", opts:["will rain","rains","rained","rain"], ans:1 },
+  { sec:0, q:"I ___ never ___ to Australia.", opts:["have / been","has / been","have / gone","did / be"], ans:0 },
+  { sec:0, q:"She has ___ finished her homework.", opts:["yet","just","ever","since"], ans:1 },
+  { sec:0, q:"___ book is this?", opts:["Who's","Whose","Who","Whom"], ans:1 },
+  { sec:0, q:"They ___ at home yesterday evening.", opts:["was","were","are","is"], ans:1 },
+  // ── Sezione 2: Vocabolario (12) ──
+  { sec:1, q:"'Grandmother' in italiano è:", opts:["zia","nonna","sorella","madre"], ans:1 },
+  { sec:1, q:"Il contrario di 'expensive' è:", opts:["cheap","rich","big","cold"], ans:0 },
+  { sec:1, q:"Quale parola è un capo d'abbigliamento?", opts:["jacket","kitchen","river","doctor"], ans:0 },
+  { sec:1, q:"'Cloudy', 'sunny' e 'windy' descrivono ___:", opts:["il cibo","il tempo (meteo)","la famiglia","la scuola"], ans:1 },
+  { sec:1, q:"'Uncle' in italiano è:", opts:["zio","cugino","nonno","nipote"], ans:0 },
+  { sec:1, q:"Quale NON è una stanza della casa?", opts:["kitchen","bedroom","bathroom","dentist"], ans:3 },
+  { sec:1, q:"'Viaggiare' in inglese è:", opts:["to travel","to trip","to journey","to move"], ans:0 },
+  { sec:1, q:"Una persona 'generous' è qualcuno che:", opts:["condivide con gli altri","non parla mai","è sempre in ritardo","dice bugie"], ans:0 },
+  { sec:1, q:"Quale parola è una parte del corpo?", opts:["shoulder","station","blanket","spoon"], ans:0 },
+  { sec:1, q:"'Formaggio' in inglese è:", opts:["butter","cheese","ham","egg"], ans:1 },
+  { sec:1, q:"Il past simple del verbo irregolare 'buy' è:", opts:["buyed","bought","buied","buy"], ans:1 },
+  { sec:1, q:"Quale luogo puoi trovare in una città?", opts:["library","mountain","ocean","desert"], ans:0 },
+  // ── Sezione 3: Comprensione (12) ──
+  { sec:2, p:0, q:"How old is Emma?", opts:["fourteen","fifteen","sixteen","seventeen"], ans:1 },
+  { sec:2, p:0, q:"Where does Emma come from?", opts:["London","Greenwood","Manchester","a small town"], ans:2 },
+  { sec:2, p:0, q:"Why did her family move?", opts:["her mother found a new job","she changed school","her father retired","they wanted a bigger house"], ans:0 },
+  { sec:2, p:0, q:"How did Emma feel on her first day, at first?", opts:["happy","nervous","angry","bored"], ans:1 },
+  { sec:2, p:0, q:"What are Emma's favourite subjects?", opts:["maths and science","art and history","music and PE","English and geography"], ans:1 },
+  { sec:2, p:0, q:"What does Emma usually do after lessons?", opts:["she goes shopping","she plays football","she goes to the library","she watches TV"], ans:2 },
+  { sec:2, p:1, q:"When is the Rossi family making plans?", opts:["Monday morning","Friday afternoon","Sunday evening","Saturday night"], ans:1 },
+  { sec:2, p:1, q:"What is Marco going to do tomorrow morning?", opts:["read a book","paint","play football","visit grandparents"], ans:2 },
+  { sec:2, p:1, q:"What does Giulia prefer?", opts:["noisy activities","quieter activities","playing sports","going shopping"], ans:1 },
+  { sec:2, p:1, q:"Who are they going to visit on Sunday?", opts:["their cousins","their friends","their grandparents","their teachers"], ans:2 },
+  { sec:2, p:1, q:"What will they do if the weather is nice?", opts:["go for a walk in the woods","stay at home","go to the cinema","play football"], ans:0 },
+  { sec:2, p:1, q:"Why is Giulia excited?", opts:["her grandmother makes a chocolate cake","she has a new bike","she is going to the beach","she will meet her friends"], ans:0 }
+];
+
+// ═══════════════════════ NAVIGATION ═══════════════════════
+function showTab(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const btns = document.querySelectorAll('nav button');
+  const map = { grammar: 0, vocab: 1, verbs: 2, exercises: 3, test: 4, results: 5 };
+  btns[map[id]].classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ═══════════════════════ QUIZ ENGINE ═══════════════════════
+const quizState = {};
+const quizTitles = {
+  "q-1":"Prova il quiz","q-2":"Prova il quiz","q-3":"Prova il quiz","q-4":"Prova il quiz",
+  "q-5":"Prova il quiz","q-6":"Prova il quiz","q-7":"Prova il quiz","q-8":"Prova il quiz","q-9":"Prova il quiz",
+  "ex-1":"Esercizio","ex-2":"Esercizio","ex-3":"Esercizio","ex-4":"Esercizio"
+};
+
+function initQuiz(id) {
+  if (!quizzes[id]) return;
+  quizState[id] = { current: 0, score: 0, answered: false };
+  renderQuiz(id);
+}
+
+function renderQuiz(id) {
+  const s = quizState[id];
+  const data = quizzes[id];
+  const q = data.questions[s.current];
+  const total = data.questions.length;
+  const pct = (s.current / total) * 100;
+  const el = document.getElementById(id);
+  el.innerHTML = `
+    <div class="quiz-title">${quizTitles[id] || "Quiz"} — domanda ${s.current+1}/${total}</div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="quiz-q">❓ ${q.q}</div>
+    <div class="quiz-opts" id="${id}-opts">
+      ${q.opts.map((o,i) => `<button class="quiz-opt" onclick="answerQuiz('${id}',${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="${id}-fb"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-indigo" onclick="nextQuiz('${id}')" id="${id}-next" style="display:none">Prossima →</button>
+      <span class="score-pill" id="${id}-score">${s.score}/${total} ⭐</span>
+    </div>
+  `;
+}
+
+function answerQuiz(id, chosen) {
+  const s = quizState[id];
+  if (s.answered) return;
+  s.answered = true;
+  const q = quizzes[id].questions[s.current];
+  const opts = document.querySelectorAll(`#${id}-opts .quiz-opt`);
+  const fb = document.getElementById(`${id}-fb`);
+  const next = document.getElementById(`${id}-next`);
+  opts.forEach((o, i) => {
+    o.disabled = true;
+    if (i === q.ans) o.classList.add('correct');
+    else if (i === chosen && chosen !== q.ans) o.classList.add('wrong');
+  });
+  if (chosen === q.ans) {
+    s.score++;
+    fb.textContent = "✅ Corretto! Bravissima Sofia!";
+    fb.className = "quiz-feedback ok";
+  } else {
+    fb.textContent = `❌ La risposta giusta era: "${q.opts[q.ans]}"`;
+    fb.className = "quiz-feedback err";
+  }
+  document.getElementById(`${id}-score`).textContent = `${s.score}/${quizzes[id].questions.length} ⭐`;
+  next.style.display = '';
+}
+
+function nextQuiz(id) {
+  const s = quizState[id];
+  const total = quizzes[id].questions.length;
+  s.current++;
+  s.answered = false;
+  if (s.current >= total) {
+    saveResult(id, s.score, total);
+    const pct = Math.round((s.score/total)*100);
+    const emoji = pct >= 80 ? '🌟' : pct >= 60 ? '😊' : '💪';
+    const msg = pct===100 ? 'Perfetto! Tutto giusto! 🏆' : pct>=60 ? 'Molto bene, continua così!' : 'Ancora un po\' di pratica e ci sei!';
+    document.getElementById(id).innerHTML = `
+      <div style="text-align:center; padding:16px 0;">
+        <div style="font-size:2.5rem;">${emoji}</div>
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.8rem; color:var(--indigo);">${s.score}/${total}</div>
+        <p style="margin:8px 0 16px; color:var(--muted); font-size:0.9rem;">${msg}</p>
+        <button class="btn btn-indigo" onclick="initQuiz('${id}')">🔄 Riprova</button>
+      </div>`;
+    return;
+  }
+  renderQuiz(id);
+}
+
+// ═══════════════════════ VOCAB ═══════════════════════
+let currentTheme = Object.keys(vocab)[0];
+let currentCard = 0;
+let isFlipped = false;
+let currentTableTheme = Object.keys(vocab)[0];
+
+function initVocab() {
+  const themes = Object.keys(vocab);
+  document.getElementById('themeTabs').innerHTML = themes.map(t => `<button class="theme-tab${t===currentTheme?' active':''}" onclick="setTheme('${t}',this)">${t}</button>`).join('');
+  document.getElementById('tableTabs').innerHTML = themes.map(t => `<button class="theme-tab${t===currentTableTheme?' active':''}" onclick="setTableTheme('${t}',this)">${t}</button>`).join('');
+  renderCard();
+  renderTable();
+}
+function setTheme(theme, btn) {
+  currentTheme = theme; currentCard = 0; isFlipped = false;
+  document.getElementById('flashcard').classList.remove('flipped');
+  document.querySelectorAll('#themeTabs .theme-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCard();
+}
+function setTableTheme(theme, btn) {
+  currentTableTheme = theme;
+  document.querySelectorAll('#tableTabs .theme-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable();
+}
+function renderCard() {
+  const words = vocab[currentTheme];
+  const w = words[currentCard];
+  document.getElementById('fc-front').textContent = w[0];
+  document.getElementById('fc-back').textContent  = w[1];
+  document.getElementById('fc-count').textContent = `${currentCard+1} / ${words.length}`;
+}
+function renderTable() {
+  const words = vocab[currentTableTheme];
+  document.getElementById('wordTableArea').innerHTML = `<table class="word-table">
+    <thead><tr><th>🇬🇧 English</th><th>🇮🇹 Italiano</th></tr></thead>
+    <tbody>${words.map(w=>`<tr><td><strong>${w[0]}</strong></td><td>${w[1]}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+function flipCard() {
+  isFlipped = !isFlipped;
+  document.getElementById('flashcard').classList.toggle('flipped', isFlipped);
+}
+function prevCard() {
+  const len = vocab[currentTheme].length;
+  currentCard = (currentCard - 1 + len) % len; isFlipped = false;
+  document.getElementById('flashcard').classList.remove('flipped');
+  renderCard();
+}
+function nextCard() {
+  const len = vocab[currentTheme].length;
+  currentCard = (currentCard + 1) % len; isFlipped = false;
+  document.getElementById('flashcard').classList.remove('flipped');
+  renderCard();
+}
+
+// ═══════════════════════ VERBS ═══════════════════════
+function initVerbs() {
+  document.getElementById('verbTableMain').innerHTML =
+    `<thead><tr><th>Base</th><th>Past Simple</th><th>Past Participle</th><th>Italiano</th></tr></thead>
+     <tbody>${irregularVerbs.map(v=>`<tr><td>${v[0]}</td><td>${v[1]}</td><td>${v[2]}</td><td>${v[3]}</td></tr>`).join('')}</tbody>`;
+}
+
+// Verb Trainer
+let vtQuestions = [];
+let vtState = { i: 0, score: 0, answered: false };
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function buildVerbTrainer() {
+  const chosen = shuffle(irregularVerbs).slice(0, 12);
+  vtQuestions = chosen.map((v, idx) => {
+    const askPast = idx % 2 === 0;
+    const col = askPast ? 1 : 2;
+    const correct = v[col];
+    const distractPool = [...new Set(irregularVerbs.map(x => x[col]).filter(f => f !== correct))];
+    const distr = shuffle(distractPool).slice(0, 3);
+    const opts = shuffle([correct, ...distr]);
+    return { base: v[0], ask: askPast ? "Past Simple" : "Past Participle", it: v[3], opts, ans: opts.indexOf(correct) };
+  });
+}
+
+function startVerbTrainer() {
+  buildVerbTrainer();
+  vtState = { i: 0, score: 0, answered: false };
+  renderVerbTrainer();
+}
+
+function renderVerbTrainer() {
+  const q = vtQuestions[vtState.i];
+  const total = vtQuestions.length;
+  const pct = (vtState.i / total) * 100;
+  document.getElementById('verbTrainer').innerHTML = `
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="vt-base">${q.base}</div>
+    <div class="vt-ask"><span class="it" style="color:var(--muted)">${q.it}</span><br>Qual è il <strong>${q.ask}</strong>?</div>
+    <div class="quiz-opts" id="vt-opts">
+      ${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answerVerbTrainer(${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="vt-fb"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-indigo" id="vt-next" onclick="nextVerbTrainer()" style="display:none">Prossimo →</button>
+      <span class="score-pill">${vtState.score}/${total} ⭐</span>
+    </div>`;
+}
+
+function answerVerbTrainer(chosen) {
+  if (vtState.answered) return;
+  vtState.answered = true;
+  const q = vtQuestions[vtState.i];
+  const opts = document.querySelectorAll('#vt-opts .quiz-opt');
+  const fb = document.getElementById('vt-fb');
+  opts.forEach((o,i)=>{
+    o.disabled = true;
+    if (i===q.ans) o.classList.add('correct');
+    else if (i===chosen && chosen!==q.ans) o.classList.add('wrong');
+  });
+  if (chosen===q.ans) { vtState.score++; fb.textContent="✅ Corretto!"; fb.className="quiz-feedback ok"; }
+  else { fb.textContent=`❌ Era: "${q.opts[q.ans]}"`; fb.className="quiz-feedback err"; }
+  document.getElementById('vt-next').style.display='';
+}
+
+function nextVerbTrainer() {
+  vtState.i++; vtState.answered = false;
+  if (vtState.i >= vtQuestions.length) {
+    saveResult('verbtrainer', vtState.score, vtQuestions.length);
+    const s = vtState.score, t = vtQuestions.length, pct = Math.round(s/t*100);
+    const emoji = pct>=80?'🌟':pct>=60?'😊':'💪';
+    document.getElementById('verbTrainer').innerHTML = `
+      <div style="text-align:center; padding:16px 0;">
+        <div style="font-size:2.5rem;">${emoji}</div>
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.8rem; color:var(--indigo);">${s}/${t}</div>
+        <p style="margin:8px 0 16px; color:var(--muted); font-size:0.9rem;">${pct>=80?'Ottima memoria dei verbi! 🏆':'Ripassa la tabella e riprova! 💪'}</p>
+        <button class="btn btn-indigo" onclick="startVerbTrainer()">🔄 Nuovi verbi</button>
+      </div>`;
+    return;
+  }
+  renderVerbTrainer();
+}
+
+// ═══════════════════════ FINAL TEST ═══════════════════════
+const secTotals = [0,0,0];
+finalTest.forEach(q => secTotals[q.sec]++);
+let ft = { i:0, answered:false, secScore:[0,0,0] };
+
+function startFinal() {
+  ft = { i:0, answered:false, secScore:[0,0,0] };
+  document.getElementById('testIntro').style.display = 'none';
+  document.getElementById('testResult').style.display = 'none';
+  document.getElementById('testArea').style.display = 'block';
+  renderFinal();
+}
+
+function renderFinal() {
+  const item = finalTest[ft.i];
+  const meta = sectionMeta[item.sec];
+  const total = finalTest.length;
+  const pct = (ft.i / total) * 100;
+  const passageHtml = (item.sec === 2 && item.p !== undefined)
+    ? `<div class="reading-box"><h4>📖 ${testPassages[item.p].title}</h4>${testPassages[item.p].text}</div>` : '';
+  document.getElementById('testArea').innerHTML = `
+    <div class="section-banner">
+      <span class="n">${meta.icon}</span>
+      <div><div class="t">Sezione ${item.sec+1} — ${meta.name}</div><div class="s">Domanda ${ft.i+1} di ${total}</div></div>
+      <span class="score-pill" style="margin-left:auto; background:rgba(255,255,255,0.25); color:white;">${ft.secScore.reduce((a,b)=>a+b,0)} ⭐</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    ${passageHtml}
+    <div class="quiz-q">❓ ${item.q}</div>
+    <div class="quiz-opts" id="ft-opts">
+      ${item.opts.map((o,i)=>`<button class="quiz-opt" onclick="answerFinal(${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="ft-fb"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-indigo" id="ft-next" onclick="nextFinal()" style="display:none">Prossima →</button>
+    </div>`;
+  document.getElementById('testArea').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function answerFinal(chosen) {
+  if (ft.answered) return;
+  ft.answered = true;
+  const item = finalTest[ft.i];
+  const opts = document.querySelectorAll('#ft-opts .quiz-opt');
+  const fb = document.getElementById('ft-fb');
+  opts.forEach((o,i)=>{
+    o.disabled = true;
+    if (i===item.ans) o.classList.add('correct');
+    else if (i===chosen && chosen!==item.ans) o.classList.add('wrong');
+  });
+  if (chosen===item.ans) { ft.secScore[item.sec]++; fb.textContent="✅ Corretto!"; fb.className="quiz-feedback ok"; }
+  else { fb.textContent=`❌ Risposta giusta: "${item.opts[item.ans]}"`; fb.className="quiz-feedback err"; }
+  document.getElementById('ft-next').style.display='';
+}
+
+function nextFinal() {
+  ft.i++; ft.answered = false;
+  if (ft.i >= finalTest.length) { showFinalResult(); return; }
+  renderFinal();
+}
+
+function showFinalResult() {
+  const totalScore = ft.secScore.reduce((a,b)=>a+b,0);
+  const totalQ = finalTest.length;
+  const pct = Math.round((totalScore/totalQ)*100);
+  const detail = sectionMeta.map((m,i)=>`${m.name}: ${ft.secScore[i]}/${secTotals[i]}`).join(' · ');
+  saveResult('finaltest', totalScore, totalQ, detail);
+
+  document.getElementById('testArea').style.display = 'none';
+  const r = document.getElementById('testResult');
+  r.style.display = 'block';
+  let emoji, msg, color;
+  if (pct>=90) { emoji='🏆'; msg='Eccezionale, Sofia! Sei pronta per il B1!'; color='var(--green)'; }
+  else if (pct>=70) { emoji='🌟'; msg='Bravissima! Stai andando davvero bene!'; color='var(--indigo)'; }
+  else if (pct>=50) { emoji='😊'; msg='Bene! Ripassa i punti deboli e migliorerai!'; color='var(--blue)'; }
+  else { emoji='💪'; msg='Non mollare! Ripassa la grammatica e riprova!'; color='var(--pink)'; }
+
+  const secRows = sectionMeta.map((m,i)=>`
+    <div class="sec-result-row">
+      <span style="font-size:1.2rem;">${m.icon}</span>
+      <span class="name">${m.name}</span>
+      <span class="val">${ft.secScore[i]}/${secTotals[i]}</span>
+    </div>`).join('');
+
+  r.innerHTML = `
+    <div class="result-box">
+      <div style="font-size:3.5rem;">${emoji}</div>
+      <div class="big-score" style="color:${color}">${totalScore}/${totalQ}</div>
+      <div style="font-size:1rem;color:var(--muted);margin:2px 0;">${pct}% corretto</div>
+      <div class="msg" style="margin-bottom:16px;">${msg}</div>
+      <div style="max-width:360px;margin:0 auto;">${secRows}</div>
+      <div class="progress-bar" style="margin:18px 0 8px;height:12px;">
+        <div class="progress-fill" style="width:${pct}%;background:linear-gradient(90deg,${color},var(--pink));"></div>
+      </div>
+      <button class="btn btn-indigo" onclick="startFinal()" style="margin-top:12px;margin-right:8px;">🔄 Riprova</button>
+      <button class="btn btn-blue" onclick="showFinalIntro()" style="margin-top:12px;">🏠 Menù</button>
+    </div>`;
+}
+
+function showFinalIntro() {
+  document.getElementById('testIntro').style.display='';
+  document.getElementById('testArea').style.display='none';
+  document.getElementById('testResult').style.display='none';
+}
+
+// ═══════════════════════ RESULTS STORAGE ═══════════════════════
+// 🔑 PASSWORD — cambiala qui se vuoi:
+const PARENT_PASSWORD = "daniele2026";
+
+const quizNames = {
+  "q-1":"Gr.1 Present Simple vs Continuous",
+  "q-2":"Gr.2 Quantifiers",
+  "q-3":"Gr.3 Past Simple",
+  "q-4":"Gr.4 Comparativi/Superlativi",
+  "q-5":"Gr.5 Futuro (will/going to)",
+  "q-6":"Gr.6 Conditionals",
+  "q-7":"Gr.7 Present Perfect (been/gone)",
+  "q-8":"Gr.8 Present Perfect vs Past",
+  "q-9":"Gr.9 Possessivi & was/were",
+  "ex-1":"Es.1 Tempi verbali misti",
+  "ex-2":"Es.2 Present Perfect vs Past",
+  "ex-3":"Es.3 Trova l'errore",
+  "ex-4":"Es.4 Completa la parola",
+  "verbtrainer":"⚡ Verb Trainer",
+  "finaltest":"🎯 TEST FINALE"
+};
+
+let memoryResults = [];
+
+function loadResults() {
+  try {
+    const raw = localStorage.getItem('englishBoosterResults');
+    return raw ? JSON.parse(raw) : [];
+  } catch(e) { return memoryResults; }
+}
+
+function saveResult(quizId, score, total, detail) {
+  const entry = {
+    quiz: quizNames[quizId] || quizId,
+    score: score,
+    total: total,
+    detail: detail || "",
+    date: new Date().toLocaleString('it-IT', {day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit'})
+  };
+  try {
+    const all = loadResults();
+    all.push(entry);
+    localStorage.setItem('englishBoosterResults', JSON.stringify(all));
+  } catch(e) {
+    memoryResults.push(entry);
+  }
+}
+
+function checkPassword() {
+  const val = document.getElementById('pwInput').value;
+  const err = document.getElementById('pwError');
+  if (val === PARENT_PASSWORD) {
+    document.getElementById('resultsLock').style.display = 'none';
+    document.getElementById('resultsArea').style.display = 'block';
+    renderResults();
+  } else {
+    err.textContent = "❌ Password sbagliata, riprova!";
+    document.getElementById('pwInput').value = '';
+  }
+}
+
+function renderResults() {
+  const all = loadResults();
+  const list = document.getElementById('resultsList');
+  if (all.length === 0) {
+    list.innerHTML = `<p style="text-align:center; color:var(--muted); padding:20px 0;">
+      Nessun risultato ancora. Quando Sofia completerà quiz e test, appariranno qui! 📭</p>`;
+    return;
+  }
+  const rows = [...all].reverse().map(r => {
+    const pct = Math.round((r.score / r.total) * 100);
+    const color = pct >= 80 ? 'var(--green)' : pct >= 60 ? 'var(--blue)' : pct >= 40 ? 'var(--yellow)' : 'var(--pink)';
+    const isTest = r.quiz.includes('TEST');
+    return `
+      <div style="display:flex; align-items:center; gap:12px; padding:10px 12px;
+        background:${isTest ? '#FFF8E8' : '#F7F5FF'}; border-radius:10px; margin-bottom:8px;
+        border-left:4px solid ${color};">
+        <div style="flex:1;">
+          <div style="font-family:'Nunito',sans-serif; font-weight:700; font-size:0.9rem;">${r.quiz}</div>
+          ${r.detail ? `<div style="font-size:0.72rem; color:var(--indigo); margin:2px 0;">${r.detail}</div>` : ''}
+          <div style="font-size:0.75rem; color:var(--muted);">${r.date}</div>
+        </div>
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.1rem; color:${color};">
+          ${r.score}/${r.total}
+        </div>
+        <div style="font-size:0.8rem; color:var(--muted); min-width:42px; text-align:right;">${pct}%</div>
+      </div>`;
+  }).join('');
+
+  const tests = all.filter(r => r.quiz.includes('TEST'));
+  const others = all.filter(r => !r.quiz.includes('TEST'));
+  const avgPct = arr => arr.length ? Math.round(arr.reduce((s,r) => s + r.score/r.total, 0) / arr.length * 100) : null;
+  const statsHtml = `
+    <div style="display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap;">
+      <div style="flex:1; min-width:120px; background:#ECE8FA; border-radius:12px; padding:12px; text-align:center;">
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.5rem; color:var(--indigo);">${all.length}</div>
+        <div style="font-size:0.75rem; color:var(--muted);">Attività completate</div>
+      </div>
+      <div style="flex:1; min-width:120px; background:#EDFBF6; border-radius:12px; padding:12px; text-align:center;">
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.5rem; color:var(--green);">${avgPct(others) !== null ? avgPct(others) + '%' : '—'}</div>
+        <div style="font-size:0.75rem; color:var(--muted);">Media quiz/esercizi</div>
+      </div>
+      <div style="flex:1; min-width:120px; background:#FFF8E8; border-radius:12px; padding:12px; text-align:center;">
+        <div style="font-family:'Nunito',sans-serif; font-weight:900; font-size:1.5rem; color:#D49000;">${avgPct(tests) !== null ? avgPct(tests) + '%' : '—'}</div>
+        <div style="font-size:0.75rem; color:var(--muted);">Media Test Finale</div>
+      </div>
+    </div>`;
+
+  list.innerHTML = statsHtml + rows;
+}
+
+function copySummary() {
+  const all = loadResults();
+  const fb = document.getElementById('copyFeedback');
+  if (all.length === 0) {
+    fb.textContent = "Nessun risultato da copiare!";
+    fb.style.color = 'var(--pink)';
+    return;
+  }
+  let txt = "📊 RISULTATI ENGLISH BOOSTER (Sofia)\n";
+  txt += "─────────────────────\n";
+  all.forEach(r => {
+    const pct = Math.round((r.score/r.total)*100);
+    txt += `${r.quiz}: ${r.score}/${r.total} (${pct}%)${r.detail ? ' — ['+r.detail+']' : ''} — ${r.date}\n`;
+  });
+  const tests = all.filter(r => r.quiz.includes('TEST'));
+  const others = all.filter(r => !r.quiz.includes('TEST'));
+  const avgPct = arr => arr.length ? Math.round(arr.reduce((s,r) => s + r.score/r.total, 0) / arr.length * 100) : null;
+  txt += "─────────────────────\n";
+  if (avgPct(others) !== null) txt += `Media quiz/esercizi: ${avgPct(others)}%\n`;
+  if (avgPct(tests) !== null) txt += `Media Test Finale: ${avgPct(tests)}%\n`;
+
+  function done(ok) {
+    fb.style.color = ok ? 'var(--green)' : 'var(--pink)';
+    fb.textContent = ok ? "✅ Copiato! Ora incollalo su WhatsApp." : "Copia non riuscita — seleziona e copia il testo qui sotto.";
+    if (!ok) {
+      const pre = document.createElement('textarea');
+      pre.value = txt;
+      pre.style.cssText = 'width:100%; height:140px; margin-top:8px; font-size:0.8rem; padding:8px; border-radius:8px; border:2px solid #E8E0F5;';
+      fb.after(pre);
+      pre.select();
+    }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(() => done(true)).catch(() => done(false));
+  } else { done(false); }
+}
+
+function clearResults() {
+  if (!confirm("Vuoi davvero cancellare tutti i risultati salvati?")) return;
+  try { localStorage.removeItem('englishBoosterResults'); } catch(e) {}
+  memoryResults = [];
+  renderResults();
+}
+
+// ═══════════════════════ INIT ═══════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  Object.keys(quizzes).forEach(id => initQuiz(id));
+  initVocab();
+  initVerbs();
+  startVerbTrainer();
+});
+</script>
+</body>
+</html>

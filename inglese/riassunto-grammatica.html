@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Inglese – Riassunto di grammatica (Verso il B1)</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 18mm 15mm; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #2D2D3F;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  :root {
+    --indigo:#5B5BE6; --purple:#7C3FD4; --pink:#E8497F; --blue:#0090B0;
+    --green:#0A9C77; --orange:#D97A2B;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    height: 250mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    page-break-after: always;
+  }
+  .cover .flag { font-size: 54pt; }
+  .cover h1 {
+    font-size: 30pt;
+    color: var(--indigo);
+    margin: 10pt 0 4pt;
+    letter-spacing: -0.5px;
+  }
+  .cover h2 { font-size: 15pt; color: var(--purple); font-weight: 600; }
+  .cover .sub { margin-top: 18pt; font-size: 12pt; color: #6a6a85; }
+  .cover .badge {
+    margin-top: 22pt;
+    display: inline-block;
+    background: var(--indigo);
+    color: white;
+    padding: 8pt 20pt;
+    border-radius: 30pt;
+    font-weight: 700;
+    font-size: 12pt;
+  }
+  .cover .who { margin-top: 30pt; font-size: 13pt; color: #2D2D3F; }
+  .cover .who b { color: var(--pink); }
+
+  /* ── TOC ── */
+  .toc { page-break-after: always; padding-top: 6mm; }
+  .toc h2 { font-size: 20pt; color: var(--indigo); margin-bottom: 12pt; border-bottom: 3px solid var(--indigo); padding-bottom: 6pt; }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li {
+    counter-increment: toc;
+    padding: 8pt 0;
+    border-bottom: 1px dotted #cfc9e8;
+    font-size: 12pt;
+    display: flex;
+    align-items: baseline;
+  }
+  .toc li::before {
+    content: counter(toc);
+    background: var(--purple);
+    color: white;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 20pt; height: 20pt;
+    min-width: 20pt;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10pt;
+    margin-right: 10pt;
+  }
+  .toc .unit { margin-left: auto; color: #8B8BAD; font-size: 9.5pt; font-style: italic; }
+
+  /* ── CHAPTER ── */
+  .chapter { page-break-before: always; padding-top: 4mm; }
+  .chapter:first-of-type { page-break-before: avoid; }
+  .ch-head {
+    display: flex;
+    align-items: center;
+    gap: 10pt;
+    border-left: 6pt solid var(--indigo);
+    padding: 6pt 0 6pt 12pt;
+    margin-bottom: 12pt;
+  }
+  .ch-head .num {
+    background: var(--indigo);
+    color: white;
+    font-weight: 800;
+    font-size: 15pt;
+    width: 30pt; height: 30pt;
+    min-width: 30pt;
+    border-radius: 8pt;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ch-head h3 { font-size: 16pt; color: var(--indigo); }
+  .ch-head .unit { font-size: 9.5pt; color: #8B8BAD; font-style: italic; }
+
+  .block { margin-bottom: 11pt; }
+  .block h4 {
+    font-size: 11.5pt;
+    color: var(--purple);
+    margin-bottom: 5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .rule {
+    background: #F1EEFF;
+    border-left: 4pt solid var(--purple);
+    border-radius: 4pt;
+    padding: 8pt 12pt;
+    font-size: 10.5pt;
+  }
+  .rule.blue { background: #E7F5FA; border-color: var(--blue); }
+  .rule.green { background: #E7FBF4; border-color: var(--green); }
+  .rule b { color: var(--purple); }
+  .rule.blue b { color: var(--blue); }
+  .rule.green b { color: var(--green); }
+
+  table.forms {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+    margin-top: 4pt;
+  }
+  table.forms th {
+    background: var(--indigo); color: white; text-align: left;
+    padding: 6pt 9pt; font-weight: 700;
+  }
+  table.forms td { padding: 6pt 9pt; border-bottom: 1px solid #e3ddf3; }
+  table.forms tr:nth-child(even) td { background: #F7F5FF; }
+  table.forms td:first-child { font-weight: 700; color: var(--indigo); white-space: nowrap; }
+
+  ul.ex { list-style: none; margin-top: 3pt; }
+  ul.ex li { padding: 3pt 0 3pt 16pt; position: relative; font-size: 10.5pt; }
+  ul.ex li::before { content: "→"; position: absolute; left: 0; color: var(--pink); font-weight: 700; }
+  ul.ex .it { color: #8B8BAD; font-style: italic; font-size: 9pt; }
+
+  .warn {
+    background: #FFF3E8;
+    border-left: 4pt solid var(--orange);
+    border-radius: 4pt;
+    padding: 8pt 12pt;
+    font-size: 10pt;
+  }
+  .warn b { color: var(--orange); }
+
+  /* ── PRACTICE ── */
+  .practice {
+    margin-top: 11pt;
+    background: #F1FCF8;
+    border: 1.5pt solid #B8ECD9;
+    border-radius: 6pt;
+    padding: 9pt 13pt 8pt;
+  }
+  .practice h4 {
+    font-size: 11pt;
+    color: var(--green);
+    margin-bottom: 5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .practice ol { margin: 0 0 0 18pt; font-size: 10.5pt; }
+  .practice ol li { padding: 3.5pt 0; line-height: 1.4; }
+  .practice .hint { color:#8B8BAD; font-style:italic; font-size:9pt; }
+  .practice .blank { letter-spacing:1px; color:#5B5BE6; font-weight:700; }
+  .solutions {
+    margin-top: 7pt;
+    padding-top: 5pt;
+    border-top: 1px dashed #cfe9df;
+    font-size: 8.5pt;
+    color: #9a9ab0;
+  }
+  .solutions b { color:#6a6a85; }
+
+  .foot { text-align:center; color:#a9a9c0; font-size:9pt; margin-top:14pt; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="cover">
+  <div class="flag">🇬🇧</div>
+  <h1>Inglese — Riassunto di Grammatica</h1>
+  <h2>Verso il B1 · Prima Liceo</h2>
+  <div class="sub">Regole ed esempi dei 9 argomenti chiave del programma</div>
+  <div class="badge">RIPASSO COMPLETO</div>
+  <div class="who">Preparato per <b>Sofia</b> 💪</div>
+</div>
+
+<!-- ══════════ TOC ══════════ -->
+<div class="toc">
+  <h2>Indice dei capitoli</h2>
+  <ol>
+    <li>Present Simple vs Present Continuous <span class="unit">Units 2–3</span></li>
+    <li>Quantifiers (much, many, some, any…) <span class="unit">Unit 4</span></li>
+    <li>Past Simple <span class="unit">Units 6–7</span></li>
+    <li>Comparativi e Superlativi <span class="unit">Unit 8</span></li>
+    <li>Il Futuro: will / going to / present continuous <span class="unit">Units 9–10</span></li>
+    <li>Zero &amp; First Conditional <span class="unit">Unit 10</span></li>
+    <li>Present Perfect + ever/never · been vs gone <span class="unit">Unit 11</span></li>
+    <li>Present Perfect (just/already/yet) vs Past Simple <span class="unit">Unit 12</span></li>
+    <li>Possessivi, pronomi &amp; was/were <span class="unit">Unit 5</span></li>
+  </ol>
+  <p class="foot">Suggerimento: leggi un paio di capitoli al giorno, poi verifica con i quiz della app “English Booster”. 🚀</p>
+</div>
+
+<!-- ══════════ 1 ══════════ -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="num">1</span>
+    <div><h3>Present Simple vs Present Continuous</h3><span class="unit">Units 2–3</span></div>
+  </div>
+
+  <div class="block">
+    <h4>Quando si usa</h4>
+    <div class="rule"><b>Present Simple</b> → abitudini, routine, fatti sempre veri, gusti.<br>
+      <b>Present Continuous</b> → azioni in corso ADESSO o situazioni temporanee.</div>
+  </div>
+
+  <div class="block">
+    <h4>Forma</h4>
+    <table class="forms">
+      <tr><th>&nbsp;</th><th>Present Simple</th><th>Present Continuous</th></tr>
+      <tr><td>Affermativa</td><td>I work / she work<b>s</b></td><td>I <b>am</b> working / she <b>is</b> working</td></tr>
+      <tr><td>Negativa</td><td>I <b>don't</b> / she <b>doesn't</b> work</td><td>I <b>'m not</b> / she <b>isn't</b> working</td></tr>
+      <tr><td>Interrogativa</td><td><b>Do</b> I / <b>Does</b> she work?</td><td><b>Am</b> I / <b>Is</b> she working?</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4>Regola chiave: Stative verbs</h4>
+    <div class="rule blue">Alcuni verbi (di stato) <b>non</b> si usano al continuous: <i>like, love, hate, want, need, know, understand, believe, prefer, seem</i> e i verbi di percezione <i>see, hear, taste, smell</i>.</div>
+  </div>
+
+  <div class="block">
+    <h4>Esempi</h4>
+    <ul class="ex">
+      <li>She usually <b>walks</b> to school. <span class="it">(abitudine)</span></li>
+      <li>Look! She <b>is walking</b> in the rain. <span class="it">(adesso)</span></li>
+      <li>I <b>love</b> this book. <span class="it">(NON “I am loving”)</span></li>
+    </ul>
+  </div>
+
+  <div class="warn"><b>Attenzione:</b> aggiungi <b>-s</b> alla 3ª persona singolare del present simple (he/she/it): <i>he play<u>s</u></i>. Con <i>-o, -ss, -sh, -ch, -x</i> → <b>-es</b> (go → go<u>es</u>).</div>
+
+  <div class="practice">
+    <h4>✍️ Mettiti alla prova</h4>
+    <ol>
+      <li>Every morning my dad <span class="blank">________</span> <span class="hint">(drive)</span> to work.</li>
+      <li>Listen! The birds <span class="blank">________</span> <span class="hint">(sing)</span> in the garden.</li>
+      <li>I <span class="blank">________</span> <span class="hint">(not / understand)</span> this exercise.</li>
+      <li>She usually <span class="blank">________</span> <span class="hint">(wear)</span> jeans, but today she <span class="blank">________</span> <span class="hint">(wear)</span> a skirt.</li>
+    </ol>
+    <div class="solutions"><b>Soluzioni:</b> 1 drives · 2 are singing · 3 don't understand · 4 wears / is wearing</div>
+  </div>
+</div>
+
+<!-- ══════════ 2 ══════════ -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="num">2</span>
+    <div><h3>Quantifiers</h3><span class="unit">Unit 4</span></div>
+  </div>
+
+  <div class="block">
+    <h4>Countable vs Uncountable</h4>
+    <div class="rule"><b>Countable</b> = si contano (an apple → three apples). <b>Uncountable</b> = non si contano (water, money, bread, sugar): sempre singolari.</div>
+  </div>
+
+  <div class="block">
+    <h4>Quale quantificatore?</h4>
+    <table class="forms">
+      <tr><th>Con countable (plurale)</th><th>Con uncountable</th></tr>
+      <tr><td>how <b>many</b>?</td><td>how <b>much</b>?</td></tr>
+      <tr><td>too <b>many</b> (troppi)</td><td>too <b>much</b> (troppo)</td></tr>
+      <tr><td>a <b>few</b> (alcuni)</td><td>a <b>little</b> (un po')</td></tr>
+      <tr><td colspan="2" style="text-align:center;background:#F1EEFF;"><b>a lot of / lots of</b> → con entrambi</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4>some / any · too / enough</h4>
+    <div class="rule green"><b>some</b> = frasi affermative e offerte/richieste · <b>any</b> = negative e domande.<br>
+      <b>too + aggettivo</b> = troppo (It's <i>too</i> hot). <b>aggettivo + enough</b> = abbastanza (warm <i>enough</i>). <b>not enough</b> = non abbastanza.</div>
+  </div>
+
+  <div class="block">
+    <h4>Esempi</h4>
+    <ul class="ex">
+      <li>There isn't <b>any</b> sugar, but there are <b>some</b> biscuits.</li>
+      <li>How <b>much</b> water? / How <b>many</b> eggs?</li>
+      <li>This coffee is <b>too</b> hot and it isn't sweet <b>enough</b>.</li>
+    </ul>
+  </div>
+
+  <div class="warn"><b>Attenzione:</b> <i>much</i> in frasi affermative è raro: meglio <b>a lot of</b> (I have <u>a lot of</u> homework, non “much homework”).</div>
+
+  <div class="practice">
+    <h4>✍️ Mettiti alla prova</h4>
+    <ol>
+      <li>There aren't <span class="blank">________</span> eggs in the fridge. <span class="hint">(some / any)</span></li>
+      <li>How <span class="blank">________</span> time do we have? <span class="hint">(much / many)</span></li>
+      <li>I have <span class="blank">________</span> friends in London. <span class="hint">(much / a lot of)</span></li>
+      <li>This tea is <span class="blank">________</span> sweet; I can't drink it. <span class="hint">(too / enough)</span></li>
+    </ol>
+    <div class="solutions"><b>Soluzioni:</b> 1 any · 2 much · 3 a lot of · 4 too</div>
+  </div>
+</div>
+
+<!-- ══════════ 3 ══════════ -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="num">3</span>
+    <div><h3>Past Simple</h3><span class="unit">Units 6–7</span></div>
+  </div>
+
+  <div class="block">
+    <h4>Quando si usa</h4>
+    <div class="rule">Azioni <b>concluse</b> nel passato, spesso con <i>yesterday, last week, in 2020, two days ago</i>.</div>
+  </div>
+
+  <div class="block">
+    <h4>Forma</h4>
+    <table class="forms">
+      <tr><th>Forma</th><th>Regolari (+ed)</th><th>Irregolari</th></tr>
+      <tr><td>Affermativa</td><td>I play<b>ed</b></td><td>I <b>went</b></td></tr>
+      <tr><td>Negativa</td><td colspan="2">I <b>didn't</b> play / go <span class="it">(verbo base!)</span></td></tr>
+      <tr><td>Interrogativa</td><td colspan="2"><b>Did</b> you play / go?</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4>Regola chiave: spelling regolari</h4>
+    <div class="rule blue">verbo + <b>-ed</b>. Se finisce in <i>-e</i> → +d (like → liked). <i>consonante + y</i> → -ied (study → studied). Consonante finale spesso raddoppia (stop → sto<b>pp</b>ed).</div>
+  </div>
+
+  <div class="block">
+    <h4>Esempi</h4>
+    <ul class="ex">
+      <li>We <b>watched</b> a film and <b>had</b> pizza. <span class="it">(reg. + irreg.)</span></li>
+      <li>She <b>didn't come</b> to the party.</li>
+      <li><b>Did</b> you <b>enjoy</b> the trip?</li>
+    </ul>
+  </div>
+
+  <div class="warn"><b>Errore comune:</b> dopo <i>did/didn't</i> NON si usa il passato: <i>Did you <u>went</u>?</i> ❌ → <i>Did you <u>go</u>?</i> ✅</div>
+
+  <div class="practice">
+    <h4>✍️ Mettiti alla prova</h4>
+    <ol>
+      <li>Last weekend we <span class="blank">________</span> <span class="hint">(go)</span> to the mountains.</li>
+      <li>She <span class="blank">________</span> <span class="hint">(not / watch)</span> the film.</li>
+      <li><span class="blank">________</span> you <span class="blank">________</span> <span class="hint">(buy)</span> the tickets?</li>
+      <li>They <span class="blank">________</span> <span class="hint">(have)</span> a great time at the party.</li>
+    </ol>
+    <div class="solutions"><b>Soluzioni:</b> 1 went · 2 didn't watch · 3 Did … buy · 4 had</div>
+  </div>
+</div>
+
+<!-- ══════════ 4 ══════════ -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="num">4</span>
+    <div><h3>Comparativi e Superlativi</h3><span class="unit">Unit 8</span></div>
+  </div>
+
+  <div class="block">
+    <h4>Forma</h4>
+    <table class="forms">
+      <tr><th>Aggettivo</th><th>Comparativo (di più)</th><th>Superlativo (il più)</th></tr>
+      <tr><td>corti (tall, fast)</td><td>tall<b>er</b> than</td><td>the tall<b>est</b></td></tr>
+      <tr><td>lunghi (modern)</td><td><b>more</b> modern than</td><td>the <b>most</b> modern</td></tr>
+      <tr><td>in -y (easy, happy)</td><td>eas<b>ier</b> than</td><td>the eas<b>iest</b></td></tr>
+      <tr><td>irregolari</td><td>good→<b>better</b>, bad→<b>worse</b></td><td>the <b>best</b>, the <b>worst</b></td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4>Regola chiave: as … as</h4>
+    <div class="rule green"><b>as + aggettivo + as</b> = uguaglianza (tanto…quanto): <i>She is <b>as tall as</b> her brother.</i> Negativo: <i>not as … as</i> = meno di.</div>
+  </div>
+
+  <div class="block">
+    <h4>Esempi</h4>
+    <ul class="ex">
+      <li>A plane is <b>faster than</b> a train.</li>
+      <li>This is <b>the most</b> beautiful beach in Italy.</li>
+      <li>Today is <b>as</b> sunny <b>as</b> yesterday.</li>
+    </ul>
+  </div>
+
+  <div class="warn"><b>Errore comune:</b> mai due comparativi insieme: <i>more taller</i> ❌ → <i>taller</i> ✅. E dopo il comparativo si usa <b>than</b>, non “that”.</div>
+
+  <div class="practice">
+    <h4>✍️ Mettiti alla prova</h4>
+    <ol>
+      <li>A cheetah is <span class="blank">________</span> <span class="hint">(fast)</span> than a lion.</li>
+      <li>This is <span class="blank">________</span> <span class="hint">(interesting)</span> book I've ever read.</li>
+      <li>My bag isn't <span class="blank">________</span> heavy <span class="blank">________</span> yours. <span class="hint">(as … as)</span></li>
+      <li>Winter is <span class="blank">________</span> <span class="hint">(bad)</span> season for me.</li>
+    </ol>
+    <div class="solutions"><b>Soluzioni:</b> 1 faster · 2 the most interesting · 3 as … as · 4 the worst</div>
+  </div>
+</div>
+
+<!-- ══════════ 5 ══════════ -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="num">5</span>
+    <div><h3>Il Futuro: will / going to / present continuous</h3><span class="unit">Units 9–10</span></div>
+  </div>
+
+  <div class="block">
+    <h4>Quale futuro?</h4>
+    <table class="forms">
+      <tr><th>Forma</th><th>Quando</th></tr>
+      <tr><td>will + base</td><td>decisioni sul momento, previsioni, promesse, offerte</td></tr>
+      <tr><td>be going to + base</td><td>piani/intenzioni già decisi, prove evidenti</td></tr>
+      <tr><td>present continuous</td><td>appuntamenti fissati (con orario/luogo)</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4>Regola chiave</h4>
+    <div class="rule blue"><b>will</b> spesso con <i>I think, probably, maybe, I'm sure</i>. <b>going to</b> quando c'è già un piano o una prova (dark clouds → it's going to rain).</div>
+  </div>
+
+  <div class="block">
+    <h4>Esempi</h4>
+    <ul class="ex">
+      <li>The bag is heavy. I <b>'ll</b> carry it for you. <span class="it">(decisione ora)</span></li>
+      <li>We <b>are going to</b> paint the house next week. <span class="it">(piano)</span></li>
+      <li>I <b>'m meeting</b> Sofia at 6 p.m. <span class="it">(appuntamento)</span></li>
+    </ul>
+  </div>
+
+  <div class="warn"><b>Attenzione:</b> forma di <i>going to</i> = <b>am/is/are + going to + verbo base</b>. Non dimenticare il verbo <i>be</i>: <i>I going to…</i> ❌</div>
+
+  <div class="practice">
+    <h4>✍️ Mettiti alla prova</h4>
+    <ol>
+      <li>Look at the sky! It <span class="blank">________</span> <span class="hint">(rain)</span> soon.</li>
+      <li>I'm tired. I think I <span class="blank">________</span> <span class="hint">(go)</span> to bed.</li>
+      <li>We <span class="blank">________</span> <span class="hint">(meet)</span> Anna at 5 — it's arranged.</li>
+      <li>A: The phone's ringing. B: I <span class="blank">________</span> <span class="hint">(answer)</span> it.</li>
+    </ol>
+    <div class="solutions"><b>Soluzioni:</b> 1 is going to rain · 2 will go · 3 are meeting · 4 will answer</div>
+  </div>
+</div>
+
+<!-- ══════════ 6 ══════════ -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="num">6</span>
+    <div><h3>Zero &amp; First Conditional</h3><span class="unit">Unit 10</span></div>
+  </div>
+
+  <div class="block">
+    <h4>Forma</h4>
+    <table class="forms">
+      <tr><th>Tipo</th><th>Struttura</th><th>Uso</th></tr>
+      <tr><td>Zero</td><td>if + <b>present</b>, <b>present</b></td><td>verità / leggi generali</td></tr>
+      <tr><td>First</td><td>if + <b>present</b>, <b>will</b> + base</td><td>futuro possibile e reale</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4>Regola chiave: niente “will” dopo if</h4>
+    <div class="rule blue">Dopo <b>if</b>, <b>when</b>, <b>as soon as</b>, <b>until</b> si usa il <b>presente</b>, mai il <i>will</i>: <i>If it <u>rains</u>, we will stay home.</i></div>
+  </div>
+
+  <div class="block">
+    <h4>Esempi</h4>
+    <ul class="ex">
+      <li>If you mix blue and yellow, you <b>get</b> green. <span class="it">(zero)</span></li>
+      <li>If I <b>study</b>, I <b>'ll pass</b> the test. <span class="it">(first)</span></li>
+      <li>I'll text you as soon as I <b>arrive</b>.</li>
+    </ul>
+  </div>
+
+  <div class="warn"><b>Errore comune:</b> <i>If it <u>will rain</u>…</i> ❌ → <i>If it <u>rains</u>…</i> ✅. Le due parti possono invertirsi: <i>We'll stay home if it rains.</i></div>
+
+  <div class="practice">
+    <h4>✍️ Mettiti alla prova</h4>
+    <ol>
+      <li>If you <span class="blank">________</span> <span class="hint">(not / hurry)</span>, you'll miss the bus.</li>
+      <li>Ice <span class="blank">________</span> <span class="hint">(melt)</span> if you leave it in the sun.</li>
+      <li>If it's sunny tomorrow, we <span class="blank">________</span> <span class="hint">(go)</span> to the beach.</li>
+      <li>I'll call you as soon as I <span class="blank">________</span> <span class="hint">(arrive)</span>.</li>
+    </ol>
+    <div class="solutions"><b>Soluzioni:</b> 1 don't hurry · 2 melts · 3 will go · 4 arrive</div>
+  </div>
+</div>
+
+<!-- ══════════ 7 ══════════ -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="num">7</span>
+    <div><h3>Present Perfect + ever/never · been vs gone</h3><span class="unit">Unit 11</span></div>
+  </div>
+
+  <div class="block">
+    <h4>Forma</h4>
+    <table class="forms">
+      <tr><th>Forma</th><th>Esempio</th></tr>
+      <tr><td>Affermativa</td><td>I <b>have</b> / she <b>has</b> + <b>past participle</b> (3ª colonna)</td></tr>
+      <tr><td>Negativa</td><td>I <b>haven't</b> / she <b>hasn't</b> been…</td></tr>
+      <tr><td>Interrogativa</td><td><b>Have</b> you <b>ever</b> been…?</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4>Regola chiave: been vs gone</h4>
+    <div class="rule green"><b>been to</b> = andato e <u>tornato</u> (esperienza): <i>I've been to London.</i><br>
+      <b>gone to</b> = andato e <u>ancora là</u>: <i>She's gone to the shops (non è tornata).</i></div>
+  </div>
+
+  <div class="block">
+    <h4>Esempi</h4>
+    <ul class="ex">
+      <li>I have <b>never</b> tried sushi. <span class="it">(mai in vita mia)</span></li>
+      <li><b>Have</b> you <b>ever</b> been to Spain?</li>
+      <li>Mum isn't home: she <b>has gone</b> to work.</li>
+    </ul>
+  </div>
+
+  <div class="warn"><b>Attenzione:</b> il present perfect si usa senza dire <u>quando</u>. Se indichi un tempo passato preciso, usa il Past Simple (vedi capitolo 8).</div>
+
+  <div class="practice">
+    <h4>✍️ Mettiti alla prova</h4>
+    <ol>
+      <li>I <span class="blank">________</span> <span class="hint">(never / eat)</span> sushi.</li>
+      <li><span class="blank">________</span> you ever <span class="blank">________</span> <span class="hint">(be)</span> to New York?</li>
+      <li>She's not here — she <span class="blank">________</span> <span class="hint">(go)</span> to the gym.</li>
+      <li>We <span class="blank">________</span> <span class="hint">(be)</span> to that museum twice.</li>
+    </ol>
+    <div class="solutions"><b>Soluzioni:</b> 1 have never eaten · 2 Have … been · 3 has gone · 4 have been</div>
+  </div>
+</div>
+
+<!-- ══════════ 8 ══════════ -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="num">8</span>
+    <div><h3>Present Perfect (just/already/yet) vs Past Simple</h3><span class="unit">Unit 12</span></div>
+  </div>
+
+  <div class="block">
+    <h4>just / already / yet</h4>
+    <table class="forms">
+      <tr><th>Parola</th><th>Significato</th><th>Posizione</th></tr>
+      <tr><td>just</td><td>appena</td><td>have <b>just</b> done</td></tr>
+      <tr><td>already</td><td>già (affermativa)</td><td>have <b>already</b> done</td></tr>
+      <tr><td>yet</td><td>ancora / già (neg. e domande)</td><td>…done <b>yet</b>? (a fine frase)</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4>Regola chiave: quale tempo?</h4>
+    <div class="rule blue"><b>Present Perfect</b> → tempo non finito o non precisato (today, this week, ever, never).<br>
+      <b>Past Simple</b> → tempo finito e preciso (yesterday, last year, in 2019, ago).</div>
+  </div>
+
+  <div class="block">
+    <h4>Esempi</h4>
+    <ul class="ex">
+      <li>I've <b>just</b> finished my homework. <span class="it">(appena)</span></li>
+      <li>Have you eaten <b>yet</b>? – No, not <b>yet</b>.</li>
+      <li>We <b>visited</b> Rome <b>in 2019</b>. <span class="it">(past simple)</span></li>
+    </ul>
+  </div>
+
+  <div class="warn"><b>Errore comune:</b> <i>I have seen him <u>yesterday</u></i> ❌ → <i>I <u>saw</u> him yesterday</i> ✅ (tempo preciso = Past Simple).</div>
+
+  <div class="practice">
+    <h4>✍️ Mettiti alla prova</h4>
+    <ol>
+      <li>I've <span class="blank">________</span> finished my homework! <span class="hint">(appena)</span></li>
+      <li>Have you called him <span class="blank">________</span>? <span class="hint">(ancora)</span></li>
+      <li>She <span class="blank">________</span> <span class="hint">(already / see)</span> that film.</li>
+      <li>We <span class="blank">________</span> <span class="hint">(meet)</span> them last summer.</li>
+    </ol>
+    <div class="solutions"><b>Soluzioni:</b> 1 just · 2 yet · 3 has already seen · 4 met</div>
+  </div>
+</div>
+
+<!-- ══════════ 9 ══════════ -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="num">9</span>
+    <div><h3>Possessivi, pronomi &amp; was/were</h3><span class="unit">Unit 5</span></div>
+  </div>
+
+  <div class="block">
+    <h4>Aggettivi e pronomi possessivi</h4>
+    <table class="forms">
+      <tr><th>Aggettivo (+ nome)</th><th>Pronome (da solo)</th></tr>
+      <tr><td>my, your, his, her, its, our, their</td><td>mine, yours, his, hers, —, ours, theirs</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4>Regole chiave</h4>
+    <div class="rule"><b>whose</b> = di chi (possesso) · <b>who's</b> = who is / who has.<br>
+      <b>Double genitive:</b> <i>a friend of mine</i> = un mio amico.<br>
+      <b>Infinitive of purpose:</b> <i>to</i> + verbo = “per” (I went out <i>to buy</i> milk).<br>
+      <b>was/were</b> = passato di <i>be</i>: I/he/she/it <b>was</b> — you/we/they <b>were</b>.</div>
+  </div>
+
+  <div class="block">
+    <h4>Esempi</h4>
+    <ul class="ex">
+      <li><b>Whose</b> jacket is this? It's <b>hers</b>.</li>
+      <li>He's a cousin <b>of mine</b>.</li>
+      <li>Where <b>were</b> you? I <b>was</b> at the gym.</li>
+      <li>I called <b>to say</b> thank you. <span class="it">(infinito di scopo)</span></li>
+    </ul>
+  </div>
+
+  <div class="warn"><b>Errore comune:</b> non confondere <i>who's</i> (who is) con <i>whose</i> (di chi): <i>Whose book?</i> ✅ · <i>Who's there?</i> ✅</div>
+
+  <div class="practice">
+    <h4>✍️ Mettiti alla prova</h4>
+    <ol>
+      <li><span class="blank">________</span> umbrella is this? It's <span class="blank">________</span>. <span class="hint">(di chi… / di lei)</span></li>
+      <li>They <span class="blank">________</span> <span class="hint">(be)</span> at the cinema yesterday.</li>
+      <li>He's an old friend <span class="blank">________</span>. <span class="hint">(di me)</span></li>
+      <li>I went out <span class="blank">________</span> buy some bread. <span class="hint">(per)</span></li>
+    </ol>
+    <div class="solutions"><b>Soluzioni:</b> 1 Whose … hers · 2 were · 3 of mine · 4 to</div>
+  </div>
+
+  <p class="foot">Fine del riassunto · Buono studio, Sofia! 🌟 — Allenati con la app “English Booster”.</p>
+</div>
+
+</body>
+</html>
