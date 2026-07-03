@@ -9,7 +9,7 @@
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    color: #23233a; font-size: 9.6pt; line-height: 1.42;
+    color: #23233a; font-size: 9.6pt; line-height: 1.33;
   }
   :root {
     --navy:#213A8F; --royal:#2F5AD0; --red:#C0392B; --teal:#0E7C86;
@@ -52,15 +52,14 @@
   .toc-mini { margin-top:12pt; }
   .toc-mini div { padding:6pt 10pt; border-radius:6pt; margin-bottom:6pt; font-weight:600; font-size:10.6pt; color:white; }
 
-  /* ── GRID (two columns) ── */
-  .grid { column-count: 2; column-gap: 7mm; }
+  /* ── LEVELS (one page each, two balanced columns within) ── */
+  .level + .level { page-break-before: always; }
+  .cols { column-count: 2; column-gap: 7mm; }
   .sec-head {
-    column-span: all; -webkit-column-span: all;
     display:flex; align-items:center; gap:10pt;
-    color:white; border-radius:7pt; padding:7pt 13pt; margin: 2pt 0 9pt;
+    color:white; border-radius:7pt; padding:6pt 13pt; margin: 0 0 6pt;
     break-after: avoid;
   }
-  .sec-head:not(:first-child){ margin-top: 6pt; }
   .sec-head.h1c{ background:#5B8DEF; }
   .sec-head.h2c{ background:#2F5AD0; }
   .sec-head.h3c{ background:#213A8F; }
@@ -70,12 +69,12 @@
 
   .pv {
     break-inside: avoid; -webkit-column-break-inside: avoid;
-    padding: 4pt 0 6pt;
+    padding: 3pt 0 4pt;
     border-bottom: 1px solid #e9e9f2;
-    margin-bottom: 3pt;
+    margin-bottom: 2pt;
   }
   .pv-term {
-    font-weight: 800; color: var(--navy); font-size: 10.6pt;
+    font-weight: 800; color: var(--navy); font-size: 10.3pt;
   }
   .pv-tag {
     font-size: 8.3pt; color: var(--muted); font-style: italic; margin-left: 5pt;
@@ -84,15 +83,15 @@
     font-size: 8pt; font-weight:700; color: var(--red);
     background:#FBEDEC; padding:1pt 6pt; border-radius:10pt; margin-left:5pt;
   }
-  .pv-def { font-size: 9.4pt; margin: 2pt 0 3pt; }
+  .pv-def { font-size: 9.2pt; margin: 1pt 0 2pt; }
   .pv-ex { list-style: none; }
   .pv-ex li {
-    padding: 1.5pt 0 1.5pt 13pt; position: relative; font-size: 9.2pt; color:#3a3a55;
+    padding: 1pt 0 1pt 13pt; position: relative; font-size: 9pt; color:#3a3a55;
   }
   .pv-ex li::before { content:"“"; position:absolute; left:1pt; color:var(--teal); font-weight:700; font-size:11pt; top:0.5pt; }
   .pv-ex li em { color:#5a5a72; }
 
-  .foot { column-span: all; text-align:center; color:#a9a9c0; font-size:9pt; margin-top:11pt; }
+  .foot { text-align:center; color:#a9a9c0; font-size:9pt; margin-top:9pt; }
 </style>
 </head>
 <body>
@@ -138,10 +137,10 @@
   </div>
 </div>
 
-<!-- ══════════ PHRASAL-VERB GRID (two columns) ══════════ -->
-<div class="grid">
-
+<!-- ══════════ PHRASAL-VERB LEVELS (one page each, two columns) ══════════ -->
+<div class="level">
   <div class="sec-head h1c"><div><div class="lv">Level 1 · B2 → C1</div><h3>Foundations</h3></div></div>
+  <div class="cols">
 
   <div class="pv"><span class="pv-term">get by</span><span class="pv-tag">manage, survive</span>
     <div class="pv-def">To manage to live or cope with the limited money, skills or resources you have.</div>
@@ -202,8 +201,12 @@
   <div class="pv"><span class="pv-term">get on with</span><span class="pv-tag">relate to; progress</span>
     <div class="pv-def">(1) To have a friendly relationship with someone. (2) To continue or make progress with a task.</div>
     <ul class="pv-ex"><li>The two of them get on like a house on fire.</li><li>I'd better get on with my essay.</li></ul></div>
+  </div>
+</div>
 
+<div class="level">
   <div class="sec-head h2c"><div><div class="lv">Level 2 · C1</div><h3>Building fluency</h3></div></div>
+  <div class="cols">
 
   <div class="pv"><span class="pv-term">put forward</span><span class="pv-tag">propose</span>
     <div class="pv-def">To propose an idea, plan or candidate for others to consider.</div>
@@ -264,8 +267,12 @@
   <div class="pv"><span class="pv-term">take on</span><span class="pv-tag">accept; employ; acquire</span>
     <div class="pv-def">(1) To accept work or responsibility. (2) To employ someone. (3) To begin to have a quality.</div>
     <ul class="pv-ex"><li>She's taken on far too much this term.</li><li>The firm is taking on new staff.</li></ul></div>
+  </div>
+</div>
 
+<div class="level">
   <div class="sec-head h3c"><div><div class="lv">Level 3 · C1 → C2</div><h3>Advanced</h3></div></div>
+  <div class="cols">
 
   <div class="pv"><span class="pv-term">wear off</span><span class="pv-tag">fade gradually</span>
     <div class="pv-def">(Of an effect or feeling) to disappear slowly over time.</div>
@@ -326,8 +333,12 @@
   <div class="pv"><span class="pv-term">rope in</span><span class="pv-tag">recruit reluctantly</span><span class="pv-reg">informal</span>
     <div class="pv-def">To persuade someone to take part in an activity, often when they are reluctant.</div>
     <ul class="pv-ex"><li>I got roped into helping with the school fair.</li><li>They roped in a few friends to move the piano.</li></ul></div>
+  </div>
+</div>
 
+<div class="level">
   <div class="sec-head h4c"><div><div class="lv">Level 4 · C2</div><h3>Proficiency &amp; idiomatic (British)</h3></div></div>
+  <div class="cols">
 
   <div class="pv"><span class="pv-term">cotton on (to)</span><span class="pv-tag">start to understand</span><span class="pv-reg">informal</span>
     <div class="pv-def">To begin to understand or realise something, often slowly.</div>
@@ -388,7 +399,7 @@
   <div class="pv"><span class="pv-term">live up to</span><span class="pv-tag">meet expectations</span>
     <div class="pv-def">To be as good as what was expected, promised or hoped for.</div>
     <ul class="pv-ex"><li>The film didn't quite live up to the hype.</li><li>She worked hard to live up to her parents' expectations.</li></ul></div>
-
+  </div>
   <p class="foot">60 phrasal verbs · B2 → C2 · Keep a notebook and add your own examples as you meet them in reading and listening.</p>
 </div>
 
