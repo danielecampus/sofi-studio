@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>English Idioms — Meanings & Examples</title>
+<style>
+  @page { size: A4; margin: 13mm 13mm 14mm 13mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #23233a; font-size: 9.6pt; line-height: 1.42;
+  }
+  :root {
+    --navy:#213A8F; --royal:#2F5AD0; --red:#C0392B; --teal:#0E7C86;
+    --green:#0A9C77; --amber:#C77A0A; --muted:#7d7d95;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    height: 262mm; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    page-break-after: always;
+  }
+  .cover .flag { font-size: 50pt; }
+  .cover h1 { font-size: 30pt; color: var(--navy); margin: 8pt 0 2pt; letter-spacing:-0.5px; }
+  .cover h2 { font-size: 15pt; color: var(--royal); font-weight: 600; }
+  .cover .sub { margin-top: 16pt; font-size: 11.5pt; color: #5a5a72; max-width: 132mm; }
+  .cover .chips { margin-top: 22pt; display:flex; flex-wrap:wrap; gap:7pt; justify-content:center; max-width:150mm; }
+  .cover .chip {
+    color:white; padding:6pt 13pt; border-radius: 20pt;
+    font-weight:700; font-size:10pt;
+  }
+  .cover .chip:nth-child(1){ background:#5B8DEF; }
+  .cover .chip:nth-child(2){ background:#2F5AD0; }
+  .cover .chip:nth-child(3){ background:#213A8F; }
+  .cover .chip:nth-child(4){ background:#C0392B; }
+  .cover .who { margin-top: 26pt; font-size: 12pt; color:#23233a; }
+
+  /* ── GUIDE ── */
+  .guide { page-break-after: always; padding-top: 4mm; }
+  .guide h2 { font-size: 18pt; color: var(--navy); margin-bottom: 9pt; border-bottom: 3px solid var(--navy); padding-bottom: 5pt; }
+  .guide h3 { font-size: 11.5pt; color: var(--royal); margin: 11pt 0 4pt; }
+  .guide p { margin-bottom: 6pt; font-size: 10.2pt; }
+  .tipbox {
+    background:#EEF3FF; border-left:4pt solid var(--royal); border-radius:5pt;
+    padding:9pt 13pt; margin-top:10pt; font-size:10pt;
+  }
+  .tipbox b { color: var(--royal); }
+  .toc-mini { margin-top:12pt; }
+  .toc-mini div { padding:6pt 10pt; border-radius:6pt; margin-bottom:6pt; font-weight:600; font-size:10.4pt; color:white; }
+
+  /* ── IDIOM GRID (two columns) ── */
+  .grid { column-count: 2; column-gap: 7mm; }
+  .sec-head {
+    column-span: all; -webkit-column-span: all;
+    display:flex; align-items:center; gap:10pt;
+    color:white; border-radius:7pt; padding:7pt 13pt;
+    margin: 2pt 0 9pt; break-after: avoid;
+  }
+  .sec-head:not(:first-child){ margin-top: 6pt; }
+  .sec-1 .sec-head, .sec-head.h1c{ background:#5B8DEF; }
+  .sec-head.h2c{ background:#2F5AD0; }
+  .sec-head.h3c{ background:#213A8F; }
+  .sec-head.h4c{ background:#C0392B; }
+  .sec-head .lv { font-size:8.4pt; font-weight:700; letter-spacing:0.5px; opacity:0.92; text-transform:uppercase; }
+  .sec-head h3 { font-size:14pt; }
+
+  .idiom {
+    break-inside: avoid; -webkit-column-break-inside: avoid;
+    padding: 4pt 0 6pt;
+    border-bottom: 1px solid #e9e9f2;
+    margin-bottom: 3pt;
+  }
+  .id-term {
+    font-weight: 800; color: var(--navy); font-size: 10.6pt; display:block;
+  }
+  .id-lit {
+    font-size: 8.3pt; color: var(--muted); font-style: italic;
+  }
+  .id-def { font-size: 9.4pt; margin: 2pt 0 3pt; }
+  .id-ex { list-style: none; }
+  .id-ex li {
+    padding: 1.5pt 0 1.5pt 13pt; position: relative; font-size: 9.2pt; color:#3a3a55;
+  }
+  .id-ex li::before { content:"\201C"; position:absolute; left:1pt; color:var(--teal); font-weight:700; font-size:11pt; top:0.5pt; }
+
+  .foot { column-span: all; text-align:center; color:#a9a9c0; font-size:9pt; margin-top:11pt; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="cover">
+  <div class="flag">🇬🇧</div>
+  <h1>English Idioms</h1>
+  <h2>30 Everyday Idiomatic Expressions · Meanings &amp; Examples</h2>
+  <div class="sub">Thirty of the most useful English idioms, each with a plain-English meaning and two example sentences — the natural, figurative language that makes you sound fluent.</div>
+  <div class="chips">
+    <span class="chip">Everyday &amp; feelings</span>
+    <span class="chip">Money &amp; effort</span>
+    <span class="chip">Problems &amp; luck</span>
+    <span class="chip">People &amp; secrets</span>
+  </div>
+  <div class="who">Advanced English study pack</div>
+</div>
+
+<!-- ══════════ GUIDE ══════════ -->
+<div class="guide">
+  <h2>How to use these idioms</h2>
+  <p>An <b>idiom</b> is a fixed expression whose meaning cannot be worked out from the individual words. <i>It's a piece of cake</i> has nothing to do with cake — it simply means <i>very easy</i>. Idioms are everywhere in natural, spoken English, and using a few well is one of the fastest ways to sound like a native speaker.</p>
+
+  <h3>Meaning first, then the words</h3>
+  <p>Each entry gives the idiom, a short literal-sounding gloss (in grey), a clear definition, and <b>two examples</b> that show it in a real sentence. Learn the whole phrase as one unit — the words rarely change, so don't try to swap them (it's <i>a piece of cake</i>, never <i>a slice of cake</i>).</p>
+
+  <h3>Watch your register</h3>
+  <p>Most of these are neutral to informal and are perfect for conversation, emails to friends, and speaking exams. In very formal writing, prefer a plain paraphrase — but recognising idioms when you <i>read</i> and <i>hear</i> them always matters.</p>
+
+  <div class="tipbox">
+    <b>Study tip:</b> pick five idioms, cover the definitions, and try to guess each meaning from the examples. Then write two fresh sentences of your own about your day. You remember an idiom far better once you've used it about yourself.
+  </div>
+
+  <div class="toc-mini">
+    <div style="background:#5B8DEF;">Group 1 · Everyday life &amp; feelings — 7 idioms</div>
+    <div style="background:#2F5AD0;">Group 2 · Money, effort &amp; getting things done — 8 idioms</div>
+    <div style="background:#213A8F;">Group 3 · Problems, luck &amp; tricky situations — 8 idioms</div>
+    <div style="background:#C0392B;">Group 4 · People, secrets &amp; decisions — 7 idioms</div>
+  </div>
+</div>
+
+<!-- ══════════ IDIOM GRID ══════════ -->
+<div class="grid">
+
+  <!-- ── GROUP 1 ── -->
+  <div class="sec-head h1c"><div><div class="lv">Group 1</div><h3>Everyday life &amp; feelings</h3></div></div>
+
+  <div class="idiom"><span class="id-term">(To feel) under the weather <span class="id-lit">— feeling ill</span></span>
+    <div class="id-def">To feel slightly ill or unwell.</div>
+    <ul class="id-ex"><li>I'm feeling a bit under the weather, so I'll stay in tonight.</li><li>She's been under the weather all week with a bad cold.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Once in a blue moon <span class="id-lit">— very rarely</span></span>
+    <div class="id-def">Something that happens very rarely, almost never.</div>
+    <ul class="id-ex"><li>We only eat out once in a blue moon.</li><li>He calls his cousin once in a blue moon, maybe twice a year.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">A piece of cake <span class="id-lit">— very easy</span></span>
+    <div class="id-def">Something that is very easy to do.</div>
+    <ul class="id-ex"><li>The exam was a piece of cake — I finished early.</li><li>Don't worry about the recipe; it's a piece of cake.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Break a leg <span class="id-lit">— good luck!</span></span>
+    <div class="id-def">A way of wishing someone good luck, especially before a performance.</div>
+    <ul class="id-ex"><li>You've got your audition today — break a leg!</li><li>Break a leg out there; you'll be brilliant.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Speak of the devil <span class="id-lit">— here they are!</span></span>
+    <div class="id-def">Said when the person you were just talking about suddenly appears.</div>
+    <ul class="id-ex"><li>Speak of the devil — we were just talking about you!</li><li>And speak of the devil, here's Tom now.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">When pigs fly <span class="id-lit">— never</span></span>
+    <div class="id-def">Used to say that something will never happen.</div>
+    <ul class="id-ex"><li>He'll tidy his room when pigs fly.</li><li>"Will they lower the prices?" "When pigs fly."</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Pull someone's leg <span class="id-lit">— to tease</span></span>
+    <div class="id-def">To joke with someone by telling them something untrue for fun.</div>
+    <ul class="id-ex"><li>Relax — I'm only pulling your leg.</li><li>Are you serious, or are you pulling my leg?</li></ul></div>
+
+  <!-- ── GROUP 2 ── -->
+  <div class="sec-head h2c"><div><div class="lv">Group 2</div><h3>Money, effort &amp; getting things done</h3></div></div>
+
+  <div class="idiom"><span class="id-term">Cost an arm and a leg <span class="id-lit">— very expensive</span></span>
+    <div class="id-def">To be extremely expensive.</div>
+    <ul class="id-ex"><li>These trainers cost an arm and a leg.</li><li>We'd love to travel more, but flights cost an arm and a leg.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Cut corners <span class="id-lit">— do it cheaply/badly</span></span>
+    <div class="id-def">To do something badly or cheaply to save time or money.</div>
+    <ul class="id-ex"><li>They cut corners on safety and it showed.</li><li>Don't cut corners — do the job properly the first time.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Go the extra mile <span class="id-lit">— make extra effort</span></span>
+    <div class="id-def">To make more effort than is expected of you.</div>
+    <ul class="id-ex"><li>Our staff always go the extra mile for customers.</li><li>She went the extra mile to make the guests feel at home.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">No pain, no gain <span class="id-lit">— effort brings reward</span></span>
+    <div class="id-def">You have to work hard and suffer a little to achieve something worthwhile.</div>
+    <ul class="id-ex"><li>My legs ache after training, but no pain, no gain.</li><li>Learning a language is slow work — no pain, no gain.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Bite the bullet <span class="id-lit">— just do it</span></span>
+    <div class="id-def">To force yourself to do something difficult or unpleasant that you have been avoiding.</div>
+    <ul class="id-ex"><li>I finally bit the bullet and booked the dentist.</li><li>We'll have to bite the bullet and tell them the truth.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Call it a day <span class="id-lit">— stop for now</span></span>
+    <div class="id-def">To decide to stop working on something, at least for now.</div>
+    <ul class="id-ex"><li>It's late — let's call it a day.</li><li>After thirty years in teaching, she decided to call it a day.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">The best of both worlds <span class="id-lit">— two benefits at once</span></span>
+    <div class="id-def">A situation in which you enjoy the advantages of two different things at the same time.</div>
+    <ul class="id-ex"><li>Working from home two days a week gives me the best of both worlds.</li><li>Living near the coast but close to the city is the best of both worlds.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Bring home the bacon <span class="id-lit">— earn the money</span></span>
+    <div class="id-def">To earn money to support your family; to succeed at something.</div>
+    <ul class="id-ex"><li>Someone has to bring home the bacon.</li><li>The team really brought home the bacon this season.</li></ul></div>
+
+  <!-- ── GROUP 3 ── -->
+  <div class="sec-head h3c"><div><div class="lv">Group 3</div><h3>Problems, luck &amp; tricky situations</h3></div></div>
+
+  <div class="idiom"><span class="id-term">A blessing in disguise <span class="id-lit">— good in the end</span></span>
+    <div class="id-def">Something that seems bad at first but turns out to be good.</div>
+    <ul class="id-ex"><li>Missing that train was a blessing in disguise — I met an old friend.</li><li>Losing the job was a blessing in disguise; she started her own business.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Kill two birds with one stone <span class="id-lit">— two jobs at once</span></span>
+    <div class="id-def">To solve two problems with a single action.</div>
+    <ul class="id-ex"><li>I'll drop off the parcel on my way to work and kill two birds with one stone.</li><li>Studying abroad let her learn French and see Europe — two birds, one stone.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Hit the nail on the head <span class="id-lit">— exactly right</span></span>
+    <div class="id-def">To describe or identify something exactly right.</div>
+    <ul class="id-ex"><li>You've hit the nail on the head — that's the real problem.</li><li>Her comment hit the nail on the head.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Add insult to injury <span class="id-lit">— make it worse</span></span>
+    <div class="id-def">To make a bad situation even worse for someone.</div>
+    <ul class="id-ex"><li>The train was late and, to add insult to injury, they raised the fares.</li><li>He forgot my birthday and, adding insult to injury, asked to borrow money.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">The last straw <span class="id-lit">— the final blow</span></span>
+    <div class="id-def">The final small problem that makes a situation unbearable.</div>
+    <ul class="id-ex"><li>When he turned up late again, that was the last straw.</li><li>The broken promise was the last straw for their friendship.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">The elephant in the room <span class="id-lit">— obvious but ignored</span></span>
+    <div class="id-def">An obvious problem that everyone can see but nobody wants to talk about.</div>
+    <ul class="id-ex"><li>Nobody mentioned the budget — the elephant in the room.</li><li>Let's address the elephant in the room and talk about the layoffs.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Get out of hand <span class="id-lit">— out of control</span></span>
+    <div class="id-def">To become impossible to control.</div>
+    <ul class="id-ex"><li>The party got completely out of hand.</li><li>We need to act before costs get out of hand.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Don't judge a book by its cover <span class="id-lit">— look deeper</span></span>
+    <div class="id-def">Don't judge someone or something only by its appearance.</div>
+    <ul class="id-ex"><li>The café looks shabby, but the food is superb — don't judge a book by its cover.</li><li>He seems stern, but he's very kind; you can't judge a book by its cover.</li></ul></div>
+
+  <!-- ── GROUP 4 ── -->
+  <div class="sec-head h4c"><div><div class="lv">Group 4</div><h3>People, secrets &amp; decisions</h3></div></div>
+
+  <div class="idiom"><span class="id-term">See eye to eye <span class="id-lit">— fully agree</span></span>
+    <div class="id-def">To agree completely with someone.</div>
+    <ul class="id-ex"><li>My sister and I don't always see eye to eye.</li><li>The two leaders finally saw eye to eye on the plan.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Let the cat out of the bag <span class="id-lit">— reveal a secret</span></span>
+    <div class="id-def">To reveal a secret, usually by accident.</div>
+    <ul class="id-ex"><li>It was meant to be a surprise, but he let the cat out of the bag.</li><li>Don't let the cat out of the bag about the party.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Give someone the cold shoulder <span class="id-lit">— ignore them</span></span>
+    <div class="id-def">To deliberately ignore someone or treat them in an unfriendly way.</div>
+    <ul class="id-ex"><li>Ever since the argument, she's given me the cold shoulder.</li><li>He gave his old friends the cold shoulder after his promotion.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Steal someone's thunder <span class="id-lit">— take their credit</span></span>
+    <div class="id-def">To take the attention or credit that someone else deserves.</div>
+    <ul class="id-ex"><li>She announced her own news at his party and stole his thunder.</li><li>I didn't want to steal your thunder, so I stayed quiet.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Break the ice <span class="id-lit">— ease the tension</span></span>
+    <div class="id-def">To do or say something to make people feel more relaxed in a new or awkward situation.</div>
+    <ul class="id-ex"><li>A quick joke helped break the ice at the meeting.</li><li>We played a game to break the ice on the first day.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">The ball is in your court <span class="id-lit">— your move now</span></span>
+    <div class="id-def">It is now your turn to make a decision or take action.</div>
+    <ul class="id-ex"><li>I've made my offer — now the ball is in your court.</li><li>She's replied to everyone, so the ball is in your court.</li></ul></div>
+
+  <div class="idiom"><span class="id-term">Sit on the fence <span class="id-lit">— stay neutral</span></span>
+    <div class="id-def">To avoid making a decision or taking sides in an argument.</div>
+    <ul class="id-ex"><li>Stop sitting on the fence and tell us what you think.</li><li>Politicians often sit on the fence to avoid losing votes.</li></ul></div>
+
+  <p class="foot">30 idioms · Everyday English · Keep a notebook and add every new idiom you meet in films, songs and reading — with one example of your own.</p>
+</div>
+
+</body>
+</html>
