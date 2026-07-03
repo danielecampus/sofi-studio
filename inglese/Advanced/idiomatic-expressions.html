@@ -50,16 +50,15 @@
   .toc-mini { margin-top:12pt; }
   .toc-mini div { padding:6pt 10pt; border-radius:6pt; margin-bottom:6pt; font-weight:600; font-size:10.4pt; color:white; }
 
-  /* ── IDIOM GRID (two columns) ── */
-  .grid { column-count: 2; column-gap: 7mm; }
+  /* ── GROUPS (one page each, two balanced columns within) ── */
+  .group + .group { page-break-before: always; }
+  .cols { column-count: 2; column-gap: 7mm; }
   .sec-head {
-    column-span: all; -webkit-column-span: all;
     display:flex; align-items:center; gap:10pt;
-    color:white; border-radius:7pt; padding:7pt 13pt;
-    margin: 2pt 0 9pt; break-after: avoid;
+    color:white; border-radius:7pt; padding:6pt 13pt;
+    margin: 0 0 6pt; break-after: avoid;
   }
-  .sec-head:not(:first-child){ margin-top: 6pt; }
-  .sec-1 .sec-head, .sec-head.h1c{ background:#5B8DEF; }
+  .sec-head.h1c{ background:#5B8DEF; }
   .sec-head.h2c{ background:#2F5AD0; }
   .sec-head.h3c{ background:#213A8F; }
   .sec-head.h4c{ background:#C0392B; }
@@ -85,7 +84,7 @@
   }
   .id-ex li::before { content:"\201C"; position:absolute; left:1pt; color:var(--teal); font-weight:700; font-size:11pt; top:0.5pt; }
 
-  .foot { column-span: all; text-align:center; color:#a9a9c0; font-size:9pt; margin-top:11pt; }
+  .foot { text-align:center; color:#a9a9c0; font-size:9pt; margin-top:9pt; }
 </style>
 </head>
 <body>
@@ -128,11 +127,10 @@
   </div>
 </div>
 
-<!-- ══════════ IDIOM GRID ══════════ -->
-<div class="grid">
-
-  <!-- ── GROUP 1 ── -->
+<!-- ══════════ IDIOM GROUPS (one page each, two columns) ══════════ -->
+<div class="group">
   <div class="sec-head h1c"><div><div class="lv">Group 1</div><h3>Everyday life &amp; feelings</h3></div></div>
+  <div class="cols">
 
   <div class="idiom"><span class="id-term">(To feel) under the weather <span class="id-lit">— feeling ill</span></span>
     <div class="id-def">To feel slightly ill or unwell.</div>
@@ -161,9 +159,12 @@
   <div class="idiom"><span class="id-term">Pull someone's leg <span class="id-lit">— to tease</span></span>
     <div class="id-def">To joke with someone by telling them something untrue for fun.</div>
     <ul class="id-ex"><li>Relax — I'm only pulling your leg.</li><li>Are you serious, or are you pulling my leg?</li></ul></div>
+  </div>
+</div>
 
-  <!-- ── GROUP 2 ── -->
+<div class="group">
   <div class="sec-head h2c"><div><div class="lv">Group 2</div><h3>Money, effort &amp; getting things done</h3></div></div>
+  <div class="cols">
 
   <div class="idiom"><span class="id-term">Cost an arm and a leg <span class="id-lit">— very expensive</span></span>
     <div class="id-def">To be extremely expensive.</div>
@@ -196,9 +197,12 @@
   <div class="idiom"><span class="id-term">Bring home the bacon <span class="id-lit">— earn the money</span></span>
     <div class="id-def">To earn money to support your family; to succeed at something.</div>
     <ul class="id-ex"><li>Someone has to bring home the bacon.</li><li>The team really brought home the bacon this season.</li></ul></div>
+  </div>
+</div>
 
-  <!-- ── GROUP 3 ── -->
+<div class="group">
   <div class="sec-head h3c"><div><div class="lv">Group 3</div><h3>Problems, luck &amp; tricky situations</h3></div></div>
+  <div class="cols">
 
   <div class="idiom"><span class="id-term">A blessing in disguise <span class="id-lit">— good in the end</span></span>
     <div class="id-def">Something that seems bad at first but turns out to be good.</div>
@@ -231,9 +235,12 @@
   <div class="idiom"><span class="id-term">Don't judge a book by its cover <span class="id-lit">— look deeper</span></span>
     <div class="id-def">Don't judge someone or something only by its appearance.</div>
     <ul class="id-ex"><li>The café looks shabby, but the food is superb — don't judge a book by its cover.</li><li>He seems stern, but he's very kind; you can't judge a book by its cover.</li></ul></div>
+  </div>
+</div>
 
-  <!-- ── GROUP 4 ── -->
+<div class="group">
   <div class="sec-head h4c"><div><div class="lv">Group 4</div><h3>People, secrets &amp; decisions</h3></div></div>
+  <div class="cols">
 
   <div class="idiom"><span class="id-term">See eye to eye <span class="id-lit">— fully agree</span></span>
     <div class="id-def">To agree completely with someone.</div>
@@ -262,7 +269,7 @@
   <div class="idiom"><span class="id-term">Sit on the fence <span class="id-lit">— stay neutral</span></span>
     <div class="id-def">To avoid making a decision or taking sides in an argument.</div>
     <ul class="id-ex"><li>Stop sitting on the fence and tell us what you think.</li><li>Politicians often sit on the fence to avoid losing votes.</li></ul></div>
-
+  </div>
   <p class="foot">30 idioms · Everyday English · Keep a notebook and add every new idiom you meet in films, songs and reading — with one example of your own.</p>
 </div>
 
