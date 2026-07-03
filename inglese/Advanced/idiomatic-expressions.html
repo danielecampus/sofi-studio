@@ -9,7 +9,7 @@
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    color: #23233a; font-size: 9.6pt; line-height: 1.42;
+    color: #23233a; font-size: 9.6pt; line-height: 1.33;
   }
   :root {
     --navy:#213A8F; --royal:#2F5AD0; --red:#C0392B; --teal:#0E7C86;
@@ -50,8 +50,8 @@
   .toc-mini { margin-top:12pt; }
   .toc-mini div { padding:6pt 10pt; border-radius:6pt; margin-bottom:6pt; font-weight:600; font-size:10.4pt; color:white; }
 
-  /* ── GROUPS (one page each, two balanced columns within) ── */
-  .group + .group { page-break-before: always; }
+  /* ── GROUPS (packed to fill pages; a group never splits unless > 1 page) ── */
+  .group { break-inside: avoid; page-break-inside: avoid; margin-bottom: 7pt; }
   .cols { column-count: 2; column-gap: 7mm; }
   .sec-head {
     display:flex; align-items:center; gap:10pt;
@@ -67,20 +67,20 @@
 
   .idiom {
     break-inside: avoid; -webkit-column-break-inside: avoid;
-    padding: 4pt 0 6pt;
+    padding: 3pt 0 4pt;
     border-bottom: 1px solid #e9e9f2;
-    margin-bottom: 3pt;
+    margin-bottom: 2pt;
   }
   .id-term {
-    font-weight: 800; color: var(--navy); font-size: 10.6pt; display:block;
+    font-weight: 800; color: var(--navy); font-size: 10.3pt; display:block;
   }
   .id-lit {
     font-size: 8.3pt; color: var(--muted); font-style: italic;
   }
-  .id-def { font-size: 9.4pt; margin: 2pt 0 3pt; }
+  .id-def { font-size: 9.2pt; margin: 1pt 0 2pt; }
   .id-ex { list-style: none; }
   .id-ex li {
-    padding: 1.5pt 0 1.5pt 13pt; position: relative; font-size: 9.2pt; color:#3a3a55;
+    padding: 1pt 0 1pt 13pt; position: relative; font-size: 9pt; color:#3a3a55;
   }
   .id-ex li::before { content:"\201C"; position:absolute; left:1pt; color:var(--teal); font-weight:700; font-size:11pt; top:0.5pt; }
 
