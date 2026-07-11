@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced English Studio · C1–C2 🎓</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+  :root {
+    --indigo:  #4F46E5;
+    --purple:  #7C3AED;
+    --blue:    #2563EB;
+    --teal:    #0E7C86;
+    --green:   #059669;
+    --amber:   #D97706;
+    --rose:    #E11D48;
+    --navy:    #1E3A8A;
+    --bg:      #F4F5FB;
+    --card:    #FFFFFF;
+    --text:    #1F2433;
+    --muted:   #767B93;
+    --line:    #E9E7F5;
+    --radius:  15px;
+    --shadow:  0 4px 22px rgba(79,70,229,0.10);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--indigo) 50%, var(--purple) 100%);
+    padding: 30px 20px 24px; text-align: center; color: white;
+  }
+  header h1 { font-family: 'Nunito', sans-serif; font-size: 2rem; font-weight: 900; letter-spacing: -0.5px; }
+  header p { font-size: 0.95rem; opacity: 0.9; margin-top: 5px; }
+  header .lvl {
+    display: inline-block; margin-top: 12px; background: rgba(255,255,255,0.18);
+    border: 1.5px solid rgba(255,255,255,0.5); padding: 4px 16px; border-radius: 20px;
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.5px;
+  }
+
+  /* NAV */
+  nav {
+    display: flex; overflow-x: auto; background: white; border-bottom: 2px solid var(--line);
+    padding: 0 8px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav button {
+    flex-shrink: 0; padding: 14px 15px; border: none; background: none; font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: all 0.2s;
+  }
+  nav button.active { color: var(--indigo); border-bottom-color: var(--indigo); }
+  nav button:hover:not(.active) { color: var(--text); }
+
+  /* MAIN */
+  main { max-width: 800px; margin: 0 auto; padding: 24px 16px 80px; }
+  section { display: none; }
+  section.active { display: block; }
+  .intro-line { font-size: 0.92rem; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
+  h2.sec-title { font-family:'Nunito',sans-serif; font-size:1.5rem; font-weight:900; margin-bottom:4px; }
+  .sub-head { font-family:'Nunito',sans-serif; font-weight:800; color:var(--purple); font-size:1.05rem; margin:18px 0 8px; }
+
+  /* CARDS */
+  .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px; margin-bottom: 20px; }
+  .card h2 { font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+  .card .unit-tag {
+    font-size: 0.72rem; font-weight: 800; color: white; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; display: inline-block;
+  }
+  .card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; margin: 16px 0 7px; color: var(--purple); }
+  .card p { line-height: 1.65; font-size: 0.93rem; }
+  .card ul.bul { margin: 6px 0 6px 20px; font-size: 0.9rem; line-height: 1.6; }
+  .card ul.bul li { margin-bottom: 3px; }
+
+  /* RULE / WARN / TIP BOXES */
+  .rule-box { background: #EEF0FF; border-left: 4px solid var(--indigo); border-radius: 8px; padding: 11px 15px; margin: 10px 0; font-size: 0.9rem; line-height: 1.6; }
+  .rule-box strong { color: var(--indigo); }
+  .rule-box.teal { background:#E4F5F6; border-color:var(--teal);} .rule-box.teal strong{color:var(--teal);}
+  .rule-box.green{ background:#E5F7EF; border-color:var(--green);} .rule-box.green strong{color:var(--green);}
+  .rule-box.amber{ background:#FCF2E3; border-color:var(--amber);} .rule-box.amber strong{color:var(--amber);}
+  .warn-box { background:#FDECEF; border-left:4px solid var(--rose); border-radius:8px; padding:10px 15px; margin:12px 0; font-size:0.88rem; line-height:1.6; }
+  .warn-box strong { color: var(--rose); }
+  .pat { display:inline-block; font-family:'Consolas',monospace; font-size:0.8rem; background:#EDEFF7; color:#3a3a55; border-radius:5px; padding:2px 7px; margin:2px 0; }
+
+  /* EXAMPLES */
+  .examples { margin: 8px 0; }
+  .examples li { list-style:none; padding:4px 0 4px 20px; position:relative; font-size:0.9rem; }
+  .examples li::before { content:"“"; position:absolute; left:2px; top:2px; color:var(--teal); font-weight:800; }
+  .examples .gl { color: var(--muted); font-style: italic; }
+
+  /* TABLE */
+  .tbl { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.85rem; }
+  .tbl th { background: var(--indigo); color:white; padding:8px 10px; text-align:left; font-family:'Nunito',sans-serif; font-weight:700; }
+  .tbl th:first-child{border-radius:8px 0 0 0;} .tbl th:last-child{border-radius:0 8px 0 0;}
+  .tbl td { padding:7px 10px; border-bottom:1px solid var(--line); }
+  .tbl tr:nth-child(even) td { background:#F7F6FD; }
+  .tbl td:first-child { font-weight:700; color:var(--indigo); }
+  .tbl.rose th{background:var(--rose);} .tbl.rose td:first-child{color:var(--rose);}
+  .tbl.teal th{background:var(--teal);} .tbl.teal td:first-child{color:var(--teal);}
+  .tbl.green th{background:var(--green);} .tbl.green td:first-child{color:var(--green);}
+
+  /* QUIZ ENGINE */
+  .quiz-area { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line); }
+  .quiz-title { font-family:'Nunito',sans-serif; font-weight:800; font-size:0.82rem; color:var(--rose); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+  .quiz-q { font-family:'Nunito',sans-serif; font-weight:700; font-size:0.98rem; margin-bottom:10px; line-height:1.5; }
+  .quiz-opts { display:flex; flex-direction:column; gap:8px; }
+  .quiz-opt { padding:10px 15px; border:2px solid var(--line); border-radius:10px; background:white; cursor:pointer; font-family:'Nunito Sans',sans-serif; font-size:0.92rem; font-weight:600; text-align:left; transition:all 0.15s; }
+  .quiz-opt:hover:not(:disabled) { border-color:var(--purple); background:#F7F4FF; }
+  .quiz-opt.correct { border-color:var(--green); background:#E7F8F1; color:#046C4E; }
+  .quiz-opt.wrong { border-color:var(--rose); background:#FDECEF; color:#A5002A; }
+  .quiz-feedback { margin-top:10px; font-size:0.86rem; font-weight:600; min-height:18px; line-height:1.5; }
+  .quiz-feedback.ok { color:var(--green); } .quiz-feedback.err { color:var(--rose); }
+  .quiz-feedback .exp { display:block; color:var(--text); font-weight:600; margin-top:4px; font-size:0.84rem; }
+  .quiz-nav { display:flex; gap:10px; margin-top:14px; align-items:center; }
+  .btn { padding:9px 20px; border-radius:10px; border:none; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.9rem; cursor:pointer; transition:transform 0.1s, opacity 0.1s; }
+  .btn:active { transform: scale(0.97); }
+  .btn-indigo{background:var(--indigo);color:#fff;} .btn-purple{background:var(--purple);color:#fff;}
+  .btn-green{background:var(--green);color:#fff;} .btn-blue{background:var(--blue);color:#fff;}
+  .btn-rose{background:var(--rose);color:#fff;} .btn-teal{background:var(--teal);color:#fff;}
+  .btn-ghost{background:#EEF0FF;color:var(--indigo);}
+  .score-pill { margin-left:auto; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.86rem; background:#EAE8FA; color:var(--indigo); padding:6px 14px; border-radius:20px; }
+  .progress-bar { height:8px; background:var(--line); border-radius:10px; overflow:hidden; margin:4px 0 12px; }
+  .progress-fill { height:100%; background:linear-gradient(90deg,var(--indigo),var(--purple)); transition:width 0.3s; }
+
+  /* FLASHCARD */
+  .theme-tabs { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+  .theme-tab { padding:6px 14px; border-radius:20px; border:2px solid var(--line); background:white; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.8rem; cursor:pointer; transition:all 0.15s; }
+  .theme-tab.active { background:var(--purple); border-color:var(--purple); color:white; }
+  .flashcard-wrap { perspective:900px; margin:10px auto; max-width:360px; height:180px; cursor:pointer; }
+  .flashcard { width:100%; height:100%; position:relative; transform-style:preserve-3d; transition:transform 0.5s ease; }
+  .flashcard.flipped { transform: rotateY(180deg); }
+  .flashcard-face { position:absolute; width:100%; height:100%; backface-visibility:hidden; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; box-shadow:0 6px 24px rgba(79,70,229,0.16); padding:14px; text-align:center; }
+  .flashcard-front { background:linear-gradient(135deg,var(--indigo),var(--purple)); color:white; }
+  .flashcard-back { background:linear-gradient(135deg,var(--teal),var(--green)); color:white; transform:rotateY(180deg); }
+  .flashcard-face .word { font-family:'Nunito',sans-serif; font-weight:900; font-size:1.5rem; }
+  .flashcard-face .pos { font-size:0.72rem; opacity:0.8; text-transform:uppercase; letter-spacing:0.5px; }
+  .flashcard-face .mean { font-size:1rem; font-weight:700; }
+  .flashcard-face .ex { font-size:0.82rem; opacity:0.9; font-style:italic; }
+  .flashcard-face .hint { font-size:0.72rem; opacity:0.7; margin-top:4px; }
+  .flashcard-controls { display:flex; align-items:center; justify-content:center; gap:12px; margin-top:14px; }
+  .fc-count { font-family:'Nunito',sans-serif; font-weight:700; font-size:0.9rem; color:var(--muted); min-width:60px; text-align:center; }
+
+  /* FINAL TEST */
+  .section-banner { display:flex; align-items:center; gap:10px; background:linear-gradient(135deg,var(--navy),var(--indigo)); color:white; border-radius:12px; padding:12px 16px; margin-bottom:14px; }
+  .section-banner .n { font-family:'Nunito',sans-serif; font-weight:900; font-size:1.3rem; }
+  .section-banner .t { font-family:'Nunito',sans-serif; font-weight:800; font-size:0.95rem; }
+  .section-banner .s { font-size:0.76rem; opacity:0.85; }
+  .timer-pill { margin-left:auto; font-family:'Nunito',sans-serif; font-weight:900; font-size:1rem; background:rgba(255,255,255,0.2); color:white; padding:6px 14px; border-radius:20px; letter-spacing:0.5px; }
+  .timer-pill.warn { background:var(--amber); }
+  .timer-pill.danger { background:var(--rose); animation:pulse 1s infinite; }
+  @keyframes pulse { 50% { opacity:0.55; } }
+  .test-intro { text-align:center; padding:14px 0; }
+  .test-intro .big-num { font-family:'Nunito',sans-serif; font-size:2.8rem; font-weight:900; background:linear-gradient(135deg,var(--indigo),var(--rose)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .test-sections-list { text-align:left; max-width:420px; margin:14px auto 20px; }
+  .test-sections-list div { padding:9px 13px; background:#F3F2FD; border-radius:10px; margin-bottom:8px; font-size:0.9rem; font-weight:600; display:flex; gap:8px; align-items:center; }
+  .test-sections-list .badge { font-family:'Nunito',sans-serif; font-weight:900; color:var(--indigo); }
+  .result-box { text-align:center; padding:24px; }
+  .result-box .big-score { font-family:'Nunito',sans-serif; font-size:3.4rem; font-weight:900; }
+  .result-box .msg { font-size:1.1rem; margin-top:8px; font-weight:700; }
+  .sec-result-row { display:flex; align-items:center; gap:12px; padding:10px 12px; background:#F6F5FD; border-radius:10px; margin-bottom:8px; border-left:4px solid var(--indigo); }
+  .sec-result-row .name { flex:1; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.9rem; text-align:left; }
+  .sec-result-row .val { font-family:'Nunito',sans-serif; font-weight:900; }
+  .reading-box { background:#FFFDF6; border:2px solid #FBE7BE; border-radius:12px; padding:14px 16px; margin-bottom:14px; font-size:0.9rem; line-height:1.7; }
+  .reading-box h4 { font-family:'Nunito',sans-serif; font-weight:800; color:#B9770B; margin-bottom:6px; }
+
+  /* PROGRESS LOCK */
+  .lock-box { text-align:center; padding:24px 16px; }
+  .lock-box input { padding:10px 14px; border:2px solid var(--line); border-radius:10px; font-size:1rem; width:220px; text-align:center; margin:10px 0; }
+  .link-chip { display:inline-block; background:#EEF0FF; color:var(--indigo); font-weight:700; font-size:0.82rem; padding:6px 12px; border-radius:20px; text-decoration:none; margin:4px 6px 4px 0; }
+  .link-chip:hover { background:var(--indigo); color:white; }
+  .stat-grid { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
+  .stat-grid > div { flex:1; min-width:120px; border-radius:12px; padding:12px; text-align:center; }
+  .footer-note { text-align:center; color:var(--muted); font-size:0.8rem; margin-top:30px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎓 Advanced English Studio</h1>
+  <p>Grammatica, lessico ed esercizi di livello avanzato</p>
+  <span class="lvl">LIVELLO C1 – C2</span>
+</header>
+
+<nav id="nav">
+  <button class="active" data-tab="overview">🧭 Panoramica</button>
+  <button data-tab="grammar">📐 Grammatica</button>
+  <button data-tab="vocab">💎 Lessico</button>
+  <button data-tab="wordform">🧩 Word Formation</button>
+  <button data-tab="register">✒️ Registro &amp; Writing</button>
+  <button data-tab="idioms">🎭 Idioms &amp; Phrasal</button>
+  <button data-tab="mixed">🔀 Esercizi misti</button>
+  <button data-tab="test">🎯 Test finale</button>
+  <button data-tab="progress">📊 Progressi</button>
+</nav>
+
+<main>
+
+<!-- ═══════════ OVERVIEW ═══════════ -->
+<section id="overview" class="active">
+  <h2 class="sec-title">Benvenuta al livello avanzato 🚀</h2>
+  <p class="intro-line">Questa dashboard raccoglie tutto ciò che serve per consolidare un inglese <strong>C1–C2</strong>: le strutture grammaticali complesse, il lessico preciso e formale, la formazione delle parole e il registro — più esercizi misti e un test finale cronometrato di circa un'ora.</p>
+
+  <div class="card">
+    <h2>🎯 Che cosa significa C1–C2</h2>
+    <div class="rule-box"><strong>C1 (Advanced):</strong> ti esprimi con scioltezza e spontaneità, usi la lingua in modo flessibile ed efficace per scopi sociali, accademici e professionali, e produci testi chiari e ben strutturati su argomenti complessi.</div>
+    <div class="rule-box teal"><strong>C2 (Proficiency):</strong> capisci con facilità praticamente tutto, riassumi informazioni da fonti diverse e ti esprimi in modo molto scorrevole e preciso, cogliendo anche sfumature sottili di significato.</div>
+    <h3>Le 5 competenze che questa dashboard allena</h3>
+    <ul class="bul">
+      <li><strong>Grammatica avanzata</strong> — condizionali, inversione, congiuntivo, cleft, participiali, passivo, modalità.</li>
+      <li><strong>Lessico preciso</strong> — sinonimi di alto livello, collocazioni, vocabolario accademico e formale.</li>
+      <li><strong>Word formation</strong> — prefissi, suffissi e trasformazioni (il cuore dell'Use of English).</li>
+      <li><strong>Registro</strong> — passare da informale a formale e parafrasare la stessa idea in più modi.</li>
+      <li><strong>Strategia d'esame</strong> — key word transformation, cloze, error correction, reading.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🗺️ Come usarla</h2>
+    <ul class="bul">
+      <li>Studia una scheda di <strong>Grammatica</strong> e fai subito il mini-quiz in fondo.</li>
+      <li>Ripassa il <strong>Lessico</strong> con le flashcard (tocca la carta per girarla).</li>
+      <li>Quando ti senti pronta, apri <strong>Esercizi misti</strong>: mescolano tutti i concetti.</li>
+      <li>Infine affronta il <strong>Test finale</strong> con il cronometro da 60 minuti, come un vero esame.</li>
+      <li>I risultati si salvano da soli: si vedono nella scheda <strong>Progressi</strong> (protetta da password).</li>
+    </ul>
+    <div class="rule-box amber"><strong>Suggerimento d'oro:</strong> a questo livello non basta “capire” — bisogna <em>produrre</em>. Dopo ogni regola, prova a riscrivere una stessa frase in due registri (neutro e formale) o con una struttura diversa (es. <em>If I had known → Had I known</em>). È esattamente ciò che premia il C2.</div>
+  </div>
+
+  <div class="card">
+    <h2>📚 Materiali collegati (PDF)</h2>
+    <p>Nella cartella <em>Advanced</em> trovi i glossari stampabili che completano questa dashboard:</p>
+    <div style="margin-top:10px;">
+      <a class="link-chip" href="advanced-grammar-C1-C2.pdf">📐 Advanced Grammar</a>
+      <a class="link-chip" href="idiomatic-expressions.pdf">🎭 English Idioms</a>
+      <a class="link-chip" href="phrasal-verbs-C1-C2.pdf">🔗 Phrasal Verbs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GRAMMAR ═══════════ -->
+<section id="grammar">
+  <h2 class="sec-title">📐 Grammatica avanzata</h2>
+  <p class="intro-line">Otto schede sulle strutture che fanno la differenza a livello C1–C2. Leggi la regola, guarda gli esempi e verifica con il mini-quiz.</p>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--indigo)">SCHEDA 1</span>
+    <h2>🔀 Condizionali, misti &amp; inversione</h2>
+    <div class="rule-box"><strong>Terzo condizionale:</strong> <span class="pat">If + past perfect, … would have + p.p.</span> — passato irreale. <em>If she had studied, she would have passed.</em></div>
+    <div class="rule-box teal"><strong>Misto (passato → presente):</strong> <span class="pat">If + past perfect, … would + inf.</span> <em>If I had taken that job, I'd be in London now.</em></div>
+    <h3>Inversione condizionale (formale, senza “if”)</h3>
+    <ul class="examples">
+      <li><em>Were I</em> in your position, I'd resign. <span class="gl">(= If I were)</span></li>
+      <li><em>Had I</em> known, I would have told you. <span class="gl">(= If I had known)</span></li>
+      <li><em>Should you</em> require help, please call. <span class="gl">(= If you (should) need)</span></li>
+    </ul>
+    <div class="warn-box"><strong>Attenzione:</strong> nell'inversione niente <em>if</em> e niente virgola-if: si inverte soggetto e ausiliare come in una domanda.</div>
+    <div class="quiz-area"><div class="quiz-title">⚡ Mini-quiz</div><div id="quiz-gr1"></div></div>
+  </div>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--teal)">SCHEDA 2</span>
+    <h2>⬆️ Inversione dopo avverbi negativi</h2>
+    <p>Quando un'espressione negativa o restrittiva va in testa alla frase, si inverte soggetto e ausiliare — dà enfasi e un tono formale/letterario.</p>
+    <ul class="examples">
+      <li><em>Never</em> had I seen such chaos.</li>
+      <li><em>No sooner</em> had I left <em>than</em> it started to rain.</li>
+      <li><em>Not only</em> did he lie, <em>but</em> he also blamed me.</li>
+      <li><em>Only when</em> the lights came on <em>did</em> we realise.</li>
+      <li><em>Under no circumstances</em> are you to open that door.</li>
+    </ul>
+    <div class="rule-box amber"><strong>Coppie fisse:</strong> <em>Hardly/Scarcely … when</em>, <em>No sooner … than</em>, <em>So + agg. … that</em>, <em>Such … that</em>.</div>
+    <div class="quiz-area"><div class="quiz-title">⚡ Mini-quiz</div><div id="quiz-gr2"></div></div>
+  </div>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--green)">SCHEDA 3</span>
+    <h2>🕊️ Congiuntivo &amp; past irreale</h2>
+    <div class="rule-box green"><strong>Congiuntivo mandativo:</strong> dopo <em>suggest, insist, demand, recommend, propose, essential/vital that</em> → <span class="pat">that + soggetto + forma base</span> (senza -s). <em>It is essential that everyone <strong>be</strong> present.</em></div>
+    <ul class="examples">
+      <li>The board recommended that he <em>resign</em>. <span class="gl">(BrE anche: … should resign)</span></li>
+      <li>It's high time we <em>left</em>. <span class="gl">(past con valore presente)</span></li>
+      <li>I'd rather you <em>didn't</em> smoke here.</li>
+      <li>He spoke quietly <em>lest</em> he wake the baby. <span class="gl">(letterario)</span></li>
+    </ul>
+    <div class="quiz-area"><div class="quiz-title">⚡ Mini-quiz</div><div id="quiz-gr3"></div></div>
+  </div>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--amber)">SCHEDA 4</span>
+    <h2>💡 Cleft sentences &amp; enfasi</h2>
+    <p>Le frasi scisse spezzano una frase per mettere in risalto un elemento.</p>
+    <ul class="examples">
+      <li><em>It was</em> Maria <em>who</em> solved it. <span class="gl">(it-cleft: chi)</span></li>
+      <li><em>What</em> I need <em>is</em> a proper holiday. <span class="gl">(wh-cleft: l'azione/cosa)</span></li>
+      <li><em>All</em> I want <em>is</em> a quiet life. <span class="gl">(= l'unica cosa)</span></li>
+      <li>I <em>do</em> apologise. <span class="gl">(do enfatico)</span></li>
+    </ul>
+    <div class="quiz-area"><div class="quiz-title">⚡ Mini-quiz</div><div id="quiz-gr4"></div></div>
+  </div>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--purple)">SCHEDA 5</span>
+    <h2>🧵 Participiali &amp; assolute</h2>
+    <ul class="examples">
+      <li><em>Feeling</em> tired, she went to bed. <span class="gl">(-ing: stesso soggetto)</span></li>
+      <li><em>Having finished</em> the report, he logged off. <span class="gl">(azione precedente)</span></li>
+      <li><em>Shocked</em> by the news, they fell silent. <span class="gl">(-ed: senso passivo)</span></li>
+      <li>The weather <em>being</em> fine, we set off. <span class="gl">(assoluta, formale)</span></li>
+      <li>The man <em>standing</em> by the door… <span class="gl">(relativa ridotta = who is standing)</span></li>
+    </ul>
+    <div class="quiz-area"><div class="quiz-title">⚡ Mini-quiz</div><div id="quiz-gr5"></div></div>
+  </div>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--blue)">SCHEDA 6</span>
+    <h2>🔄 Passivo avanzato &amp; impersonale</h2>
+    <div class="rule-box"><strong>Reporting passive:</strong> <span class="pat">S + be + said/believed/thought + to-inf / to have + p.p.</span> <em>He is said to be wealthy. She is believed to have left.</em></div>
+    <ul class="examples">
+      <li><em>It is thought that</em> the talks will resume. <span class="gl">(impersonale)</span></li>
+      <li>We're <em>having</em> the kitchen <em>renovated</em>. <span class="gl">(causativo)</span></li>
+      <li>He <em>had</em> his wallet <em>stolen</em>. <span class="gl">(esperienza subìta)</span></li>
+      <li>The car <em>needs washing</em>. <span class="gl">(senso passivo, BrE)</span></li>
+    </ul>
+    <div class="quiz-area"><div class="quiz-title">⚡ Mini-quiz</div><div id="quiz-gr6"></div></div>
+  </div>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--rose)">SCHEDA 7</span>
+    <h2>🎚️ Modalità avanzata</h2>
+    <ul class="examples">
+      <li>She <em>must have</em> left already. / He <em>can't have</em> known. <span class="gl">(deduzione sul passato)</span></li>
+      <li>You <em>should have</em> told me. <span class="gl">(critica/rimpianto)</span></li>
+      <li>You <em>needn't have</em> paid — it was free. <span class="gl">(fatto ma inutile)</span> ≠ I <em>didn't need to</em> pay.</li>
+      <li>As a boy he <em>would</em> spend hours reading. <span class="gl">(abitudine passata; per gli stati → used to)</span></li>
+    </ul>
+    <div class="quiz-area"><div class="quiz-title">⚡ Mini-quiz</div><div id="quiz-gr7"></div></div>
+  </div>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--navy)">SCHEDA 8</span>
+    <h2>🔗 Relative &amp; connettori formali</h2>
+    <ul class="examples">
+      <li>the manager <em>to whom</em> I spoke <span class="gl">(preposizione + whom, formale)</span></li>
+      <li>200 guests, <em>many of whom</em> were students <span class="gl">(quantificatore + whom/which)</span></li>
+      <li>She was late, <em>which</em> annoyed everyone. <span class="gl">(which = tutta la frase)</span></li>
+      <li>The plan, <em>albeit</em> costly, is sound. <span class="gl">(albeit = although + frase ridotta)</span></li>
+      <li>He signed early, <em>thereby</em> avoiding the queue.</li>
+    </ul>
+    <div class="quiz-area"><div class="quiz-title">⚡ Mini-quiz</div><div id="quiz-gr8"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ VOCAB ═══════════ -->
+<section id="vocab">
+  <h2 class="sec-title">💎 Lessico avanzato</h2>
+  <p class="intro-line">A livello C1–C2 conta la <strong>precisione</strong>: la parola giusta al posto di quella generica. Ripassa con le flashcard (tocca per girare) e le tabelle, poi mettiti alla prova.</p>
+
+  <div class="card">
+    <h2>🃏 Flashcard tematiche</h2>
+    <div class="theme-tabs" id="vocabThemes"></div>
+    <div class="flashcard-wrap" onclick="flipCard()"><div class="flashcard" id="flashcard">
+      <div class="flashcard-face flashcard-front"><div class="pos" id="fcPos"></div><div class="word" id="fcWord"></div><div class="hint">tocca per la definizione</div></div>
+      <div class="flashcard-face flashcard-back"><div class="mean" id="fcMean"></div><div class="ex" id="fcEx"></div></div>
+    </div></div>
+    <div class="flashcard-controls">
+      <button class="btn btn-ghost" onclick="prevCard()">←</button>
+      <span class="fc-count" id="fcCount"></span>
+      <button class="btn btn-ghost" onclick="nextCard()">→</button>
+    </div>
+    <div id="wordTableArea" style="margin-top:16px;"></div>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Quiz — la parola più precisa</h2>
+    <p>Scegli il termine di registro alto o la collocazione corretta.</p>
+    <div class="quiz-area"><div class="quiz-title">⚡ Vocabulary quiz</div><div id="quiz-vocab"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ WORD FORMATION ═══════════ -->
+<section id="wordform">
+  <h2 class="sec-title">🧩 Word Formation</h2>
+  <p class="intro-line">Dalla stessa radice si formano nomi, aggettivi, verbi e avverbi. È la parte più “tecnica” dell'Use of English: si aggiunge un prefisso o un suffisso e a volte cambia la radice.</p>
+
+  <div class="card">
+    <h2>🔧 Suffissi utili</h2>
+    <table class="tbl teal">
+      <thead><tr><th>Tipo</th><th>Suffissi</th><th>Esempi</th></tr></thead>
+      <tbody>
+        <tr><td>Nomi (persona)</td><td>-er, -or, -ist, -ant</td><td>employer, investor, analyst, consultant</td></tr>
+        <tr><td>Nomi (astratti)</td><td>-tion, -ment, -ity, -ness, -ance</td><td>reduction, agreement, ability, awareness, reluctance</td></tr>
+        <tr><td>Aggettivi</td><td>-able, -ive, -ous, -ful, -less, -ic</td><td>reliable, effective, ambitious, harmful, harmless, economic</td></tr>
+        <tr><td>Verbi</td><td>-ise/-ize, -en, -ify</td><td>modernise, strengthen, clarify</td></tr>
+        <tr><td>Avverbi</td><td>-ly</td><td>consequently, remarkably</td></tr>
+      </tbody>
+    </table>
+    <h3>Prefissi negativi</h3>
+    <table class="tbl rose">
+      <thead><tr><th>Prefisso</th><th>Esempi</th></tr></thead>
+      <tbody>
+        <tr><td>un-</td><td>unlikely, unaware, undeniable</td></tr>
+        <tr><td>in- / im- / il- / ir-</td><td>inconsistent, impossible, illegal, irrelevant</td></tr>
+        <tr><td>dis- / mis-</td><td>disagree, dishonest, misunderstand, misleading</td></tr>
+        <tr><td>over- / under-</td><td>overestimate, overwhelming, understate, underrated</td></tr>
+      </tbody>
+    </table>
+    <div class="warn-box"><strong>Trappola d'esame:</strong> spesso serve un cambio di radice o un doppio passaggio. Es. <em>strong → strength → strengthen</em>; <em>able → ability → disability</em>; <em>long → length → lengthy</em>.</div>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Famiglie di parole</h2>
+    <table class="tbl">
+      <thead><tr><th>Verbo</th><th>Nome</th><th>Aggettivo</th><th>Avverbio</th></tr></thead>
+      <tbody>
+        <tr><td>analyse</td><td>analysis</td><td>analytical</td><td>analytically</td></tr>
+        <tr><td>persuade</td><td>persuasion</td><td>persuasive</td><td>persuasively</td></tr>
+        <tr><td>succeed</td><td>success</td><td>successful</td><td>successfully</td></tr>
+        <tr><td>maintain</td><td>maintenance</td><td>—</td><td>—</td></tr>
+        <tr><td>decide</td><td>decision</td><td>decisive</td><td>decisively</td></tr>
+        <tr><td>rely</td><td>reliance</td><td>reliable</td><td>reliably</td></tr>
+      </tbody>
+    </table>
+    <div class="quiz-area"><div class="quiz-title">⚡ Word formation quiz</div><div id="quiz-wordform"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ REGISTER ═══════════ -->
+<section id="register">
+  <h2 class="sec-title">✒️ Registro &amp; Writing</h2>
+  <p class="intro-line">Saper cambiare registro è una competenza chiave del C2: la stessa idea si può dire in modo neutro o formale. Utile per essay, report e lettere formali.</p>
+
+  <div class="card">
+    <h2>🔁 Neutro → formale</h2>
+    <table class="tbl">
+      <thead><tr><th>Neutro/informale</th><th>Formale</th></tr></thead>
+      <tbody>
+        <tr><td>get</td><td>obtain / receive</td></tr>
+        <tr><td>ask for</td><td>request</td></tr>
+        <tr><td>need</td><td>require</td></tr>
+        <tr><td>enough</td><td>sufficient</td></tr>
+        <tr><td>a lot of</td><td>a great deal of / numerous</td></tr>
+        <tr><td>but</td><td>however / nevertheless</td></tr>
+        <tr><td>also</td><td>moreover / furthermore</td></tr>
+        <tr><td>so</td><td>therefore / consequently</td></tr>
+        <tr><td>find out</td><td>ascertain / establish</td></tr>
+        <tr><td>put off</td><td>postpone</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🧷 Linkers per funzione</h2>
+    <ul class="bul">
+      <li><strong>Aggiungere:</strong> moreover, furthermore, in addition, what is more.</li>
+      <li><strong>Contrasto:</strong> however, nevertheless, nonetheless, on the other hand, whereas, whilst.</li>
+      <li><strong>Concessione:</strong> although, even though, despite / in spite of + -ing/noun, albeit.</li>
+      <li><strong>Causa/effetto:</strong> owing to, due to, as a result, consequently, hence, thereby.</li>
+      <li><strong>Esemplificare:</strong> for instance, namely, such as, to illustrate.</li>
+      <li><strong>Concludere:</strong> in conclusion, to sum up, all in all, on balance.</li>
+    </ul>
+    <div class="rule-box"><strong>despite / in spite of</strong> + nome o -ing (<em>despite the rain / despite being tired</em>); <strong>although</strong> + frase completa (<em>although it was raining</em>). Non “despite of”.</div>
+  </div>
+
+  <div class="card">
+    <h2>✍️ Frasi utili per essay ed email formali</h2>
+    <ul class="bul">
+      <li>It is often argued that… / It is widely acknowledged that…</li>
+      <li>While there is some truth in this view, it fails to consider…</li>
+      <li>A further point worth considering is…</li>
+      <li>I am writing to enquire about… / I would be grateful if you could…</li>
+      <li>Should you require any further information, please do not hesitate to contact me.</li>
+    </ul>
+    <div class="quiz-area"><div class="quiz-title">⚡ Register quiz</div><div id="quiz-register"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ IDIOMS & PHRASAL ═══════════ -->
+<section id="idioms">
+  <h2 class="sec-title">🎭 Idioms &amp; Phrasal Verbs</h2>
+  <p class="intro-line">Il linguaggio figurato e i phrasal verbs rendono l'inglese naturale. Qui un ripasso rapido e un trainer; il glossario completo è nei PDF.</p>
+
+  <div class="card">
+    <h2>📎 Glossari completi</h2>
+    <a class="link-chip" href="idiomatic-expressions.pdf">🎭 30 English Idioms (PDF)</a>
+    <a class="link-chip" href="phrasal-verbs-C1-C2.pdf">🔗 60 Phrasal Verbs (PDF)</a>
+    <h3>Un assaggio</h3>
+    <table class="tbl green">
+      <thead><tr><th>Espressione</th><th>Significato</th></tr></thead>
+      <tbody>
+        <tr><td>bite the bullet</td><td>affrontare qualcosa di sgradevole e inevitabile</td></tr>
+        <tr><td>a blessing in disguise</td><td>un male che si rivela un bene</td></tr>
+        <tr><td>the last straw</td><td>la goccia che fa traboccare il vaso</td></tr>
+        <tr><td>gloss over</td><td>sorvolare, minimizzare (un problema)</td></tr>
+        <tr><td>put up with</td><td>sopportare, tollerare</td></tr>
+        <tr><td>wriggle out of</td><td>svicolare da (un dovere) con scuse</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Trainer — significato</h2>
+    <p>Scegli il significato corretto dell'idiom o del phrasal verb.</p>
+    <div class="quiz-area"><div class="quiz-title">⚡ Idioms &amp; phrasal trainer</div><div id="quiz-idiom"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ MIXED EXERCISES ═══════════ -->
+<section id="mixed">
+  <h2 class="sec-title">🔀 Esercizi riepilogativi</h2>
+  <p class="intro-line">Questi esercizi <strong>mescolano</strong> grammatica, lessico e registro — come nelle prove d'esame. Tre tipologie, ognuna con il suo mini-quiz.</p>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--indigo)">TIPOLOGIA A</span>
+    <h2>🔑 Key Word Transformation</h2>
+    <p>Riscrivi la frase con la parola chiave, mantenendo lo stesso significato. Scegli la versione corretta (3–5 parole).</p>
+    <div class="quiz-area"><div class="quiz-title">⚡ Trasformazioni</div><div id="quiz-ex1"></div></div>
+  </div>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--rose)">TIPOLOGIA B</span>
+    <h2>🔍 Trova &amp; correggi l'errore</h2>
+    <p>Ogni frase contiene un errore tipico da C1–C2. Scegli la correzione giusta.</p>
+    <div class="quiz-area"><div class="quiz-title">⚡ Error correction</div><div id="quiz-ex2"></div></div>
+  </div>
+
+  <div class="card">
+    <span class="unit-tag" style="background:var(--teal)">TIPOLOGIA C</span>
+    <h2>🧬 Cloze misto (grammatica + lessico)</h2>
+    <p>Completa la frase scegliendo l'opzione che funziona sia grammaticalmente sia come registro.</p>
+    <div class="quiz-area"><div class="quiz-title">⚡ Mixed cloze</div><div id="quiz-ex3"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ FINAL TEST ═══════════ -->
+<section id="test">
+  <h2 class="sec-title">🎯 Test finale (~1 ora)</h2>
+
+  <div id="testIntro" class="test-intro">
+    <div class="big-num">40</div>
+    <p style="color:var(--muted); margin-bottom:6px;">domande · 5 sezioni · <strong>60 minuti</strong></p>
+    <p class="intro-line" style="max-width:520px;margin:0 auto 4px;">Un test completo in stile esame Cambridge Advanced/Proficiency. Il cronometro parte quando premi “Inizia”. Allo scadere dei 60 minuti il test si chiude e vedi il punteggio.</p>
+    <div class="test-sections-list">
+      <div><span class="badge">1 ·</span> 🔤 Multiple-choice cloze (lessico &amp; collocazioni) — 8</div>
+      <div><span class="badge">2 ·</span> ⛓️ Open cloze (parola grammaticale mancante) — 8</div>
+      <div><span class="badge">3 ·</span> 🧩 Word formation — 8</div>
+      <div><span class="badge">4 ·</span> 🔑 Key word transformation — 8</div>
+      <div><span class="badge">5 ·</span> 📖 Reading comprehension — 8</div>
+    </div>
+    <button class="btn btn-rose" style="font-size:1.05rem;padding:12px 30px;" onclick="startFinal()">▶️ Inizia il test</button>
+  </div>
+
+  <div id="testArea" style="display:none;"></div>
+  <div id="testResult" style="display:none;"></div>
+</section>
+
+<!-- ═══════════ PROGRESS ═══════════ -->
+<section id="progress">
+  <h2 class="sec-title">📊 Progressi</h2>
+  <p class="intro-line">Tutti i punteggi di quiz ed esercizi si salvano automaticamente su questo dispositivo. Area riservata ai genitori.</p>
+
+  <div class="card">
+    <div id="resultsLock" class="lock-box">
+      <div style="font-size:2.4rem;">🔒</div>
+      <p style="font-weight:700;margin:6px 0;">Area genitori</p>
+      <p style="font-size:0.85rem;color:var(--muted);">Inserisci la password per vedere i risultati.</p>
+      <input type="password" id="pwInput" placeholder="password" onkeydown="if(event.key==='Enter')checkPassword()">
+      <div id="pwError" style="color:var(--rose);font-size:0.85rem;min-height:18px;font-weight:600;"></div>
+      <button class="btn btn-indigo" onclick="checkPassword()">Sblocca</button>
+    </div>
+    <div id="resultsArea" style="display:none;">
+      <div id="resultsList"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+        <button class="btn btn-green" onclick="copySummary()">📋 Copia riepilogo</button>
+        <button class="btn btn-rose" onclick="clearResults()">🗑️ Cancella tutto</button>
+      </div>
+      <div id="copyFeedback" style="font-size:0.85rem;font-weight:600;margin-top:10px;"></div>
+    </div>
+  </div>
+  <p class="footer-note">Advanced English Studio · C1–C2 · fatto con ❤️ per lo studio di Sofia</p>
+</section>
+
+</main>
+
+<script>
+// ═══════════════════ TAB NAV ═══════════════════
+document.querySelectorAll('#nav button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#nav button').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('main section').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.tab).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+// ═══════════════════ GENERIC QUIZ ENGINE ═══════════════════
+const quizData = {
+  'gr1': [
+    { q:"Completa (inversione): “____ I known about the strike, I'd have taken the car.”", opts:["Had","If had","Have","Were"], ans:0, exp:"Terzo condizionale invertito: Had + soggetto + participio passato." },
+    { q:"Scegli l'equivalente formale di “If you need any help, call me.”", opts:["Should you need any help, call me.","Would you need any help, call me.","If you would need help, call me.","Need you help, call me."], ans:0, exp:"Should + soggetto + infinito = primo condizionale formale." },
+    { q:"Frase mista: “If I ____ your advice, I wouldn't be in this mess now.”", opts:["had taken","took","would take","take"], ans:0, exp:"Condizione passata (had taken) → risultato presente (wouldn't be)." },
+    { q:"“____ it not for your support, I would give up.”", opts:["Were","Had","Was","Should"], ans:0, exp:"Were it not for = If it weren't for (presente)." }
+  ],
+  'gr2': [
+    { q:"“Never ____ such a beautiful sunset.” Completa correttamente.", opts:["had I seen","I had seen","I saw","did I saw"], ans:0, exp:"Dopo l'avverbio negativo iniziale si inverte: had I seen." },
+    { q:"Quale usa correttamente la coppia fissa?", opts:["No sooner had we arrived than it began to rain.","No sooner had we arrived when it began to rain.","No sooner we arrived than it rained.","No sooner did we arrive than it rained had."], ans:0, exp:"No sooner … than, con had + participio nell'inversione." },
+    { q:"“Only after the meeting ____ the truth.”", opts:["did we learn","we learned","we did learn","learned we"], ans:0, exp:"L'inversione cade sulla principale: did we learn." },
+    { q:"“____ are you to reveal this information.”", opts:["Under no circumstances","In no circumstances is","At any time","No circumstances"], ans:0, exp:"Under no circumstances + inversione (are you to)." }
+  ],
+  'gr3': [
+    { q:"Congiuntivo mandativo: “The committee insists that every report ____ signed.”", opts:["be","is","was","should to be"], ans:0, exp:"Forma base 'be' per tutte le persone dopo insist that." },
+    { q:"“It's high time we ____ about it.”", opts:["did something","do something","have done something","will do something"], ans:0, exp:"It's high time + past simple (valore presente)." },
+    { q:"“I'd rather you ____ tomorrow, not today.”", opts:["came","come","will come","would come"], ans:0, exp:"would rather + soggetto + past per il presente/futuro." },
+    { q:"Quale frase è corretta?", opts:["He whispered lest he wake the child.","He whispered lest he wakes the child.","He whispered lest to wake the child.","He whispered lest waking the child."], ans:0, exp:"lest + congiuntivo (forma base 'wake')." }
+  ],
+  'gr4': [
+    { q:"Trasforma in cleft (enfasi sul soggetto): “Maria solved it.”", opts:["It was Maria who solved it.","It was Maria solved it.","What Maria is solved it.","Maria it was solved."], ans:0, exp:"It-cleft: It + be + focus + who/that." },
+    { q:"Completa il wh-cleft: “____ a proper break.”", opts:["What I need is","That I need is","It I need is","Which I need is"], ans:0, exp:"Wh-cleft: What + frase + is + focus." },
+    { q:"Quale enfatizza col 'do'?", opts:["I do understand your concern.","I am understand your concern.","I understanding your concern.","I did understanding."], ans:0, exp:"do/does/did + forma base per enfasi." },
+    { q:"“____ me is the constant noise.”", opts:["What annoys","That annoys","It annoys","Which annoy"], ans:0, exp:"Pseudo-cleft con What come soggetto." }
+  ],
+  'gr5': [
+    { q:"Unisci: “Because she had finished early, she went home.” →", opts:["Having finished early, she went home.","Finishing early, she went home.","Finished early, she went home.","To finish early, she went home."], ans:0, exp:"Perfect participle 'Having + p.p.' per un'azione precedente." },
+    { q:"Senso passivo: “____ from space, the Earth looks blue.”", opts:["Seen","Seeing","Having seen","To see"], ans:0, exp:"Participio passato (-ed) = essendo vista (passivo)." },
+    { q:"Assoluta corretta:", opts:["The weather being fine, we set off.","The weather is fine, we set off.","Being the weather fine, we set off.","With weather fine, we set off."], ans:0, exp:"Costruzione assoluta: soggetto + participio, senza congiunzione." },
+    { q:"Relativa ridotta di “the documents that were signed today”:", opts:["the documents signed today","the documents signing today","the documents to sign today","the documents having signed today"], ans:0, exp:"Participio passato per una relativa passiva ridotta." }
+  ],
+  'gr6': [
+    { q:"Passivo di reporting: “People say he is very rich.” →", opts:["He is said to be very rich.","He is said that he is rich.","It says he to be rich.","He said to be rich."], ans:0, exp:"S + be + said + to-infinito." },
+    { q:"Tempo anteriore: “They believe she left the country.” →", opts:["She is believed to have left the country.","She is believed to leave the country.","She believes to have left.","It believes she to leave."], ans:0, exp:"to have + p.p. per l'azione anteriore." },
+    { q:"Causativo (servizio): “We arranged for someone to repair the roof.” →", opts:["We had the roof repaired.","We had repaired the roof.","We had repair the roof.","We have the roof repair."], ans:0, exp:"have + oggetto + participio passato." },
+    { q:"Senso passivo (BrE): “This report ____ .”", opts:["needs rewriting","needs to rewrite","needs rewrite","need rewriting"], ans:0, exp:"need + -ing ha senso passivo (= needs to be rewritten)." }
+  ],
+  'gr7': [
+    { q:"Deduzione sicura sul passato: “The ground is wet. It ____ during the night.”", opts:["must have rained","must rain","should have rained","can have rained"], ans:0, exp:"must have + p.p. = deduzione quasi certa sul passato." },
+    { q:"“You ____ — the entrance was free!” (hai pagato inutilmente)", opts:["needn't have paid","didn't need to pay","mustn't have paid","hadn't to pay"], ans:0, exp:"needn't have + p.p. = l'hai fatto ma era inutile." },
+    { q:"Abitudine passata (azione ripetuta):", opts:["He would sit for hours by the window.","He would be tall as a child.","He would live in Rome.","He would have a car."], ans:0, exp:"'would' per azioni ripetute; per stati si usa 'used to'." },
+    { q:"“She's not answering. She ____ still be in the meeting.”", opts:["might","must","can","shall"], ans:0, exp:"might = possibilità presente." }
+  ],
+  'gr8': [
+    { q:"Registro formale: “the colleague ____ I spoke.”", opts:["to whom","who to","whom to","that to"], ans:0, exp:"preposizione + whom nella relativa formale." },
+    { q:"“The report has 50 pages, ____ deal with safety.”", opts:["many of which","many of them","which many","of which many are"], ans:0, exp:"quantificatore + of + which per cose." },
+    { q:"“He arrived late, ____ irritated the whole panel.”", opts:["which","that","what","who"], ans:0, exp:"which non-defining riferito all'intera frase precedente." },
+    { q:"Scegli il connettore di concessione formale:", opts:["The proposal, albeit expensive, is sensible.","The proposal, although expensive it is, is sensible.","The proposal, despite expensive, is sensible.","The proposal, even expensive, is sensible."], ans:0, exp:"albeit + aggettivo/frase ridotta = although." }
+  ],
+  'vocab': [
+    { q:"Registro alto per “a very big increase”:", opts:["a substantial increase","a fat increase","a giant increase","a mega increase"], ans:0, exp:"'substantial' è preciso e formale." },
+    { q:"Collocazione corretta:", opts:["make a decision","do a decision","take a decision quickly make","have a decision"], ans:0, exp:"make a decision (con 'do' è errato)." },
+    { q:"“Heavy ____” è la collocazione naturale con:", opts:["rain","water","storm wet","cloudy"], ans:0, exp:"heavy rain / heavy traffic / heavy smoker." },
+    { q:"Sinonimo preciso di “to say something is true without proof”:", opts:["to claim","to tell","to speak","to talk"], ans:0, exp:"claim = affermare (senza prova)." },
+    { q:"Aggettivo di registro alto per “not clear”:", opts:["ambiguous","unclear-ish","foggy","blurry"], ans:0, exp:"ambiguous = che ammette più interpretazioni." },
+    { q:"Collocazione: “to ____ a goal”", opts:["achieve","reach up","make","gain up"], ans:0, exp:"achieve a goal / reach a target." }
+  ],
+  'wordform': [
+    { q:"STRONG → “We must ____ our defences.”", opts:["strengthen","strong","strongen","strengthness"], ans:0, exp:"strong → strength → strengthen (verbo)." },
+    { q:"RELY → “He is utterly ____.”", opts:["reliable","reliant on nothing","relying","reliableness"], ans:0, exp:"rely → reliable (aggettivo di persona/oggetto affidabile)." },
+    { q:"ANALYSE → “She has an ____ mind.”", opts:["analytical","analysing","analysis","analytic-able"], ans:0, exp:"analyse → analytical (aggettivo)." },
+    { q:"CONSIST → prefisso negativo: “His story was ____.”", opts:["inconsistent","unconsistent","disconsistent","misconsistent"], ans:0, exp:"in- + consistent = inconsistent." },
+    { q:"LONG → “a rather ____ delay.”", opts:["lengthy","longly","longness","lengthful"], ans:0, exp:"long → length → lengthy." },
+    { q:"ABLE → “people with a ____.”", opts:["disability","unability","disablement only","inability physical"], ans:0, exp:"able → ability → disability." }
+  ],
+  'register': [
+    { q:"Versione formale di “I want to know about the course.”", opts:["I am writing to enquire about the course.","I wanna know about the course.","Tell me about the course.","I need to know the course stuff."], ans:0, exp:"'enquire about' + apertura formale." },
+    { q:"Formale per “but”:", opts:["nevertheless","plus","anyway","so"], ans:0, exp:"nevertheless / however introducono un contrasto formale." },
+    { q:"Corretto:", opts:["Despite being tired, she carried on.","Despite of being tired, she carried on.","Although tired but she carried on.","Despite she was tired, she carried on."], ans:0, exp:"despite + -ing/nome; niente 'despite of'." },
+    { q:"Chiusura formale di un'email:", opts:["Should you require further information, please do not hesitate to contact me.","Hit me up if you need anything.","Let me know, cheers.","Text me back soon."], ans:0, exp:"Formula standard di chiusura formale." },
+    { q:"Formale per “a lot of problems”:", opts:["numerous problems","loads of problems","tons of problems","a bunch of problems"], ans:0, exp:"numerous / a great many = registro alto." }
+  ],
+  'idiom': [
+    { q:"“to bite the bullet” significa:", opts:["affrontare qualcosa di sgradevole e inevitabile","sparare a qualcuno","mangiare in fretta","arrabbiarsi molto"], ans:0, exp:"Affrontare con coraggio qualcosa di difficile." },
+    { q:"“a blessing in disguise” significa:", opts:["un male che si rivela un bene","una benedizione religiosa","un travestimento","una fortuna evidente"], ans:0, exp:"Qualcosa di apparentemente negativo che si rivela positivo." },
+    { q:"phrasal: “to put up with” significa:", opts:["sopportare, tollerare","alloggiare qualcuno","alzare qualcosa","proporre"], ans:0, exp:"tollerare qualcosa di spiacevole." },
+    { q:"“to gloss over” significa:", opts:["sorvolare, minimizzare","lucidare","spiegare in dettaglio","tradurre"], ans:0, exp:"trattare un problema in modo superficiale." },
+    { q:"“the last straw” significa:", opts:["la goccia che fa traboccare il vaso","l'ultima cannuccia","un piccolo aiuto","la fine felice"], ans:0, exp:"l'ultimo di una serie di fastidi, che fa perdere la pazienza." },
+    { q:"phrasal: “to wriggle out of” significa:", opts:["svicolare da un dovere con scuse","entrare di nascosto","risolvere del tutto","annullare un contratto"], ans:0, exp:"evitare un obbligo con astuzia." },
+    { q:"“to see eye to eye” significa:", opts:["essere pienamente d'accordo","guardarsi negli occhi","sorvegliare","sfidarsi"], ans:0, exp:"concordare con qualcuno." },
+    { q:"phrasal: “to carry out” significa:", opts:["eseguire, svolgere (un compito)","portare fuori la spazzatura","continuare","sopportare"], ans:0, exp:"carry out a task/an inspection = eseguire." }
+  ],
+  'ex1': [
+    { q:"“I've never eaten such spicy food.” → EVER: “This is ____ eaten.”", opts:["the spiciest food I've ever","the most spicy food I ever","spicier food than I've ever","the spiciest food I never"], ans:0, exp:"Superlativo + present perfect con 'ever'." },
+    { q:"“It's not necessary to book.” → NEED: “You ____ book.”", opts:["don't need to","needn't to","don't need","mustn't"], ans:0, exp:"don't need to + infinito (o needn't + base)." },
+    { q:"“Perhaps she forgot.” → MIGHT: “She ____ .”", opts:["might have forgotten","might forget","might have forget","may forgot"], ans:0, exp:"might have + participio = possibilità sul passato." },
+    { q:"“I regret selling my bike.” → WISH: “I ____ my bike.”", opts:["wish I hadn't sold","wish I didn't sell","wish I haven't sold","wish I wouldn't sell"], ans:0, exp:"wish + past perfect per un rimpianto sul passato." },
+    { q:"“They'll cancel the trip if it rains.” → CASE: “They'll cancel it ____ rains.”", opts:["in case it","in the case it","in case of it","in case that it"], ans:0, exp:"in case + soggetto + verbo." },
+    { q:"“Someone is repairing our car.” → HAVING: “We ____ .”", opts:["are having our car repaired","are having repaired our car","have our car repairing","are repairing our car had"], ans:0, exp:"causativo: have + oggetto + participio passato." }
+  ],
+  'ex2': [
+    { q:"Trova la correzione: “If I would have known, I would have come.”", opts:["If I had known, I would have come.","If I would known, I would come.","If I have known, I would have come.","If I knew, I would have came."], ans:0, exp:"Nel se-clause del terzo condizionale: past perfect, non 'would have'." },
+    { q:"“Despite of the rain, we went out.”", opts:["Despite the rain, we went out.","Despite of the rain, we go out.","Although of the rain, we went out.","In despite the rain, we went out."], ans:0, exp:"despite + nome (senza 'of')." },
+    { q:"“She suggested me to take a break.”", opts:["She suggested that I take a break.","She suggested me taking a break.","She suggested to me take a break.","She suggested me take a break."], ans:0, exp:"suggest + that + congiuntivo (non 'suggest sb to do')." },
+    { q:"“Hardly I had arrived when the phone rang.”", opts:["Hardly had I arrived when the phone rang.","Hardly I arrived when the phone rang.","Hardly did I arrived when the phone rang.","Hardly had arrived I when the phone rang."], ans:0, exp:"Dopo 'Hardly' iniziale serve l'inversione: had I arrived." },
+    { q:"“The number of applicants have risen.”", opts:["The number of applicants has risen.","The number of applicants have rise.","The numbers of applicant has risen.","The number of applicant have risen."], ans:0, exp:"'The number of' è singolare → has." },
+    { q:"“I look forward to hear from you.”", opts:["I look forward to hearing from you.","I look forward to hear of you.","I am looking forward to hear from you.","I look forward hearing from you."], ans:0, exp:"look forward to + -ing (to è preposizione)." }
+  ],
+  'ex3': [
+    { q:"“____ the difficult conditions, the team met the deadline.”", opts:["Notwithstanding","Nevertheless","However","Whereas"], ans:0, exp:"Notwithstanding + nome = nonostante (formale)." },
+    { q:"“The findings are ____ with previous research.”", opts:["consistent","consequent","persistent","insistent"], ans:0, exp:"consistent with = coerente con." },
+    { q:"“It is essential that the form ____ in ink.”", opts:["be completed","is completed","was completed","completes"], ans:0, exp:"congiuntivo mandativo passivo: be completed." },
+    { q:"“Only by working hard ____ succeed.”", opts:["will you","you will","you would","will to you"], ans:0, exp:"Dopo 'Only by …' si inverte: will you." },
+    { q:"“Her argument was so persuasive ____ everyone agreed.”", opts:["that","as","than","so"], ans:0, exp:"so + agg. + that (frase consecutiva)." },
+    { q:"“He denied ____ the money.”", opts:["taking","to take","take","to have take"], ans:0, exp:"deny + -ing." }
+  ]
+};
+const quizMeta = {
+  'gr1':"Gr.1 Condizionali & inversione", 'gr2':"Gr.2 Inversione negativa", 'gr3':"Gr.3 Congiuntivo",
+  'gr4':"Gr.4 Cleft & enfasi", 'gr5':"Gr.5 Participiali", 'gr6':"Gr.6 Passivo avanzato",
+  'gr7':"Gr.7 Modalità", 'gr8':"Gr.8 Relative & connettori", 'vocab':"Lessico", 'wordform':"Word formation",
+  'register':"Registro", 'idiom':"Idioms & phrasal", 'ex1':"Es. Key word transformation",
+  'ex2':"Es. Error correction", 'ex3':"Es. Mixed cloze"
+};
+const qState = {};
+
+function initQuiz(id){ qState[id] = { order: shuffle(quizData[id].map((_,i)=>i)), i:0, score:0, answered:false }; renderQuiz(id); }
+function renderQuiz(id){
+  const st = qState[id]; const item = quizData[id][st.order[st.i]]; const total = st.order.length;
+  const pct = (st.i/total)*100;
+  document.getElementById('quiz-'+id).innerHTML = `
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="quiz-q">❓ ${item.q}</div>
+    <div class="quiz-opts" id="opts-${id}">
+      ${item.opts.map((o,i)=>`<button class="quiz-opt" onclick="answerQuiz('${id}',${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="fb-${id}"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-indigo" id="next-${id}" onclick="nextQuiz('${id}')" style="display:none">Prossima →</button>
+      <span class="score-pill">${st.score}/${total}</span>
+    </div>`;
+}
+function answerQuiz(id, chosen){
+  const st = qState[id]; if(st.answered) return; st.answered = true;
+  const item = quizData[id][st.order[st.i]];
+  const opts = document.querySelectorAll('#opts-'+id+' .quiz-opt');
+  const fb = document.getElementById('fb-'+id);
+  opts.forEach((o,i)=>{ o.disabled=true; if(i===item.ans) o.classList.add('correct'); else if(i===chosen) o.classList.add('wrong'); });
+  if(chosen===item.ans){ st.score++; fb.innerHTML = `✅ Corretto! <span class="exp">${item.exp}</span>`; fb.className='quiz-feedback ok'; }
+  else { fb.innerHTML = `❌ Giusta: “${item.opts[item.ans]}”. <span class="exp">${item.exp}</span>`; fb.className='quiz-feedback err'; }
+  document.getElementById('next-'+id).style.display='';
+}
+function nextQuiz(id){
+  const st = qState[id]; st.i++; st.answered=false;
+  if(st.i >= st.order.length){
+    saveResult(id, st.score, st.order.length);
+    const s=st.score, t=st.order.length, pct=Math.round(s/t*100);
+    const emoji = pct>=80?'🌟':pct>=50?'😊':'💪';
+    document.getElementById('quiz-'+id).innerHTML = `
+      <div style="text-align:center;padding:14px 0;">
+        <div style="font-size:2.2rem;">${emoji}</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.6rem;color:var(--indigo);">${s}/${t}</div>
+        <p style="margin:6px 0 14px;color:var(--muted);font-size:0.88rem;">${pct>=80?'Ottimo controllo!':'Ripassa e riprova!'}</p>
+        <button class="btn btn-ghost" onclick="initQuiz('${id}')">🔄 Rifai</button>
+      </div>`;
+    return;
+  }
+  renderQuiz(id);
+}
+
+// ═══════════════════ VOCAB FLASHCARDS ═══════════════════
+const vocab = {
+  "Adjectives+": [
+    ["superb","adj","excellent, di altissima qualità","a superb performance"],
+    ["dreadful","adj","terrible, awful","the weather was dreadful"],
+    ["substantial","adj","large in amount, considerevole","a substantial sum of money"],
+    ["negligible","adj","so small it's not worth considering","the risk is negligible"],
+    ["compelling","adj","convincente, irresistibile","a compelling argument"],
+    ["daunting","adj","intimidating, scoraggiante","a daunting task"]
+  ],
+  "Collocations": [
+    ["make an effort","phr","fare uno sforzo","make a real effort to attend"],
+    ["take responsibility","phr","assumersi la responsabilità","take full responsibility for it"],
+    ["heavy traffic","phr","traffico intenso","stuck in heavy traffic"],
+    ["draw a conclusion","phr","trarre una conclusione","draw the obvious conclusion"],
+    ["meet a deadline","phr","rispettare una scadenza","struggle to meet the deadline"],
+    ["raise awareness","phr","sensibilizzare","raise awareness of the issue"]
+  ],
+  "Academic": [
+    ["demonstrate","v","mostrare, dimostrare (con prove)","the data demonstrate a clear trend"],
+    ["indicate","v","indicare, suggerire","results indicate a decline"],
+    ["obtain","v","ottenere (formale)","permission must be obtained"],
+    ["significant","adj","importante, rilevante (anche statistico)","a significant difference"],
+    ["furthermore","adv","inoltre (formale)","furthermore, costs have risen"],
+    ["albeit","conj","sebbene (+ frase ridotta)","a useful, albeit costly, solution"]
+  ],
+  "Nuance": [
+    ["confident vs arrogant","adj","sicuro di sé ↔ arrogante","confident (positivo), arrogant (negativo)"],
+    ["thrifty vs stingy","adj","parsimonioso ↔ tirchio","thrifty (positivo), stingy (negativo)"],
+    ["assertive vs pushy","adj","deciso ↔ invadente","assertive (positivo), pushy (negativo)"],
+    ["curious vs nosy","adj","curioso ↔ ficcanaso","curious (neutro), nosy (negativo)"],
+    ["slim vs skinny","adj","snello ↔ magro (spregiativo)","slim (positivo), skinny (negativo)"],
+    ["childlike vs childish","adj","ingenuo/puro ↔ infantile","childlike (positivo), childish (negativo)"]
+  ]
+};
+let currentTheme = "Adjectives+", currentCard = 0, isFlipped = false;
+function initVocab(){
+  const tabs = document.getElementById('vocabThemes');
+  tabs.innerHTML = Object.keys(vocab).map((t,i)=>`<button class="theme-tab ${i===0?'active':''}" onclick="setTheme('${t}',this)">${t}</button>`).join('');
+  renderCard(); renderTable();
+}
+function setTheme(t, el){
+  currentTheme = t; currentCard = 0; isFlipped = false;
+  document.querySelectorAll('#vocabThemes .theme-tab').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('flashcard').classList.remove('flipped');
+  renderCard(); renderTable();
+}
+function renderCard(){
+  const c = vocab[currentTheme][currentCard];
+  document.getElementById('fcPos').textContent = c[1];
+  document.getElementById('fcWord').textContent = c[0];
+  document.getElementById('fcMean').textContent = c[2];
+  document.getElementById('fcEx').textContent = "“"+c[3]+"”";
+  document.getElementById('fcCount').textContent = (currentCard+1)+" / "+vocab[currentTheme].length;
+}
+function renderTable(){
+  const rows = vocab[currentTheme];
+  document.getElementById('wordTableArea').innerHTML = `<table class="tbl"><thead><tr><th>Parola</th><th>Significato</th><th>Esempio</th></tr></thead>
+    <tbody>${rows.map(w=>`<tr><td>${w[0]}</td><td>${w[2]}</td><td style="font-style:italic;color:var(--muted)">${w[3]}</td></tr>`).join('')}</tbody></table>`;
+}
+function flipCard(){ isFlipped=!isFlipped; document.getElementById('flashcard').classList.toggle('flipped', isFlipped); }
+function prevCard(){ const n=vocab[currentTheme].length; currentCard=(currentCard-1+n)%n; isFlipped=false; document.getElementById('flashcard').classList.remove('flipped'); renderCard(); }
+function nextCard(){ const n=vocab[currentTheme].length; currentCard=(currentCard+1)%n; isFlipped=false; document.getElementById('flashcard').classList.remove('flipped'); renderCard(); }
+
+// ═══════════════════ FINAL TEST ═══════════════════
+const testPassages = [
+  { title:"The rise of remote work", text:"When the pandemic forced millions to work from home, few imagined the change would outlast it. Yet years later, hybrid arrangements have become the norm rather than the exception. Employers who once insisted on constant supervision have, somewhat reluctantly, come to accept that productivity does not hinge on physical presence. Critics, however, warn that the erosion of face-to-face contact may, in the long run, weaken the informal bonds on which creativity so often depends." },
+  { title:"In praise of boredom", text:"We tend to treat boredom as an enemy to be defeated with a glance at a screen. Psychologists, though, increasingly argue that idle moments are far from wasted. It is precisely when the mind is left to wander, unoccupied by tasks, that it forges unexpected connections. Far from being a void, boredom may be the very soil in which original ideas take root." }
+];
+const sectionMeta = [
+  { name:"Multiple-choice cloze", icon:"🔤" },
+  { name:"Open cloze", icon:"⛓️" },
+  { name:"Word formation", icon:"🧩" },
+  { name:"Key word transformation", icon:"🔑" },
+  { name:"Reading", icon:"📖" }
+];
+const finalTest = [
+  // ── S0: multiple-choice cloze (vocab & collocations) ──
+  { sec:0, q:"The evidence was so ____ that the jury reached a verdict within an hour.", opts:["compelling","interesting","big","nice"], ans:0, exp:"compelling evidence = prove convincenti." },
+  { sec:0, q:"She made a ____ effort to finish the project on time.", opts:["concerted","strong-willed","hard","heavy"], ans:0, exp:"a concerted effort = uno sforzo deciso e coordinato." },
+  { sec:0, q:"The difference between the two samples was ____ .", opts:["negligible","tiny bit","few","little-ish"], ans:0, exp:"negligible = trascurabile." },
+  { sec:0, q:"We got stuck in ____ traffic on the motorway.", opts:["heavy","strong","thick","big"], ans:0, exp:"heavy traffic è la collocazione naturale." },
+  { sec:0, q:"The report failed to ____ any firm conclusions.", opts:["draw","make","take","do"], ans:0, exp:"draw a conclusion." },
+  { sec:0, q:"His explanation was ____ ; nobody could be sure what he meant.", opts:["ambiguous","clear","obvious","plain"], ans:0, exp:"ambiguous = ambiguo, poco chiaro." },
+  { sec:0, q:"The company managed to ____ a substantial share of the market.", opts:["capture","catch","grab up","take over on"], ans:0, exp:"capture market share = conquistare quote di mercato." },
+  { sec:0, q:"They eventually ____ responsibility for the mistake.", opts:["took","made","did","got"], ans:0, exp:"take responsibility for." },
+  // ── S1: open cloze (grammatical word) ──
+  { sec:1, q:"“No sooner had she sat down ____ the phone rang.”", opts:["than","when","that","then"], ans:0, exp:"No sooner … than." },
+  { sec:1, q:"“It was her patience ____ impressed the panel.”", opts:["that","who","which it","what"], ans:0, exp:"cleft: it was … that." },
+  { sec:1, q:"“He behaves as ____ he owned the place.”", opts:["if","like","though that","that"], ans:0, exp:"as if + past subjunctive." },
+  { sec:1, q:"“There were 60 guests, many ____ whom were relatives.”", opts:["of","for","to","with"], ans:0, exp:"many of whom." },
+  { sec:1, q:"“____ being exhausted, she carried on to the summit.”", opts:["Despite","Although","However","Even"], ans:0, exp:"Despite + -ing." },
+  { sec:1, q:"“I'd rather you ____ tell anyone about this.”", opts:["didn't","don't","wouldn't","not"], ans:0, exp:"would rather + soggetto + past (negativo didn't)." },
+  { sec:1, q:"“Little ____ they know what lay ahead.”", opts:["did","do","had","were"], ans:0, exp:"Little did they know — inversione." },
+  { sec:1, q:"“The more you practise, ____ better you become.”", opts:["the","a","much","even"], ans:0, exp:"the … the … (comparativo doppio)." },
+  // ── S2: word formation ──
+  { sec:2, q:"STRONG — “The team worked to ____ its position.”", opts:["strengthen","strong","strengthness","strongen"], ans:0, exp:"strengthen (verbo)." },
+  { sec:2, q:"CONSIST — “Her results were ____ across all trials.”", opts:["consistent","consistence","consisting","consistently ones"], ans:0, exp:"consistent (aggettivo)." },
+  { sec:2, q:"PERSUADE — “He gave a ____ speech.”", opts:["persuasive","persuadable","persuading","persuasion"], ans:0, exp:"persuasive (aggettivo)." },
+  { sec:2, q:"ABLE — “The scheme supports people with a ____.”", opts:["disability","disable","unability","disableness"], ans:0, exp:"disability (nome)." },
+  { sec:2, q:"RELY — “Solar power is now highly ____.”", opts:["reliable","reliant","relying","reliance"], ans:0, exp:"reliable (aggettivo)." },
+  { sec:2, q:"LONG — “after a ____ discussion.”", opts:["lengthy","longly","longsome","lengthful"], ans:0, exp:"lengthy." },
+  { sec:2, q:"DECIDE — “a ____ victory.”", opts:["decisive","decidable","deciding","decision"], ans:0, exp:"decisive (aggettivo)." },
+  { sec:2, q:"AWARE — “a campaign to raise ____.”", opts:["awareness","awaredness","awareful","awaring"], ans:0, exp:"awareness (nome)." },
+  // ── S3: key word transformation (MC) ──
+  { sec:3, q:"“I'm sure he forgot.” — MUST: “He ____ .”", opts:["must have forgotten","must forget","must have forget","must be forgotten"], ans:0, exp:"must have + p.p." },
+  { sec:3, q:"“It was a mistake to trust him.” — SHOULD: “I ____ him.”", opts:["shouldn't have trusted","shouldn't trust","should have not trust","shouldn't have trust"], ans:0, exp:"shouldn't have + p.p." },
+  { sec:3, q:"“Nobody has ever been so kind to me.” — SUCH: “I've never ____ kindness.”", opts:["been shown such","shown such a","been shown so","been such shown"], ans:0, exp:"been shown such kindness." },
+  { sec:3, q:"“They can't have arrived yet.” — POSSIBLY: “They ____ arrived yet.”", opts:["can't possibly have","possibly can't have","can't have possibly to","can possibly not have"], ans:0, exp:"can't possibly have + p.p." },
+  { sec:3, q:"“If you hadn't helped, I'd have failed.” — BUT: “____ your help, I'd have failed.”", opts:["But for","But of","If but for","But without"], ans:0, exp:"But for + nome = se non fosse stato per." },
+  { sec:3, q:"“She regrets not studying harder.” — WISHES: “She ____ harder.”", opts:["wishes she had studied","wishes she studied","wishes to study","wishes she has studied"], ans:0, exp:"wish + past perfect." },
+  { sec:3, q:"“It's possible that the flight was delayed.” — MIGHT: “The flight ____ .”", opts:["might have been delayed","might be delayed","might have delayed","might been delayed"], ans:0, exp:"might have been + p.p. (passivo)." },
+  { sec:3, q:"“As soon as we arrived, it started to rain.” — SOONER: “No ____ than it started to rain.”", opts:["sooner had we arrived","sooner we arrived","sooner did we arrive","sooner were we arrived"], ans:0, exp:"No sooner had we arrived than…" },
+  // ── S4: reading ──
+  { sec:4, p:0, q:"According to the passage, hybrid work has become:", opts:["the normal arrangement, not the exception","completely rejected by employers","less common than before","illegal in many places"], ans:0, exp:"“the norm rather than the exception”." },
+  { sec:4, p:0, q:"Employers accepted remote work:", opts:["reluctantly","enthusiastically","immediately","never"], ans:0, exp:"“somewhat reluctantly, come to accept”." },
+  { sec:4, p:0, q:"The word “hinge on” in the text is closest in meaning to:", opts:["depend on","object to","result from","consist of"], ans:0, exp:"hinge on = dipendere da." },
+  { sec:4, p:0, q:"Critics fear that less face-to-face contact may:", opts:["weaken informal bonds behind creativity","increase office rent","improve productivity","end hybrid work"], ans:0, exp:"“weaken the informal bonds on which creativity depends”." },
+  { sec:4, p:1, q:"The writer's main argument about boredom is that it:", opts:["can foster original ideas","should always be avoided","is a sign of laziness","harms the mind"], ans:0, exp:"“the very soil in which original ideas take root”." },
+  { sec:4, p:1, q:"“Idle moments are far from wasted” means they are:", opts:["actually valuable","completely useless","rarely experienced","physically tiring"], ans:0, exp:"far from wasted = tutt'altro che sprecati." },
+  { sec:4, p:1, q:"According to the passage, new connections form when the mind is:", opts:["allowed to wander","kept very busy","looking at a screen","under pressure"], ans:0, exp:"“when the mind is left to wander”." },
+  { sec:4, p:1, q:"The tone of the passage towards boredom is:", opts:["appreciative","dismissive","fearful","indifferent"], ans:0, exp:"Il titolo “In praise of boredom” e il testo la valorizzano." }
+];
+
+const secTotals = [0,0,0,0,0];
+finalTest.forEach(q => secTotals[q.sec]++);
+let ft = { i:0, answered:false, secScore:[0,0,0,0,0], timer:null, remaining:60*60 };
+
+function fmtTime(s){ const m=Math.floor(s/60), sec=s%60; return (m<10?'0':'')+m+':'+(sec<10?'0':'')+sec; }
+function startFinal(){
+  ft = { i:0, answered:false, secScore:[0,0,0,0,0], timer:null, remaining:60*60 };
+  document.getElementById('testIntro').style.display='none';
+  document.getElementById('testResult').style.display='none';
+  document.getElementById('testArea').style.display='block';
+  ft.timer = setInterval(tickTimer, 1000);
+  renderFinal();
+}
+function tickTimer(){
+  ft.remaining--;
+  const el = document.getElementById('timerPill');
+  if(el){ el.textContent = '⏱ '+fmtTime(ft.remaining); el.className = 'timer-pill' + (ft.remaining<=60?' danger':ft.remaining<=300?' warn':''); }
+  if(ft.remaining<=0){ clearInterval(ft.timer); showFinalResult(true); }
+}
+function renderFinal(){
+  const item = finalTest[ft.i]; const meta = sectionMeta[item.sec]; const total = finalTest.length;
+  const pct = (ft.i/total)*100;
+  const passageHtml = (item.p!==undefined) ? `<div class="reading-box"><h4>📖 ${testPassages[item.p].title}</h4>${testPassages[item.p].text}</div>` : '';
+  const cls = ft.remaining<=60?' danger':ft.remaining<=300?' warn':'';
+  document.getElementById('testArea').innerHTML = `
+    <div class="section-banner">
+      <span class="n">${meta.icon}</span>
+      <div><div class="t">Sezione ${item.sec+1} — ${meta.name}</div><div class="s">Domanda ${ft.i+1} di ${total}</div></div>
+      <span class="timer-pill${cls}" id="timerPill">⏱ ${fmtTime(ft.remaining)}</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    ${passageHtml}
+    <div class="quiz-q">❓ ${item.q}</div>
+    <div class="quiz-opts" id="ft-opts">
+      ${item.opts.map((o,i)=>`<button class="quiz-opt" onclick="answerFinal(${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="ft-fb"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-indigo" id="ft-next" onclick="nextFinal()" style="display:none">Prossima →</button>
+      <span class="score-pill">${ft.secScore.reduce((a,b)=>a+b,0)}/${total}</span>
+    </div>`;
+  document.getElementById('testArea').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+function answerFinal(chosen){
+  if(ft.answered) return; ft.answered=true;
+  const item = finalTest[ft.i];
+  const opts = document.querySelectorAll('#ft-opts .quiz-opt');
+  const fb = document.getElementById('ft-fb');
+  opts.forEach((o,i)=>{ o.disabled=true; if(i===item.ans) o.classList.add('correct'); else if(i===chosen) o.classList.add('wrong'); });
+  if(chosen===item.ans){ ft.secScore[item.sec]++; fb.innerHTML=`✅ Corretto! <span class="exp">${item.exp}</span>`; fb.className='quiz-feedback ok'; }
+  else { fb.innerHTML=`❌ Giusta: “${item.opts[item.ans]}”. <span class="exp">${item.exp}</span>`; fb.className='quiz-feedback err'; }
+  document.getElementById('ft-next').style.display='';
+}
+function nextFinal(){
+  ft.i++; ft.answered=false;
+  if(ft.i >= finalTest.length){ showFinalResult(false); return; }
+  renderFinal();
+}
+function showFinalResult(timeUp){
+  if(ft.timer) clearInterval(ft.timer);
+  const totalScore = ft.secScore.reduce((a,b)=>a+b,0);
+  const totalQ = finalTest.length; const pct = Math.round(totalScore/totalQ*100);
+  const detail = sectionMeta.map((m,i)=>`${m.name}: ${ft.secScore[i]}/${secTotals[i]}`).join(' · ');
+  saveResult('finaltest', totalScore, totalQ, detail);
+  document.getElementById('testArea').style.display='none';
+  const r = document.getElementById('testResult'); r.style.display='block';
+  let emoji, msg, color;
+  if(pct>=85){ emoji='🏆'; msg='Livello C2 in vista! Prestazione eccellente.'; color='var(--green)'; }
+  else if(pct>=70){ emoji='🌟'; msg='Ottimo, solido C1! Ci sei quasi.'; color='var(--indigo)'; }
+  else if(pct>=50){ emoji='😊'; msg='Buona base: ripassa le sezioni deboli.'; color='var(--blue)'; }
+  else { emoji='💪'; msg='Continua ad allenarti: rivedi grammatica e lessico.'; color='var(--rose)'; }
+  const secRows = sectionMeta.map((m,i)=>`
+    <div class="sec-result-row"><span style="font-size:1.2rem;">${m.icon}</span>
+      <span class="name">${m.name}</span><span class="val" style="color:${color}">${ft.secScore[i]}/${secTotals[i]}</span></div>`).join('');
+  r.innerHTML = `
+    <div class="result-box">
+      <div style="font-size:3.2rem;">${emoji}</div>
+      ${timeUp?'<div style="color:var(--rose);font-weight:800;margin-bottom:6px;">⏱ Tempo scaduto!</div>':''}
+      <div class="big-score" style="color:${color}">${totalScore}/${totalQ}</div>
+      <div style="font-size:1rem;color:var(--muted);margin:2px 0;">${pct}% corretto</div>
+      <div class="msg">${msg}</div>
+      <div style="max-width:420px;margin:16px auto 0;">${secRows}</div>
+      <div class="progress-bar" style="margin:18px 0 8px;height:12px;"><div class="progress-fill" style="width:${pct}%;background:linear-gradient(90deg,${color},var(--purple));"></div></div>
+      <button class="btn btn-rose" onclick="startFinal()" style="margin:12px 8px 0 0;">🔄 Riprova</button>
+      <button class="btn btn-ghost" onclick="showFinalIntro()" style="margin-top:12px;">🏠 Menù test</button>
+    </div>`;
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+function showFinalIntro(){
+  if(ft.timer) clearInterval(ft.timer);
+  document.getElementById('testIntro').style.display='';
+  document.getElementById('testArea').style.display='none';
+  document.getElementById('testResult').style.display='none';
+}
+
+// ═══════════════════ RESULTS STORAGE ═══════════════════
+const PARENT_PASSWORD = "daniele2026";
+let memoryResults = [];
+function loadResults(){ try{ const raw=localStorage.getItem('advEnglishResults'); return raw?JSON.parse(raw):[]; }catch(e){ return memoryResults; } }
+function saveResult(id, score, total, detail){
+  const entry = { quiz: (id==='finaltest'?'🎯 TEST FINALE':(quizMeta[id]||id)), score, total, detail:detail||"",
+    date: new Date().toLocaleString('it-IT',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}) };
+  try{ const all=loadResults(); all.push(entry); localStorage.setItem('advEnglishResults', JSON.stringify(all)); }
+  catch(e){ memoryResults.push(entry); }
+}
+function checkPassword(){
+  const val=document.getElementById('pwInput').value; const err=document.getElementById('pwError');
+  if(val===PARENT_PASSWORD){ document.getElementById('resultsLock').style.display='none'; document.getElementById('resultsArea').style.display='block'; renderResults(); }
+  else { err.textContent="❌ Password sbagliata, riprova!"; document.getElementById('pwInput').value=''; }
+}
+function renderResults(){
+  const all=loadResults(); const list=document.getElementById('resultsList');
+  if(all.length===0){ list.innerHTML=`<p style="text-align:center;color:var(--muted);padding:20px 0;">Nessun risultato ancora. 📭</p>`; return; }
+  const rows=[...all].reverse().map(r=>{
+    const pct=Math.round(r.score/r.total*100);
+    const color=pct>=80?'var(--green)':pct>=60?'var(--blue)':pct>=40?'var(--amber)':'var(--rose)';
+    const isTest=r.quiz.includes('TEST');
+    return `<div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:${isTest?'#FFF7E9':'#F6F5FD'};border-radius:10px;margin-bottom:8px;border-left:4px solid ${color};">
+      <div style="flex:1;"><div style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.9rem;">${r.quiz}</div>
+      ${r.detail?`<div style="font-size:0.72rem;color:var(--indigo);margin:2px 0;">${r.detail}</div>`:''}
+      <div style="font-size:0.75rem;color:var(--muted);">${r.date}</div></div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;color:${color};">${r.score}/${r.total}</div>
+      <div style="font-size:0.8rem;color:var(--muted);min-width:42px;text-align:right;">${pct}%</div></div>`;
+  }).join('');
+  const tests=all.filter(r=>r.quiz.includes('TEST')), others=all.filter(r=>!r.quiz.includes('TEST'));
+  const avg=arr=>arr.length?Math.round(arr.reduce((s,r)=>s+r.score/r.total,0)/arr.length*100):null;
+  const stats=`<div class="stat-grid">
+    <div style="background:#EAE8FA;"><div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;color:var(--indigo);">${all.length}</div><div style="font-size:0.75rem;color:var(--muted);">Attività</div></div>
+    <div style="background:#E7F8F1;"><div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;color:var(--green);">${avg(others)!==null?avg(others)+'%':'—'}</div><div style="font-size:0.75rem;color:var(--muted);">Media quiz</div></div>
+    <div style="background:#FFF7E9;"><div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;color:var(--amber);">${avg(tests)!==null?avg(tests)+'%':'—'}</div><div style="font-size:0.75rem;color:var(--muted);">Media test</div></div>
+  </div>`;
+  list.innerHTML = stats + rows;
+}
+function copySummary(){
+  const all=loadResults(); const fb=document.getElementById('copyFeedback');
+  if(all.length===0){ fb.textContent="Nessun risultato da copiare!"; fb.style.color='var(--rose)'; return; }
+  let txt="📊 RISULTATI ADVANCED ENGLISH (Sofia)\n─────────────────────\n";
+  all.forEach(r=>{ const pct=Math.round(r.score/r.total*100); txt+=`${r.quiz}: ${r.score}/${r.total} (${pct}%)${r.detail?' — ['+r.detail+']':''} — ${r.date}\n`; });
+  const tests=all.filter(r=>r.quiz.includes('TEST')), others=all.filter(r=>!r.quiz.includes('TEST'));
+  const avg=arr=>arr.length?Math.round(arr.reduce((s,r)=>s+r.score/r.total,0)/arr.length*100):null;
+  txt+="─────────────────────\n";
+  if(avg(others)!==null) txt+=`Media quiz/esercizi: ${avg(others)}%\n`;
+  if(avg(tests)!==null) txt+=`Media Test Finale: ${avg(tests)}%\n`;
+  function done(ok){ fb.style.color=ok?'var(--green)':'var(--rose)'; fb.textContent=ok?"✅ Copiato!":"Copia non riuscita — seleziona il testo qui sotto.";
+    if(!ok){ const pre=document.createElement('textarea'); pre.value=txt; pre.style.cssText='width:100%;height:140px;margin-top:8px;font-size:0.8rem;padding:8px;border-radius:8px;border:2px solid var(--line);'; fb.after(pre); pre.select(); } }
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(()=>done(true)).catch(()=>done(false)); } else { done(false); }
+}
+function clearResults(){ if(!confirm("Cancellare tutti i risultati salvati?")) return; try{ localStorage.removeItem('advEnglishResults'); }catch(e){} memoryResults=[]; renderResults(); }
+
+// ═══════════════════ INIT ═══════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  Object.keys(quizData).forEach(id => initQuiz(id));
+  initVocab();
+});
+</script>
+</body>
+</html>
