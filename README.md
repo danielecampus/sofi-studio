@@ -2,6 +2,17 @@
 
 Materiale di studio per Sofia.
 
+🌐 **Sito:** https://danielecampus.github.io/sofi-studio/ — la home (`index.html`) raccoglie tutte le dashboard e i PDF.
+
+## 🎓 inglese/Advanced/ (livello C1–C2)
+
+| File | Cosa contiene |
+|------|---------------|
+| [advanced-dashboard-C1-C2.html](inglese/Advanced/advanced-dashboard-C1-C2.html) | 🎓 **English Dashboard Advanced** — app C1–C2: grammatica avanzata (8 schede con quiz), lessico/flashcard, word formation, registro, idioms, **esercizi misti** e un **test finale cronometrato da 60 minuti** (40 domande, 5 sezioni). |
+| [advanced-grammar-C1-C2.pdf](inglese/Advanced/advanced-grammar-C1-C2.pdf) | 📐 Glossario di grammatica avanzata e formale: condizionali, inversione, congiuntivo, cleft, participiali, passivo, modalità, connettori. |
+| [idiomatic-expressions.pdf](inglese/Advanced/idiomatic-expressions.pdf) | 🎭 30 idiomatic expressions con significato e 2 esempi. |
+| [phrasal-verbs-C1-C2.pdf](inglese/Advanced/phrasal-verbs-C1-C2.pdf) | 🔗 60 phrasal verbs C1→C2 su 4 livelli. |
+
 ## 📁 inglese/
 
 Cartella con tutto il materiale di inglese (Prima Liceo — Verso il B1).

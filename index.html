@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sofi Studio · Materiale di studio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+  :root{
+    --indigo:#4F46E5; --purple:#7C3AED; --pink:#FF6B9D; --blue:#2563EB;
+    --teal:#0E7C86; --green:#059669; --amber:#D97706; --rose:#E11D48; --navy:#1E3A8A;
+    --bg:#F4F5FB; --card:#fff; --text:#1F2433; --muted:#767B93; --line:#E9E7F5;
+    --shadow:0 6px 26px rgba(79,70,229,0.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+  header{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--indigo) 45%,var(--purple) 80%,var(--pink) 100%);
+    color:white;text-align:center;padding:44px 20px 38px;
+  }
+  header .logo{font-size:2.6rem;}
+  header h1{font-family:'Nunito',sans-serif;font-weight:900;font-size:2.3rem;letter-spacing:-0.5px;margin-top:4px;}
+  header p{opacity:0.92;font-size:1.02rem;margin-top:6px;}
+  main{max-width:940px;margin:0 auto;padding:30px 18px 70px;}
+  .group-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.35rem;margin:26px 0 6px;display:flex;align-items:center;gap:9px;}
+  .group-sub{color:var(--muted);font-size:0.92rem;margin-bottom:16px;}
+
+  .featured{
+    display:block;text-decoration:none;color:white;border-radius:20px;padding:24px 26px;margin-bottom:22px;
+    background:linear-gradient(135deg,var(--indigo),var(--purple));box-shadow:var(--shadow);
+    position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s;
+  }
+  .featured:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(79,70,229,0.28);}
+  .featured .tag{display:inline-block;background:rgba(255,255,255,0.22);border:1.5px solid rgba(255,255,255,0.5);
+    font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.6px;padding:3px 11px;border-radius:20px;margin-bottom:10px;}
+  .featured h2{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.55rem;display:flex;align-items:center;gap:10px;}
+  .featured p{opacity:0.94;font-size:0.96rem;margin-top:7px;max-width:640px;line-height:1.55;}
+  .featured .go{position:absolute;right:24px;bottom:20px;font-size:1.6rem;opacity:0.9;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:15px;}
+  .tile{
+    display:flex;flex-direction:column;text-decoration:none;color:var(--text);background:var(--card);
+    border-radius:15px;padding:18px 18px 16px;box-shadow:var(--shadow);border-top:4px solid var(--indigo);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .tile:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(31,36,51,0.14);}
+  .tile .ico{font-size:1.7rem;}
+  .tile h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:1.05rem;margin:8px 0 4px;}
+  .tile p{color:var(--muted);font-size:0.86rem;line-height:1.5;flex:1;}
+  .tile .kind{margin-top:10px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.4px;
+    display:inline-block;padding:3px 10px;border-radius:20px;align-self:flex-start;}
+  .kind.app{background:#EAE8FA;color:var(--indigo);} .kind.pdf{background:#FDECEF;color:var(--rose);}
+  .c-blue{border-color:var(--blue);} .c-teal{border-color:var(--teal);} .c-green{border-color:var(--green);}
+  .c-amber{border-color:var(--amber);} .c-rose{border-color:var(--rose);} .c-navy{border-color:var(--navy);}
+  .c-pink{border-color:var(--pink);} .c-purple{border-color:var(--purple);}
+
+  footer{text-align:center;color:var(--muted);font-size:0.82rem;padding:10px 18px 40px;}
+  footer code{background:#EEF0FF;color:var(--indigo);padding:1px 6px;border-radius:5px;font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">📚</div>
+  <h1>Sofi Studio</h1>
+  <p>Materiale di studio per Sofia · dashboard interattive e glossari</p>
+</header>
+
+<main>
+
+  <!-- ══════ INGLESE ══════ -->
+  <div class="group-title">🇬🇧 Inglese</div>
+  <div class="group-sub">Dashboard interattive (quiz, flashcard, test) e glossari stampabili.</div>
+
+  <a class="featured" href="inglese/Advanced/advanced-dashboard-C1-C2.html">
+    <span class="tag">★ NOVITÀ · LIVELLO C1–C2</span>
+    <h2>🎓 English Dashboard Advanced</h2>
+    <p>Grammatica avanzata, lessico preciso, word formation, registro, esercizi misti e un <strong>test finale cronometrato di 60 minuti</strong>. Il livello più alto, in stile esame Cambridge.</p>
+    <span class="go">→</span>
+  </a>
+
+  <div class="grid">
+    <a class="tile c-purple" href="inglese/english-dashboard-2.html">
+      <div class="ico">🚀</div><h3>English Booster</h3>
+      <p>Ripasso avanzato verso il B1: 9 capitoli di grammatica, ~120 vocaboli, verbi + trainer e test finale.</p>
+      <span class="kind app">APP</span>
+    </a>
+    <a class="tile c-pink" href="inglese/english-dashboard.html">
+      <div class="ico">🇬🇧</div><h3>English Ripasso</h3>
+      <p>App di ripasso base (Prima Liceo): tempi verbali, modali, articoli, con quiz e flashcard.</p>
+      <span class="kind app">APP</span>
+    </a>
+    <a class="tile c-navy" href="inglese/Advanced/advanced-grammar-C1-C2.pdf">
+      <div class="ico">📐</div><h3>Advanced Grammar</h3>
+      <p>Glossario C1–C2: condizionali, inversione, congiuntivo, cleft, participiali, passivo, modalità.</p>
+      <span class="kind pdf">PDF</span>
+    </a>
+    <a class="tile c-amber" href="inglese/Advanced/idiomatic-expressions.pdf">
+      <div class="ico">🎭</div><h3>English Idioms</h3>
+      <p>30 espressioni idiomatiche con significato e due esempi ciascuna.</p>
+      <span class="kind pdf">PDF</span>
+    </a>
+    <a class="tile c-teal" href="inglese/Advanced/phrasal-verbs-C1-C2.pdf">
+      <div class="ico">🔗</div><h3>Phrasal Verbs</h3>
+      <p>60 phrasal verbs C1→C2 su 4 livelli, con definizione inglese e due esempi.</p>
+      <span class="kind pdf">PDF</span>
+    </a>
+    <a class="tile c-blue" href="inglese/riassunto-grammatica.pdf">
+      <div class="ico">📄</div><h3>Riassunto grammatica</h3>
+      <p>Regole ed esempi dei 9 capitoli di grammatica, in versione stampabile.</p>
+      <span class="kind pdf">PDF</span>
+    </a>
+    <a class="tile c-green" href="inglese/inglese_programma_1liceo.pdf">
+      <div class="ico">🗂️</div><h3>Programma 1ª Liceo</h3>
+      <p>Indice del programma del libro di testo (le 12 unità).</p>
+      <span class="kind pdf">PDF</span>
+    </a>
+  </div>
+
+  <!-- ══════ DIRITTO & ECONOMIA ══════ -->
+  <div class="group-title">⚖️ Diritto &amp; Economia</div>
+  <div class="group-sub">Guide di studio per l'esame integrativo.</div>
+
+  <div class="grid">
+    <a class="tile c-navy" href="diritto/Guida_Diritto.pdf">
+      <div class="ico">⚖️</div><h3>Guida Diritto</h3>
+      <p>Guida di studio di Diritto per l'esame integrativo.</p>
+      <span class="kind pdf">PDF</span>
+    </a>
+    <a class="tile c-green" href="diritto/Guida_Economia.pdf">
+      <div class="ico">📈</div><h3>Guida Economia</h3>
+      <p>Guida di studio di Economia per l'esame integrativo.</p>
+      <span class="kind pdf">PDF</span>
+    </a>
+    <a class="tile c-blue" href="diritto/diritto_indice_1anno.pdf">
+      <div class="ico">🗂️</div><h3>Indice Diritto (1° anno)</h3>
+      <p>Indice degli argomenti del primo anno.</p>
+      <span class="kind pdf">PDF</span>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  Aperto direttamente nel browser · funziona anche offline · l'area <strong>Risultati</strong> delle app è protetta da password
+  (<code>daniele2026</code>).
+</footer>
+
+</body>
+</html>
