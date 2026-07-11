@@ -25,18 +25,6 @@
   .group-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.35rem;margin:26px 0 6px;display:flex;align-items:center;gap:9px;}
   .group-sub{color:var(--muted);font-size:0.92rem;margin-bottom:16px;}
 
-  .featured{
-    display:block;text-decoration:none;color:white;border-radius:20px;padding:24px 26px;margin-bottom:22px;
-    background:linear-gradient(135deg,var(--indigo),var(--purple));box-shadow:var(--shadow);
-    position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s;
-  }
-  .featured:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(79,70,229,0.28);}
-  .featured .tag{display:inline-block;background:rgba(255,255,255,0.22);border:1.5px solid rgba(255,255,255,0.5);
-    font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.6px;padding:3px 11px;border-radius:20px;margin-bottom:10px;}
-  .featured h2{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.55rem;display:flex;align-items:center;gap:10px;}
-  .featured p{opacity:0.94;font-size:0.96rem;margin-top:7px;max-width:640px;line-height:1.55;}
-  .featured .go{position:absolute;right:24px;bottom:20px;font-size:1.6rem;opacity:0.9;}
-
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:15px;}
   .tile{
     display:flex;flex-direction:column;text-decoration:none;color:var(--text);background:var(--card);
@@ -50,6 +38,9 @@
   .tile .kind{margin-top:10px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.4px;
     display:inline-block;padding:3px 10px;border-radius:20px;align-self:flex-start;}
   .kind.app{background:#EAE8FA;color:var(--indigo);} .kind.pdf{background:#FDECEF;color:var(--rose);}
+  .tile.hero{background:linear-gradient(135deg,var(--blue),var(--indigo));border-top-color:rgba(255,255,255,0.45);color:white;}
+  .tile.hero p{color:rgba(255,255,255,0.92);}
+  .tile.hero .kind.heroK{background:rgba(255,255,255,0.22);color:white;}
   .c-blue{border-color:var(--blue);} .c-teal{border-color:var(--teal);} .c-green{border-color:var(--green);}
   .c-amber{border-color:var(--amber);} .c-rose{border-color:var(--rose);} .c-navy{border-color:var(--navy);}
   .c-pink{border-color:var(--pink);} .c-purple{border-color:var(--purple);}
@@ -72,21 +63,19 @@
   <div class="group-title">🇬🇧 Inglese</div>
   <div class="group-sub">Dashboard interattive (quiz, flashcard, test) e glossari stampabili.</div>
 
-  <a class="featured" href="inglese/Advanced/advanced-dashboard-C1-C2.html">
-    <span class="tag">★ NOVITÀ · LIVELLO C1–C2</span>
-    <h2>🎓 English Dashboard Advanced</h2>
-    <p>Grammatica avanzata, lessico preciso, word formation, registro, esercizi misti e un <strong>test finale cronometrato di 60 minuti</strong>. Il livello più alto, in stile esame Cambridge.</p>
-    <span class="go">→</span>
-  </a>
-
   <div class="grid">
+    <a class="tile hero" href="inglese/Advanced/advanced-dashboard-C1-C2.html">
+      <div class="ico">🎓</div><h3>English Dashboard Advanced</h3>
+      <p>Livello C1–C2: grammatica avanzata, lessico, word formation, esercizi misti e test finale da 60 minuti.</p>
+      <span class="kind heroK">APP · C1–C2</span>
+    </a>
     <a class="tile c-purple" href="inglese/english-dashboard-2.html">
-      <div class="ico">🚀</div><h3>English Booster</h3>
+      <div class="ico">🚀</div><h3>English Booster (Sofia)</h3>
       <p>Ripasso avanzato verso il B1: 9 capitoli di grammatica, ~120 vocaboli, verbi + trainer e test finale.</p>
       <span class="kind app">APP</span>
     </a>
     <a class="tile c-pink" href="inglese/english-dashboard.html">
-      <div class="ico">🇬🇧</div><h3>English Ripasso</h3>
+      <div class="ico">🇬🇧</div><h3>English Ripasso 1° anno (Sofia)</h3>
       <p>App di ripasso base (Prima Liceo): tempi verbali, modali, articoli, con quiz e flashcard.</p>
       <span class="kind app">APP</span>
     </a>
